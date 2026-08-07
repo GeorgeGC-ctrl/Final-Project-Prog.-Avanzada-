@@ -1,0 +1,544 @@
+import pathlib
+
+OUT = pathlib.Path(r"c:\Users\PC\Desktop\George UCE\programacion media\PAPF\mockup.html")
+
+html = r"""<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>Northwind Manager — Mockup</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    :root{
+      --bg:#0f1117;--surface:#1a1d27;--surface2:#21253a;--border:#2e3350;
+      --accent:#6366f1;--accent2:#818cf8;--green:#22c55e;--red:#ef4444;
+      --yellow:#f59e0b;--text:#e2e8f0;--text2:#94a3b8;--radius:10px
+    }
+    body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);min-height:100vh;display:flex;flex-direction:column}
+    /* header */
+    header{background:var(--surface);border-bottom:1px solid var(--border);padding:0 24px;display:flex;align-items:center;height:52px;gap:16px;position:sticky;top:0;z-index:100}
+    .logo{font-weight:700;font-size:18px;background:linear-gradient(135deg,var(--accent),var(--accent2));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+    .hbadge{font-size:11px;background:rgba(99,102,241,.18);color:var(--accent2);border:1px solid rgba(99,102,241,.35);padding:2px 8px;border-radius:20px}
+    .hbadge.ok{background:rgba(34,197,94,.12);color:#86efac;border-color:rgba(34,197,94,.25)}
+    .spacer{flex:1}
+    .huser{display:flex;align-items:center;gap:8px;font-size:13px;color:var(--text2)}
+    .avatar{width:30px;height:30px;border-radius:50%;background:linear-gradient(135deg,#6366f1,#818cf8);display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;color:#fff}
+    /* layout */
+    .app{display:flex;flex:1;overflow:hidden;height:calc(100vh - 52px)}
+    nav{width:220px;background:var(--surface);border-right:1px solid var(--border);padding:16px 0;flex-shrink:0;overflow-y:auto}
+    .nsec{padding:0 12px 4px 16px;font-size:10px;font-weight:600;color:var(--text2);letter-spacing:1px;text-transform:uppercase;margin:12px 0 4px}
+    .ni{display:flex;align-items:center;gap:10px;padding:9px 16px;cursor:pointer;font-size:13.5px;color:var(--text2);transition:all .15s;border-left:3px solid transparent;user-select:none}
+    .ni:hover{background:rgba(255,255,255,.04);color:var(--text)}
+    .ni.active{background:rgba(99,102,241,.12);color:var(--accent2);border-left-color:var(--accent)}
+    .nic{width:18px;text-align:center;font-size:15px}
+    .nbadge{margin-left:auto;background:rgba(99,102,241,.2);color:var(--accent2);font-size:10px;font-weight:600;padding:1px 6px;border-radius:10px}
+    main{flex:1;overflow-y:auto;padding:28px 32px;background:var(--bg)}
+    /* page header */
+    .ph{display:flex;align-items:flex-start;gap:16px;margin-bottom:24px}
+    .pi{width:46px;height:46px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:22px;background:linear-gradient(135deg,rgba(99,102,241,.25),rgba(129,140,248,.1));border:1px solid rgba(99,102,241,.3);flex-shrink:0}
+    .pt{font-size:22px;font-weight:700;letter-spacing:-.4px}
+    .ps{font-size:13px;color:var(--text2);margin-top:2px}
+    /* toolbar */
+    .tb{display:flex;gap:10px;align-items:center;margin-bottom:18px;flex-wrap:wrap}
+    .sb{display:flex;align-items:center;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:0 12px;gap:8px;flex:1;min-width:200px}
+    .sb input{border:none;background:transparent;color:var(--text);font-family:inherit;font-size:13px;padding:8px 0;outline:none;width:100%}
+    .sb input::placeholder{color:var(--text2)}
+    /* buttons */
+    .btn{display:inline-flex;align-items:center;gap:6px;padding:8px 16px;border-radius:var(--radius);border:none;cursor:pointer;font-family:inherit;font-size:13px;font-weight:500;transition:all .15s;white-space:nowrap}
+    .bp{background:linear-gradient(135deg,var(--accent),#7c3aed);color:#fff;box-shadow:0 4px 14px rgba(99,102,241,.3)}
+    .bp:hover{transform:translateY(-1px);box-shadow:0 6px 20px rgba(99,102,241,.4)}
+    .bs{background:var(--surface);border:1px solid var(--border);color:var(--text2)}
+    .bs:hover{border-color:var(--accent);color:var(--text)}
+    .bd{background:rgba(239,68,68,.12);border:1px solid rgba(239,68,68,.25);color:#fca5a5}
+    .bd:hover{background:rgba(239,68,68,.25)}
+    .bg{background:rgba(34,197,94,.12);border:1px solid rgba(34,197,94,.25);color:#86efac}
+    .bg:hover{background:rgba(34,197,94,.25)}
+    .sm{padding:5px 10px;font-size:12px;border-radius:7px}
+    /* stat cards */
+    .sr{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:14px;margin-bottom:22px}
+    .sc{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:16px 18px;transition:border-color .15s}
+    .sc:hover{border-color:var(--accent)}
+    .sl{font-size:11px;color:var(--text2);text-transform:uppercase;letter-spacing:.8px;font-weight:600}
+    .sv{font-size:28px;font-weight:700;margin-top:4px}
+    .sv.ii{color:var(--accent2)}.sv.gg{color:var(--green)}.sv.rr{color:var(--red)}.sv.yy{color:var(--yellow)}
+    /* table */
+    .tc{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden}
+    table{width:100%;border-collapse:collapse;font-size:13px}
+    thead tr{background:var(--surface2)}
+    thead th{padding:11px 14px;text-align:left;font-size:11px;font-weight:600;color:var(--text2);text-transform:uppercase;letter-spacing:.7px;border-bottom:1px solid var(--border)}
+    tbody tr{border-bottom:1px solid rgba(46,51,80,.5);transition:background .12s}
+    tbody tr:last-child{border-bottom:none}
+    tbody tr:hover{background:rgba(99,102,241,.06)}
+    td{padding:10px 14px;vertical-align:middle}
+    .tid{color:var(--text2);font-size:12px;font-weight:600}
+    /* badges */
+    .badge{display:inline-flex;align-items:center;gap:4px;padding:3px 9px;border-radius:20px;font-size:11px;font-weight:600}
+    .ba{background:rgba(34,197,94,.15);color:#86efac;border:1px solid rgba(34,197,94,.25)}
+    .bi{background:rgba(239,68,68,.12);color:#fca5a5;border:1px solid rgba(239,68,68,.2)}
+    .bc{background:rgba(99,102,241,.15);color:var(--accent2);border:1px solid rgba(99,102,241,.25)}
+    /* modal */
+    .ov{display:none;position:fixed;inset:0;background:rgba(0,0,0,.65);backdrop-filter:blur(4px);z-index:200;align-items:center;justify-content:center}
+    .ov.open{display:flex;animation:fi .18s ease}
+    @keyframes fi{from{opacity:0}to{opacity:1}}
+    .modal{background:var(--surface);border:1px solid var(--border);border-radius:14px;width:480px;max-width:95vw;box-shadow:0 25px 60px rgba(0,0,0,.6);animation:su .2s ease}
+    @keyframes su{from{transform:translateY(20px);opacity:0}to{transform:none;opacity:1}}
+    .mh{padding:20px 24px 16px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:12px}
+    .mi{width:38px;height:38px;border-radius:10px;background:rgba(99,102,241,.2);display:flex;align-items:center;justify-content:center;font-size:18px}
+    .mt{font-size:16px;font-weight:600}
+    .ms{font-size:12px;color:var(--text2);margin-top:1px}
+    .mc{margin-left:auto;background:none;border:none;color:var(--text2);font-size:20px;cursor:pointer;padding:4px;border-radius:6px;transition:background .15s;line-height:1}
+    .mc:hover{background:rgba(255,255,255,.08);color:var(--text)}
+    .mb{padding:20px 24px}
+    .mf{padding:16px 24px;border-top:1px solid var(--border);display:flex;justify-content:flex-end;gap:10px}
+    /* form */
+    .fg{margin-bottom:14px}
+    .fr{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+    label{display:block;font-size:12px;font-weight:500;color:var(--text2);margin-bottom:5px}
+    input[type=text],input[type=number],select,textarea{width:100%;background:var(--bg);border:1px solid var(--border);border-radius:8px;color:var(--text);font-family:inherit;font-size:13px;padding:8px 11px;outline:none;transition:border-color .15s}
+    input:focus,select:focus,textarea:focus{border-color:var(--accent)}
+    select option{background:var(--surface2)}
+    textarea{resize:vertical;min-height:70px}
+    .cbr{display:flex;align-items:center;gap:8px;cursor:pointer}
+    .cbr input{width:16px;height:16px;accent-color:var(--accent);cursor:pointer}
+    /* toast */
+    #toast{position:fixed;bottom:28px;right:28px;background:var(--surface2);border:1px solid var(--border);border-radius:10px;padding:12px 18px;font-size:13px;display:flex;align-items:center;gap:10px;box-shadow:0 8px 30px rgba(0,0,0,.5);z-index:300;transform:translateY(80px);opacity:0;transition:all .3s cubic-bezier(.34,1.56,.64,1)}
+    #toast.show{transform:none;opacity:1}
+    .nd{text-align:center;padding:50px 0;color:var(--text2)}
+    .nd .ni2{font-size:48px;margin-bottom:12px}
+    ::-webkit-scrollbar{width:6px;height:6px}
+    ::-webkit-scrollbar-track{background:transparent}
+    ::-webkit-scrollbar-thumb{background:var(--border);border-radius:4px}
+    /* dashboard */
+    .dg{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:20px}
+    .dc{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:20px}
+    .dc h3{font-size:14px;font-weight:600;margin-bottom:14px;color:var(--text2)}
+    .ml{list-style:none}
+    .ml li{display:flex;align-items:center;justify-content:space-between;padding:7px 0;border-bottom:1px solid rgba(46,51,80,.5);font-size:13px}
+    .ml li:last-child{border-bottom:none}
+    .mp{font-size:11px;font-weight:600;padding:2px 8px;border-radius:10px;background:rgba(99,102,241,.15);color:var(--accent2)}
+    .pr{display:flex;align-items:center;gap:10px;margin-bottom:9px;font-size:12px}
+    .pr span:first-child{width:120px;color:var(--text2);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+    .pb{flex:1;height:6px;background:var(--border);border-radius:4px;overflow:hidden}
+    .pf{height:100%;border-radius:4px;background:linear-gradient(90deg,var(--accent),var(--accent2));transition:width .6s ease}
+    .pv{width:55px;text-align:right;color:var(--text2);font-size:12px}
+  </style>
+</head>
+<body>
+<header>
+  <span class="logo">&#x1F9ED; Northwind</span>
+  <span class="hbadge">Manager v1.0</span>
+  <span class="hbadge ok">&#x25CF; Mockup Interactivo</span>
+  <span class="spacer"></span>
+  <div class="huser"><div class="avatar">GU</div><span>George UCE</span></div>
+</header>
+
+<div class="app">
+  <nav>
+    <div class="nsec">Principal</div>
+    <div class="ni active" onclick="nav('dashboard')" id="nav-dashboard"><span class="nic">&#x1F4CA;</span>Dashboard</div>
+    <div class="nsec">Catalogo</div>
+    <div class="ni" onclick="nav('categories')" id="nav-categories"><span class="nic">&#x1F5C2;</span>Categorias<span class="nbadge" id="cnt-cat">8</span></div>
+    <div class="ni" onclick="nav('products')" id="nav-products"><span class="nic">&#x1F4E6;</span>Productos<span class="nbadge" id="cnt-prod">6</span></div>
+    <div class="nsec">Contactos</div>
+    <div class="ni" onclick="nav('suppliers')" id="nav-suppliers"><span class="nic">&#x1F3ED;</span>Proveedores<span class="nbadge" id="cnt-sup">4</span></div>
+    <div class="nsec">Sistema</div>
+    <div class="ni" onclick="toast2('Configuracion proximamente','yy')"><span class="nic">&#x2699;</span>Configuracion</div>
+    <div class="ni" onclick="toast2('Northwind Manager PAPF v1.0','ii')"><span class="nic">&#x2139;</span>Acerca de</div>
+  </nav>
+  <main id="main"></main>
+</div>
+
+<!-- MODAL: Categoria -->
+<div class="ov" id="m-cat">
+  <div class="modal">
+    <div class="mh">
+      <div class="mi">&#x1F5C2;</div>
+      <div><div class="mt" id="cat-mt">Nueva Categoria</div><div class="ms">Northwind.Domain.Entidades.Categories</div></div>
+      <button class="mc" onclick="cm('m-cat')">&#x2715;</button>
+    </div>
+    <div class="mb">
+      <input type="hidden" id="cat-id"/>
+      <div class="fg"><label>Nombre *</label><input type="text" id="cat-name" placeholder="Ej. Beverages"/></div>
+      <div class="fg"><label>Descripcion</label><textarea id="cat-desc" placeholder="Descripcion opcional..."></textarea></div>
+      <div class="fg"><label>Imagen URL</label><input type="text" id="cat-pic" placeholder="/images/cat.jpg"/></div>
+    </div>
+    <div class="mf">
+      <button class="btn bs" onclick="cm('m-cat')">Cancelar</button>
+      <button class="btn bp" onclick="saveCat()">&#x1F4BE; Guardar</button>
+    </div>
+  </div>
+</div>
+
+<!-- MODAL: Producto -->
+<div class="ov" id="m-prod">
+  <div class="modal">
+    <div class="mh">
+      <div class="mi">&#x1F4E6;</div>
+      <div><div class="mt" id="prod-mt">Nuevo Producto</div><div class="ms">Northwind.Domain.Entidades.Products</div></div>
+      <button class="mc" onclick="cm('m-prod')">&#x2715;</button>
+    </div>
+    <div class="mb">
+      <input type="hidden" id="prod-id"/>
+      <div class="fg"><label>Nombre del Producto *</label><input type="text" id="prod-name" placeholder="Ej. Chai"/></div>
+      <div class="fr">
+        <div class="fg"><label>Categoria</label><select id="prod-cat"></select></div>
+        <div class="fg"><label>Proveedor</label><select id="prod-sup"></select></div>
+      </div>
+      <div class="fr">
+        <div class="fg"><label>Precio ($)</label><input type="number" id="prod-price" placeholder="0.00" step="0.01" min="0"/></div>
+        <div class="fg"><label>Und. Empaque</label><input type="text" id="prod-qty" placeholder="10 boxes x 20 bags"/></div>
+      </div>
+      <div class="fr">
+        <div class="fg"><label>Stock</label><input type="number" id="prod-stock" placeholder="0" min="0"/></div>
+        <div class="fg"><label>Nivel Reorden</label><input type="number" id="prod-reorder" placeholder="0" min="0"/></div>
+      </div>
+      <div class="fg"><label class="cbr"><input type="checkbox" id="prod-disc"/> Descontinuado</label></div>
+    </div>
+    <div class="mf">
+      <button class="btn bs" onclick="cm('m-prod')">Cancelar</button>
+      <button class="btn bp" onclick="saveProd()">&#x1F4BE; Guardar</button>
+    </div>
+  </div>
+</div>
+
+<!-- MODAL: Proveedor -->
+<div class="ov" id="m-sup">
+  <div class="modal" style="width:520px">
+    <div class="mh">
+      <div class="mi">&#x1F3ED;</div>
+      <div><div class="mt" id="sup-mt">Nuevo Proveedor</div><div class="ms">Northwind.Domain.Entidades.Suppliers</div></div>
+      <button class="mc" onclick="cm('m-sup')">&#x2715;</button>
+    </div>
+    <div class="mb">
+      <input type="hidden" id="sup-id"/>
+      <div class="fg"><label>Nombre Empresa *</label><input type="text" id="sup-co" placeholder="Exotic Liquids"/></div>
+      <div class="fr">
+        <div class="fg"><label>Contacto</label><input type="text" id="sup-cn" placeholder="Charlotte Cooper"/></div>
+        <div class="fg"><label>Titulo</label><input type="text" id="sup-ct" placeholder="Purchasing Manager"/></div>
+      </div>
+      <div class="fr">
+        <div class="fg"><label>Ciudad</label><input type="text" id="sup-ci" placeholder="London"/></div>
+        <div class="fg"><label>Pais</label><input type="text" id="sup-cy" placeholder="UK"/></div>
+      </div>
+      <div class="fr">
+        <div class="fg"><label>Telefono</label><input type="text" id="sup-ph" placeholder="(171) 555-2222"/></div>
+        <div class="fg"><label>Direccion</label><input type="text" id="sup-ad" placeholder="49 Gilbert St."/></div>
+      </div>
+    </div>
+    <div class="mf">
+      <button class="btn bs" onclick="cm('m-sup')">Cancelar</button>
+      <button class="btn bp" onclick="saveSup()">&#x1F4BE; Guardar</button>
+    </div>
+  </div>
+</div>
+
+<!-- MODAL: Confirmar Delete -->
+<div class="ov" id="m-del">
+  <div class="modal" style="width:380px">
+    <div class="mh">
+      <div class="mi" style="background:rgba(239,68,68,.18)">&#x26A0;</div>
+      <div><div class="mt">Confirmar Eliminacion</div><div class="ms" id="del-sub">Esta accion no se puede deshacer.</div></div>
+      <button class="mc" onclick="cm('m-del')">&#x2715;</button>
+    </div>
+    <div class="mb"><p style="font-size:13px;color:var(--text2)">Deseas eliminar <strong id="del-nm" style="color:var(--text)"></strong>? Se perderan todos los datos.</p></div>
+    <div class="mf">
+      <button class="btn bs" onclick="cm('m-del')">Cancelar</button>
+      <button class="btn bd" id="btn-del">&#x1F5D1; Eliminar</button>
+    </div>
+  </div>
+</div>
+
+<div id="toast"><span id="tmsg"></span></div>
+
+<script>
+var cats=[
+  {id:1,name:'Beverages',desc:'Soft drinks, coffees, teas, beers, and ales',pic:'/img/bev.jpg'},
+  {id:2,name:'Condiments',desc:'Sweet and savory sauces, relishes, spreads',pic:''},
+  {id:3,name:'Confections',desc:'Desserts, candies, and sweet breads',pic:''},
+  {id:4,name:'Dairy Products',desc:'Cheeses',pic:''},
+  {id:5,name:'Grains/Cereals',desc:'Breads, crackers, pasta, and cereal',pic:''},
+  {id:6,name:'Meat/Poultry',desc:'Prepared meats',pic:''},
+  {id:7,name:'Produce',desc:'Dried fruit and bean curd',pic:''},
+  {id:8,name:'Seafood',desc:'Seaweed and fish',pic:''}
+];
+var prods=[
+  {id:1,name:'Chai',si:1,ci:1,qty:'10 boxes x 20 bags',price:18,stock:39,ro:10,disc:false},
+  {id:2,name:'Chang',si:1,ci:1,qty:'24-12 oz bottles',price:19,stock:17,ro:25,disc:false},
+  {id:3,name:'Aniseed Syrup',si:1,ci:2,qty:'12-550 ml bottles',price:10,stock:13,ro:25,disc:false},
+  {id:4,name:'Chef Antons Cajun',si:2,ci:2,qty:'48-6 oz jars',price:22,stock:53,ro:0,disc:false},
+  {id:5,name:'Tofu',si:3,ci:7,qty:'40-100 g pkgs.',price:23.25,stock:0,ro:5,disc:false},
+  {id:6,name:'Ikura',si:4,ci:8,qty:'12-200 ml jars',price:31,stock:31,ro:0,disc:false}
+];
+var sups=[
+  {id:1,co:'Exotic Liquids',cn:'Charlotte Cooper',ct:'Purchasing Manager',ci:'London',cy:'UK',ph:'(171) 555-2222',ad:'49 Gilbert St.'},
+  {id:2,co:'New Orleans Cajun',cn:'Shelley Burke',ct:'Order Administrator',ci:'New Orleans',cy:'USA',ph:'(100) 555-4822',ad:'P.O. Box 78934'},
+  {id:3,co:"Grandma Kellys",cn:'Regina Murphy',ct:'Sales Representative',ci:'Ann Arbor',cy:'USA',ph:'(313) 555-5735',ad:'707 Oxford Rd.'},
+  {id:4,co:'Tokyo Traders',cn:'Yoshi Nagase',ct:'Marketing Manager',ci:'Tokyo',cy:'Japan',ph:'(03) 3555-5011',ad:'9-8 Sekimai'}
+];
+var nci=9,npi=7,nsi=5,page='dashboard',delCb=null;
+
+function nav(p){
+  page=p;
+  document.querySelectorAll('.ni').forEach(function(n){n.classList.remove('active')});
+  document.getElementById('nav-'+p).classList.add('active');
+  renderPage(p);
+}
+
+function renderPage(p){
+  var m=document.getElementById('main');
+  if(p==='dashboard')  m.innerHTML=dashHTML();
+  if(p==='categories') m.innerHTML=catHTML('');
+  if(p==='products')   m.innerHTML=prodHTML('');
+  if(p==='suppliers')  m.innerHTML=supHTML('');
+  cnt();
+}
+
+function cnt(){
+  document.getElementById('cnt-cat').textContent=cats.length;
+  document.getElementById('cnt-prod').textContent=prods.length;
+  document.getElementById('cnt-sup').textContent=sups.length;
+}
+
+/* DASHBOARD */
+function dashHTML(){
+  var act=prods.filter(function(p){return !p.disc}).length;
+  var dis=prods.filter(function(p){return p.disc}).length;
+  var low=prods.filter(function(p){return p.stock<=10});
+  var mx=Math.max.apply(null,prods.map(function(p){return p.price}));
+  var sp=prods.slice().sort(function(a,b){return b.price-a.price}).slice(0,5);
+  return '<div class="ph"><div class="pi">&#x1F4CA;</div><div><div class="pt">Dashboard</div><div class="ps">Resumen general del catalogo Northwind</div></div></div>'+
+    '<div class="sr">'+
+      sc('Categorias',cats.length,'ii')+sc('Productos',prods.length,'ii')+
+      sc('Activos',act,'gg')+sc('Descontinuados',dis,'rr')+sc('Proveedores',sups.length,'yy')+
+    '</div>'+
+    '<div class="dg">'+
+      '<div class="dc"><h3>&#x1F3C6; Productos por Precio</h3>'+
+        sp.map(function(p){return '<div class="pr"><span>'+p.name+'</span><div class="pb"><div class="pf" style="width:'+Math.round(p.price/mx*100)+'%"></div></div><span class="pv">$'+p.price.toFixed(2)+'</span></div>'}).join('')+
+      '</div>'+
+      '<div class="dc"><h3>&#x1F5C2; Categorias</h3><ul class="ml">'+
+        cats.slice(0,6).map(function(c){var n=prods.filter(function(p){return p.ci===c.id}).length;return '<li><span>'+c.name+'</span><span class="mp">'+n+' prod.</span></li>'}).join('')+
+      '</ul></div>'+
+      '<div class="dc"><h3>&#x1F3ED; Proveedores</h3><ul class="ml">'+
+        sups.map(function(s){var n=prods.filter(function(p){return p.si===s.id}).length;return '<li><span>'+s.co+'</span><span class="mp">'+s.cy+' - '+n+' prod.</span></li>'}).join('')+
+      '</ul></div>'+
+      '<div class="dc"><h3>&#x1F4E6; Stock Bajo</h3><ul class="ml">'+
+        (low.length===0?'<li style="color:var(--green);justify-content:center">&#x2705; Todo el stock OK</li>':
+          low.map(function(p){return '<li><span>'+p.name+'</span><span class="mp" style="background:rgba(239,68,68,.15);color:#fca5a5">'+p.stock+' und.</span></li>'}).join(''))+
+      '</ul></div>'+
+    '</div>';
+}
+function sc(l,v,cl){return '<div class="sc"><div class="sl">'+l+'</div><div class="sv '+cl+'">'+v+'</div></div>'}
+
+/* CATEGORIES */
+function catHTML(f){
+  var list=cats.filter(function(c){return c.name.toLowerCase().indexOf(f.toLowerCase())>=0});
+  return '<div class="ph"><div class="pi">&#x1F5C2;</div><div><div class="pt">Categorias</div><div class="ps">'+cats.length+' registros</div></div></div>'+
+    '<div class="tb">'+
+      '<div class="sb"><span>&#x1F50D;</span><input type="text" placeholder="Buscar categoria..." value="'+esc(f)+'" oninput="document.getElementById(\'main\').innerHTML=catHTML(this.value)"/></div>'+
+      '<button class="btn bp" onclick="openCat()">&#xFF0B; Nueva Categoria</button>'+
+    '</div>'+
+    '<div class="sr" style="grid-template-columns:repeat(3,1fr);margin-bottom:16px">'+
+      sc('Total',cats.length,'ii')+
+      sc('Con productos',cats.filter(function(c){return prods.some(function(p){return p.ci===c.id})}).length,'gg')+
+      sc('Sin productos',cats.filter(function(c){return !prods.some(function(p){return p.ci===c.id})}).length,'yy')+
+    '</div>'+
+    '<div class="tc"><table><thead><tr><th>ID</th><th>Nombre</th><th>Descripcion</th><th>Productos</th><th>Imagen</th><th>Acciones</th></tr></thead><tbody>'+
+    (list.length===0?nd('Sin resultados para "'+esc(f)+'"',6):
+      list.map(function(c){
+        var np=prods.filter(function(p){return p.ci===c.id}).length;
+        return '<tr><td class="tid">#'+c.id+'</td><td><strong>'+c.name+'</strong></td>'+
+          '<td style="color:var(--text2);font-size:12px;max-width:220px">'+(c.desc||'--')+'</td>'+
+          '<td><span class="badge bc">'+np+' prod.</span></td>'+
+          '<td style="font-size:11px;color:var(--text2)">'+(c.pic||'Sin imagen')+'</td>'+
+          '<td>'+btnE('openCat('+c.id+')')+' '+btnD('del(\'cat\','+c.id+',\''+esc(c.name)+'\')')+'</td></tr>'
+      }).join(''))+
+    '</tbody></table></div>';
+}
+
+/* PRODUCTS */
+function prodHTML(f){
+  var list=prods.filter(function(p){return p.name.toLowerCase().indexOf(f.toLowerCase())>=0});
+  return '<div class="ph"><div class="pi">&#x1F4E6;</div><div><div class="pt">Productos</div><div class="ps">'+prods.length+' registros</div></div></div>'+
+    '<div class="tb">'+
+      '<div class="sb"><span>&#x1F50D;</span><input type="text" placeholder="Buscar producto..." value="'+esc(f)+'" oninput="document.getElementById(\'main\').innerHTML=prodHTML(this.value)"/></div>'+
+      '<button class="btn bp" onclick="openProd()">&#xFF0B; Nuevo Producto</button>'+
+    '</div>'+
+    '<div class="sr" style="grid-template-columns:repeat(4,1fr);margin-bottom:16px">'+
+      sc('Total',prods.length,'ii')+sc('Activos',prods.filter(function(p){return !p.disc}).length,'gg')+
+      sc('Descontinuados',prods.filter(function(p){return p.disc}).length,'rr')+sc('Stock Bajo',prods.filter(function(p){return p.stock<=10}).length,'yy')+
+    '</div>'+
+    '<div class="tc"><table><thead><tr><th>ID</th><th>Nombre</th><th>Categoria</th><th>Proveedor</th><th>Precio</th><th>Stock</th><th>Estado</th><th>Acciones</th></tr></thead><tbody>'+
+    (list.length===0?nd('Sin resultados',8):
+      list.map(function(p){
+        var cat=cats.find(function(c){return c.id===p.ci});
+        var sup=sups.find(function(s){return s.id===p.si});
+        return '<tr><td class="tid">#'+p.id+'</td>'+
+          '<td><strong>'+p.name+'</strong><br><small style="color:var(--text2)">'+(p.qty||'')+'</small></td>'+
+          '<td><span class="badge bc">'+(cat?cat.name:'--')+'</span></td>'+
+          '<td style="font-size:12px;color:var(--text2)">'+(sup?sup.co:'--')+'</td>'+
+          '<td style="font-weight:600">$'+p.price.toFixed(2)+'</td>'+
+          '<td>'+(p.stock<=10?'<span style="color:var(--red);font-weight:600">'+p.stock+'</span>':p.stock)+'</td>'+
+          '<td><span class="badge '+(p.disc?'bi':'ba')+'">'+(p.disc?'Desc.':'Activo')+'</span></td>'+
+          '<td style="display:flex;gap:4px;flex-wrap:wrap">'+
+            btnE('openProd('+p.id+')')+
+            ' <button class="btn '+(p.disc?'bg':'bs')+' sm" onclick="toggleDisc('+p.id+')">'+(p.disc?'&#x21BA;':'&#x2298;')+'</button>'+
+            ' '+btnD('del(\'prod\','+p.id+',\''+esc(p.name)+'\')')+
+          '</td></tr>'
+      }).join(''))+
+    '</tbody></table></div>';
+}
+
+/* SUPPLIERS */
+function supHTML(f){
+  var list=sups.filter(function(s){return s.co.toLowerCase().indexOf(f.toLowerCase())>=0||(s.cn||'').toLowerCase().indexOf(f.toLowerCase())>=0});
+  return '<div class="ph"><div class="pi">&#x1F3ED;</div><div><div class="pt">Proveedores</div><div class="ps">'+sups.length+' registros</div></div></div>'+
+    '<div class="tb">'+
+      '<div class="sb"><span>&#x1F50D;</span><input type="text" placeholder="Buscar empresa o contacto..." value="'+esc(f)+'" oninput="document.getElementById(\'main\').innerHTML=supHTML(this.value)"/></div>'+
+      '<button class="btn bp" onclick="openSup()">&#xFF0B; Nuevo Proveedor</button>'+
+    '</div>'+
+    '<div class="tc"><table><thead><tr><th>ID</th><th>Empresa</th><th>Contacto</th><th>Titulo</th><th>Ciudad</th><th>Pais</th><th>Telefono</th><th>Productos</th><th>Acciones</th></tr></thead><tbody>'+
+    (list.length===0?nd('Sin resultados',9):
+      list.map(function(s){
+        var np=prods.filter(function(p){return p.si===s.id}).length;
+        return '<tr><td class="tid">#'+s.id+'</td><td><strong>'+s.co+'</strong></td><td>'+(s.cn||'--')+'</td>'+
+          '<td style="font-size:12px;color:var(--text2)">'+(s.ct||'--')+'</td>'+
+          '<td>'+(s.ci||'--')+'</td><td><span class="badge bc">'+(s.cy||'--')+'</span></td>'+
+          '<td style="font-size:12px">'+(s.ph||'--')+'</td>'+
+          '<td><span class="badge ba">'+np+' prod.</span></td>'+
+          '<td>'+btnE('openSup('+s.id+')')+' '+btnD('del(\'sup\','+s.id+',\''+esc(s.co)+'\')')+'</td></tr>'
+      }).join(''))+
+    '</tbody></table></div>';
+}
+
+/* helpers */
+function nd(t,c){return '<tr><td colspan="'+c+'"><div class="nd"><div class="ni2">&#x1F50D;</div><p>'+t+'</p></div></td></tr>'}
+function btnE(f){return '<button class="btn bs sm" onclick="'+f+'">&#x270F; Editar</button>'}
+function btnD(f){return '<button class="btn bd sm" onclick="'+f+'">&#x1F5D1;</button>'}
+function esc(s){return String(s).replace(/'/g,"&apos;")}
+
+/* OPEN MODALS */
+function openCat(id){
+  document.getElementById('cat-mt').textContent=id?'Editar Categoria':'Nueva Categoria';
+  var c=id?cats.find(function(x){return x.id===id}):null;
+  document.getElementById('cat-id').value=c?c.id:'';
+  document.getElementById('cat-name').value=c?c.name:'';
+  document.getElementById('cat-desc').value=c?c.desc||'':'';
+  document.getElementById('cat-pic').value=c?c.pic||'':'';
+  om('m-cat');
+}
+function saveCat(){
+  var name=document.getElementById('cat-name').value.trim();
+  if(!name){toast2('El nombre es obligatorio','rr');return}
+  var id=document.getElementById('cat-id').value;
+  var desc=document.getElementById('cat-desc').value.trim();
+  var pic=document.getElementById('cat-pic').value.trim();
+  if(id){var c=cats.find(function(x){return x.id===+id});c.name=name;c.desc=desc;c.pic=pic;toast2('Categoria actualizada','gg')}
+  else{cats.push({id:nci++,name:name,desc:desc,pic:pic});toast2('Categoria creada','gg')}
+  cm('m-cat');renderPage('categories');
+}
+
+function openProd(id){
+  document.getElementById('prod-mt').textContent=id?'Editar Producto':'Nuevo Producto';
+  var cs=document.getElementById('prod-cat');var ss=document.getElementById('prod-sup');
+  cs.innerHTML='<option value="">-- Sin categoria --</option>'+cats.map(function(c){return '<option value="'+c.id+'">'+c.name+'</option>'}).join('');
+  ss.innerHTML='<option value="">-- Sin proveedor --</option>'+sups.map(function(s){return '<option value="'+s.id+'">'+s.co+'</option>'}).join('');
+  var p=id?prods.find(function(x){return x.id===id}):null;
+  document.getElementById('prod-id').value=p?p.id:'';
+  document.getElementById('prod-name').value=p?p.name:'';
+  document.getElementById('prod-price').value=p?p.price:'';
+  document.getElementById('prod-qty').value=p?p.qty||'':'';
+  document.getElementById('prod-stock').value=p?p.stock:'';
+  document.getElementById('prod-reorder').value=p?p.ro:'';
+  document.getElementById('prod-disc').checked=p?p.disc:false;
+  cs.value=p?p.ci||'':''; ss.value=p?p.si||'':'';
+  om('m-prod');
+}
+function saveProd(){
+  var name=document.getElementById('prod-name').value.trim();
+  if(!name){toast2('El nombre es obligatorio','rr');return}
+  var id=document.getElementById('prod-id').value;
+  var ci=+document.getElementById('prod-cat').value||null;
+  var si=+document.getElementById('prod-sup').value||null;
+  var price=parseFloat(document.getElementById('prod-price').value)||0;
+  var qty=document.getElementById('prod-qty').value.trim();
+  var stock=+document.getElementById('prod-stock').value||0;
+  var ro=+document.getElementById('prod-reorder').value||0;
+  var disc=document.getElementById('prod-disc').checked;
+  if(id){var p=prods.find(function(x){return x.id===+id});p.name=name;p.ci=ci;p.si=si;p.price=price;p.qty=qty;p.stock=stock;p.ro=ro;p.disc=disc;toast2('Producto actualizado','gg')}
+  else{prods.push({id:npi++,name:name,ci:ci,si:si,price:price,qty:qty,stock:stock,ro:ro,disc:disc});toast2('Producto creado','gg')}
+  cm('m-prod');renderPage('products');
+}
+function toggleDisc(id){
+  var p=prods.find(function(x){return x.id===id});p.disc=!p.disc;
+  toast2(p.disc?'Producto descontinuado':'Producto reactivado',p.disc?'rr':'gg');
+  renderPage('products');
+}
+
+function openSup(id){
+  document.getElementById('sup-mt').textContent=id?'Editar Proveedor':'Nuevo Proveedor';
+  var s=id?sups.find(function(x){return x.id===id}):null;
+  document.getElementById('sup-id').value=s?s.id:'';
+  document.getElementById('sup-co').value=s?s.co:'';
+  document.getElementById('sup-cn').value=s?s.cn||'':'';
+  document.getElementById('sup-ct').value=s?s.ct||'':'';
+  document.getElementById('sup-ci').value=s?s.ci||'':'';
+  document.getElementById('sup-cy').value=s?s.cy||'':'';
+  document.getElementById('sup-ph').value=s?s.ph||'':'';
+  document.getElementById('sup-ad').value=s?s.ad||'':'';
+  om('m-sup');
+}
+function saveSup(){
+  var co=document.getElementById('sup-co').value.trim();
+  if(!co){toast2('El nombre de la empresa es obligatorio','rr');return}
+  var id=document.getElementById('sup-id').value;
+  var cn=document.getElementById('sup-cn').value.trim();
+  var ct=document.getElementById('sup-ct').value.trim();
+  var ci=document.getElementById('sup-ci').value.trim();
+  var cy=document.getElementById('sup-cy').value.trim();
+  var ph=document.getElementById('sup-ph').value.trim();
+  var ad=document.getElementById('sup-ad').value.trim();
+  if(id){var s=sups.find(function(x){return x.id===+id});s.co=co;s.cn=cn;s.ct=ct;s.ci=ci;s.cy=cy;s.ph=ph;s.ad=ad;toast2('Proveedor actualizado','gg')}
+  else{sups.push({id:nsi++,co:co,cn:cn,ct:ct,ci:ci,cy:cy,ph:ph,ad:ad});toast2('Proveedor creado','gg')}
+  cm('m-sup');renderPage('suppliers');
+}
+
+function del(type,id,name){
+  document.getElementById('del-nm').textContent=name;
+  document.getElementById('del-sub').textContent='Tipo: '+(type==='cat'?'Categoria':type==='prod'?'Producto':'Proveedor');
+  document.getElementById('btn-del').onclick=function(){
+    if(type==='cat')  cats=cats.filter(function(x){return x.id!==id});
+    if(type==='prod') prods=prods.filter(function(x){return x.id!==id});
+    if(type==='sup')  sups=sups.filter(function(x){return x.id!==id});
+    toast2('Registro eliminado','rr');cm('m-del');
+    renderPage(type==='cat'?'categories':type==='prod'?'products':'suppliers');
+  };
+  om('m-del');
+}
+
+function om(id){document.getElementById(id).classList.add('open')}
+function cm(id){document.getElementById(id).classList.remove('open')}
+document.querySelectorAll('.ov').forEach(function(o){
+  o.addEventListener('click',function(e){if(e.target===o)o.classList.remove('open')});
+});
+
+var tt;
+var clr={gg:'var(--green)',rr:'var(--red)',yy:'var(--yellow)',ii:'var(--accent2)'};
+function toast2(msg,c){
+  var t=document.getElementById('toast');
+  document.getElementById('tmsg').textContent=msg;
+  t.style.borderColor=clr[c]||clr.gg;
+  t.classList.add('show');clearTimeout(tt);
+  tt=setTimeout(function(){t.classList.remove('show')},3000);
+}
+
+nav('dashboard');
+</script>
+</body>
+</html>
+"""
+
+OUT.write_text(html, encoding='utf-8')
+print('OK -', OUT.stat().st_size, 'bytes')
