@@ -5,6 +5,7 @@ using Northwind.Application.Validators.Categorias;
 using Northwind.Infrastructure;
 using Northwind.Infrastructure.Persistence.Repositorios;
 using Serilog;
+using Serilog.Extensions.Logging;
 using System;
 using System.Collections.Generic;
 using System.Linq;

@@ -19,6 +19,12 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="FontAwesome.Sharp" Version="6.6.0" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="10.0.10" />
+    <PackageReference Include="Serilog.Sinks.Console" Version="6.1.1" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\Northwind.Application\Northwind.Application.csproj" />
     <ProjectReference Include="..\Northwind.Infrastructure\Northwind.Infrastructure.csproj" />
   </ItemGroup>

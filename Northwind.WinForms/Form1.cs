@@ -6,5 +6,10 @@ namespace Northwind.WinForms
         {
             InitializeComponent();
         }
+
+        private void siticoneDashboardButton1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
