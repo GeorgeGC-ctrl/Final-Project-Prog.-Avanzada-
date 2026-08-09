@@ -1,7 +1,7 @@
 ﻿using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace Northwind.Application
+namespace Northwind.Domain
 {
     public static class DependencyInjections
     {

@@ -12,7 +12,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Northwind.Application
+namespace Northwind.Infrastructure
 {
     public static class DependencyInjections
     {

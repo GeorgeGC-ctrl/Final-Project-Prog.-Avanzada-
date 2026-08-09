@@ -1,7 +1,10 @@
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Northwind.Application;
+using Northwind.Domain;
+using Northwind.Infrastructure;
 using Serilog;
+
 
 namespace Northwind.WinForms
 {
