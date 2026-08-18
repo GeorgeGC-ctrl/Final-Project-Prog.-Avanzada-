@@ -18,20 +18,21 @@ namespace Northwind.WinForms
         {
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
+            // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
 
+            var basePath = AppDomain.CurrentDomain.BaseDirectory;
             var configuration = new ConfigurationBuilder()
-                  .SetBasePath(Directory.GetCurrentDirectory())
-                  .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
-                  .Build();
+                    .SetBasePath(basePath)
+                    .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
+                    .Build();
 
             var services = new ServiceCollection();
 
             services.AddDomain(configuration);
             services.AddApplication(configuration);
             services.AddInfrastructure(configuration);
-
-            services.AddTransient<Form1>();
+           
 
             var serviceProvider = services.BuildServiceProvider();
 

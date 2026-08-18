@@ -19,7 +19,7 @@ namespace Northwind.Application.UseCases.Categorias
             _categoryRepository = categoryRepository;
             _logger = logger;
         }
-        public async Task<Result> EjectarAsync(int id)
+        public async Task<Result> EjecutarAsync(int id)
         {
          _logger.LogInformation("Iniciando eliminación de categoría con ID: {Id}", id);
             var category = await _categoryRepository.GetCategoryByIdAsync(id);

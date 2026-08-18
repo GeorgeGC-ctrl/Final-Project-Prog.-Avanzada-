@@ -2,6 +2,8 @@
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Northwind.Application.Validators.Categorias;
+using Northwind.Application.Validators.Productos;
+using Northwind.Application.Validators.Suplidores;
 using Northwind.Infrastructure;
 using Northwind.Infrastructure.Persistence.Repositorios;
 using Serilog;
@@ -22,6 +24,8 @@ namespace Northwind.Infrastructure
                    options.UseSqlServer(configuration.GetConnectionString("Northwind")));
 
             services.AddScoped<ICategoryRepository, CategoriaRepositorio>();
+            services.AddScoped<IProductRepository, ProductoRepositorio>();
+            services.AddScoped<ISupplierRepository, SuplidorRepositorio>();
 
             Log.Logger = new LoggerConfiguration()
                 .ReadFrom.Configuration(configuration)
