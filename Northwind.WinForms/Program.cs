@@ -32,20 +32,20 @@ namespace Northwind.WinForms
             services.AddDomain(configuration);
             services.AddApplication(configuration);
             services.AddInfrastructure(configuration);
-           
+            services.AddTransient<Form1>();
 
             var serviceProvider = services.BuildServiceProvider();
 
             try
             {
-                Log.Information("=== Iniciando aplicación Northwind ===");
+                Log.Information("=== Iniciando aplicaciï¿½n Northwind ===");
 
                 var formPrincipal = serviceProvider.GetRequiredService<Form1>();
                 System.Windows.Forms.Application.Run(formPrincipal);
             }
             catch (Exception ex)
             {
-                Log.Fatal(ex, "La aplicación terminó inesperadamente");
+                Log.Fatal(ex, "La aplicaciï¿½n terminï¿½ inesperadamente");
             }
             finally
             {
