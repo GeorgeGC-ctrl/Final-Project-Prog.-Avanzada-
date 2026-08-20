@@ -30,6 +30,7 @@ namespace Northwind.WinForms
         {
             components = new System.ComponentModel.Container();
             panelHeader = new Panel();
+            lblEyebrow = new Label();
             lblSubtitulo = new Label();
             lblTitulo = new Label();
             panelContent = new Panel();
@@ -51,148 +52,160 @@ namespace Northwind.WinForms
             // 
             // panelHeader
             // 
-            panelHeader.BackColor = Color.FromArgb(30, 41, 59);
+            panelHeader.BackColor = Color.White;
+            panelHeader.Controls.Add(lblEyebrow);
             panelHeader.Controls.Add(lblSubtitulo);
             panelHeader.Controls.Add(lblTitulo);
             panelHeader.Dock = DockStyle.Top;
             panelHeader.Location = new Point(0, 0);
             panelHeader.Name = "panelHeader";
-            panelHeader.Padding = new Padding(20, 15, 20, 15);
-            panelHeader.Size = new Size(484, 75);
+            panelHeader.Padding = new Padding(25, 16, 25, 14);
+            panelHeader.Size = new Size(500, 90);
             panelHeader.TabIndex = 0;
+            // 
+            // lblEyebrow
+            // 
+            lblEyebrow.AutoSize = true;
+            lblEyebrow.Font = new Font("Segoe UI", 8F, FontStyle.Bold);
+            lblEyebrow.ForeColor = Color.FromArgb(136, 144, 160);
+            lblEyebrow.Location = new Point(25, 12);
+            lblEyebrow.Name = "lblEyebrow";
+            lblEyebrow.Size = new Size(160, 19);
+            lblEyebrow.TabIndex = 2;
+            lblEyebrow.Text = "DETALLE DE CATEGORÍA";
             // 
             // lblSubtitulo
             // 
             lblSubtitulo.AutoSize = true;
-            lblSubtitulo.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            lblSubtitulo.ForeColor = Color.FromArgb(148, 163, 184);
-            lblSubtitulo.Location = new Point(20, 42);
+            lblSubtitulo.Font = new Font("Segoe UI", 9F);
+            lblSubtitulo.ForeColor = Color.FromArgb(91, 100, 116);
+            lblSubtitulo.Location = new Point(25, 58);
             lblSubtitulo.Name = "lblSubtitulo";
-            lblSubtitulo.Size = new Size(227, 15);
+            lblSubtitulo.Size = new Size(295, 20);
             lblSubtitulo.TabIndex = 1;
-            lblSubtitulo.Text = "Complete los datos del formulario.";
+            lblSubtitulo.Text = "Complete los campos para guardar la categoría";
             // 
             // lblTitulo
             // 
             lblTitulo.AutoSize = true;
-            lblTitulo.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
-            lblTitulo.ForeColor = Color.White;
-            lblTitulo.Location = new Point(20, 14);
+            lblTitulo.Font = new Font("Segoe UI", 13.5F, FontStyle.Bold);
+            lblTitulo.ForeColor = Color.FromArgb(22, 26, 36);
+            lblTitulo.Location = new Point(23, 29);
             lblTitulo.Name = "lblTitulo";
-            lblTitulo.Size = new Size(160, 25);
+            lblTitulo.Size = new Size(188, 31);
             lblTitulo.TabIndex = 0;
             lblTitulo.Text = "Nueva Categoría";
             // 
             // panelContent
             // 
             panelContent.BackColor = Color.White;
+            panelContent.BorderStyle = BorderStyle.FixedSingle;
             panelContent.Controls.Add(lblId);
             panelContent.Controls.Add(txtId);
             panelContent.Controls.Add(lblNombre);
             panelContent.Controls.Add(txtNombre);
             panelContent.Controls.Add(lblDescripcion);
             panelContent.Controls.Add(txtDescripcion);
-            panelContent.Dock = DockStyle.Fill;
-            panelContent.Location = new Point(0, 75);
+            panelContent.Location = new Point(25, 108);
             panelContent.Name = "panelContent";
-            panelContent.Padding = new Padding(25, 20, 25, 20);
-            panelContent.Size = new Size(484, 256);
+            panelContent.Padding = new Padding(20);
+            panelContent.Size = new Size(450, 310);
             panelContent.TabIndex = 1;
             // 
             // lblId
             // 
             lblId.AutoSize = true;
-            lblId.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            lblId.ForeColor = Color.FromArgb(71, 85, 105);
-            lblId.Location = new Point(25, 15);
+            lblId.Font = new Font("Segoe UI", 9.5F, FontStyle.Bold);
+            lblId.ForeColor = Color.FromArgb(22, 26, 36);
+            lblId.Location = new Point(20, 20);
             lblId.Name = "lblId";
-            lblId.Size = new Size(23, 15);
+            lblId.Size = new Size(27, 21);
             lblId.TabIndex = 0;
-            lblId.Text = "ID:";
+            lblId.Text = "ID";
             // 
             // txtId
             // 
-            txtId.BackColor = Color.FromArgb(241, 245, 249);
-            txtId.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
-            txtId.Location = new Point(25, 33);
+            txtId.BackColor = Color.FromArgb(245, 247, 251);
+            txtId.BorderStyle = BorderStyle.FixedSingle;
+            txtId.Font = new Font("Segoe UI", 10F);
+            txtId.ForeColor = Color.FromArgb(91, 100, 116);
+            txtId.Location = new Point(20, 48);
             txtId.Name = "txtId";
             txtId.ReadOnly = true;
-            txtId.Size = new Size(100, 25);
+            txtId.Size = new Size(100, 30);
             txtId.TabIndex = 1;
-            txtId.TabStop = false;
             // 
             // lblNombre
             // 
             lblNombre.AutoSize = true;
-            lblNombre.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            lblNombre.ForeColor = Color.FromArgb(71, 85, 105);
-            lblNombre.Location = new Point(25, 70);
+            lblNombre.Font = new Font("Segoe UI", 9.5F, FontStyle.Bold);
+            lblNombre.ForeColor = Color.FromArgb(22, 26, 36);
+            lblNombre.Location = new Point(20, 90);
             lblNombre.Name = "lblNombre";
-            lblNombre.Size = new Size(137, 15);
+            lblNombre.Size = new Size(84, 21);
             lblNombre.TabIndex = 2;
-            lblNombre.Text = "Nombre de la Categoría *";
+            lblNombre.Text = "Nombre *";
             // 
             // txtNombre
             // 
-            txtNombre.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            txtNombre.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
-            txtNombre.Location = new Point(25, 88);
-            txtNombre.MaxLength = 50;
+            txtNombre.BackColor = Color.White;
+            txtNombre.BorderStyle = BorderStyle.FixedSingle;
+            txtNombre.Font = new Font("Segoe UI", 10F);
+            txtNombre.ForeColor = Color.FromArgb(22, 26, 36);
+            txtNombre.Location = new Point(20, 118);
+            txtNombre.MaxLength = 15;
             txtNombre.Name = "txtNombre";
-            txtNombre.PlaceholderText = "Ej. Bebidas, Lácteos, etc.";
-            txtNombre.Size = new Size(410, 25);
+            txtNombre.Size = new Size(390, 30);
             txtNombre.TabIndex = 3;
-            txtNombre.TextChanged += txtNombre_TextChanged;
             // 
             // lblDescripcion
             // 
             lblDescripcion.AutoSize = true;
-            lblDescripcion.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            lblDescripcion.ForeColor = Color.FromArgb(71, 85, 105);
-            lblDescripcion.Location = new Point(25, 125);
+            lblDescripcion.Font = new Font("Segoe UI", 9.5F, FontStyle.Bold);
+            lblDescripcion.ForeColor = Color.FromArgb(22, 26, 36);
+            lblDescripcion.Location = new Point(20, 160);
             lblDescripcion.Name = "lblDescripcion";
-            lblDescripcion.Size = new Size(70, 15);
+            lblDescripcion.Size = new Size(100, 21);
             lblDescripcion.TabIndex = 4;
             lblDescripcion.Text = "Descripción";
             // 
             // txtDescripcion
             // 
-            txtDescripcion.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            txtDescripcion.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
-            txtDescripcion.Location = new Point(25, 143);
-            txtDescripcion.MaxLength = 200;
+            txtDescripcion.BackColor = Color.White;
+            txtDescripcion.BorderStyle = BorderStyle.FixedSingle;
+            txtDescripcion.Font = new Font("Segoe UI", 10F);
+            txtDescripcion.ForeColor = Color.FromArgb(22, 26, 36);
+            txtDescripcion.Location = new Point(20, 188);
             txtDescripcion.Multiline = true;
             txtDescripcion.Name = "txtDescripcion";
-            txtDescripcion.PlaceholderText = "Descripción opcional de la categoría (máx. 200 caracteres)";
             txtDescripcion.ScrollBars = ScrollBars.Vertical;
-            txtDescripcion.Size = new Size(410, 85);
+            txtDescripcion.Size = new Size(390, 90);
             txtDescripcion.TabIndex = 5;
-            txtDescripcion.TextChanged += txtDescripcion_TextChanged;
             // 
             // panelFooter
             // 
-            panelFooter.BackColor = Color.FromArgb(248, 250, 252);
+            panelFooter.BackColor = Color.FromArgb(238, 241, 247);
             panelFooter.Controls.Add(btnCancelar);
             panelFooter.Controls.Add(btnGuardar);
             panelFooter.Dock = DockStyle.Bottom;
-            panelFooter.Location = new Point(0, 331);
+            panelFooter.Location = new Point(0, 438);
             panelFooter.Name = "panelFooter";
-            panelFooter.Padding = new Padding(25, 12, 25, 12);
-            panelFooter.Size = new Size(484, 55);
+            panelFooter.Padding = new Padding(20, 10, 20, 14);
+            panelFooter.Size = new Size(500, 72);
             panelFooter.TabIndex = 2;
             // 
             // btnCancelar
             // 
-            btnCancelar.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
-            btnCancelar.BackColor = Color.FromArgb(241, 245, 249);
+            btnCancelar.BackColor = Color.White;
+            btnCancelar.Cursor = Cursors.Hand;
             btnCancelar.DialogResult = DialogResult.Cancel;
-            btnCancelar.FlatAppearance.BorderColor = Color.FromArgb(203, 213, 225);
+            btnCancelar.FlatAppearance.BorderColor = Color.FromArgb(227, 231, 239);
             btnCancelar.FlatStyle = FlatStyle.Flat;
-            btnCancelar.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            btnCancelar.ForeColor = Color.FromArgb(51, 65, 85);
-            btnCancelar.Location = new Point(365, 12);
+            btnCancelar.Font = new Font("Segoe UI", 9.5F, FontStyle.Bold);
+            btnCancelar.ForeColor = Color.FromArgb(22, 26, 36);
+            btnCancelar.Location = new Point(370, 14);
             btnCancelar.Name = "btnCancelar";
-            btnCancelar.Size = new Size(94, 31);
+            btnCancelar.Size = new Size(100, 42);
             btnCancelar.TabIndex = 1;
             btnCancelar.Text = "Cancelar";
             btnCancelar.UseVisualStyleBackColor = false;
@@ -200,17 +213,17 @@ namespace Northwind.WinForms
             // 
             // btnGuardar
             // 
-            btnGuardar.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
-            btnGuardar.BackColor = Color.FromArgb(37, 99, 235);
+            btnGuardar.BackColor = Color.FromArgb(44, 78, 130);
+            btnGuardar.Cursor = Cursors.Hand;
             btnGuardar.FlatAppearance.BorderSize = 0;
             btnGuardar.FlatStyle = FlatStyle.Flat;
-            btnGuardar.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            btnGuardar.Font = new Font("Segoe UI", 9.5F, FontStyle.Bold);
             btnGuardar.ForeColor = Color.White;
-            btnGuardar.Location = new Point(255, 12);
+            btnGuardar.Location = new Point(250, 14);
             btnGuardar.Name = "btnGuardar";
-            btnGuardar.Size = new Size(100, 31);
+            btnGuardar.Size = new Size(110, 42);
             btnGuardar.TabIndex = 0;
-            btnGuardar.Text = "💾 Guardar";
+            btnGuardar.Text = "Guardar";
             btnGuardar.UseVisualStyleBackColor = false;
             btnGuardar.Click += btnGuardar_Click;
             // 
@@ -222,19 +235,18 @@ namespace Northwind.WinForms
             // FrmCategoriaForm
             // 
             AcceptButton = btnGuardar;
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.FromArgb(245, 247, 251);
             CancelButton = btnCancelar;
-            ClientSize = new Size(484, 386);
-            Controls.Add(panelContent);
+            ClientSize = new Size(500, 510);
             Controls.Add(panelFooter);
+            Controls.Add(panelContent);
             Controls.Add(panelHeader);
-            Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
             FormBorderStyle = FormBorderStyle.FixedDialog;
             MaximizeBox = false;
             MinimizeBox = false;
             Name = "FrmCategoriaForm";
-            ShowInTaskbar = false;
             StartPosition = FormStartPosition.CenterParent;
             Text = "Categoría";
             panelHeader.ResumeLayout(false);
@@ -249,8 +261,9 @@ namespace Northwind.WinForms
         #endregion
 
         private Panel panelHeader;
-        private Label lblSubtitulo;
+        private Label lblEyebrow;
         private Label lblTitulo;
+        private Label lblSubtitulo;
         private Panel panelContent;
         private Label lblId;
         private TextBox txtId;
@@ -259,8 +272,8 @@ namespace Northwind.WinForms
         private Label lblDescripcion;
         private TextBox txtDescripcion;
         private Panel panelFooter;
-        private Button btnCancelar;
         private Button btnGuardar;
+        private Button btnCancelar;
         private ErrorProvider errorProvider;
     }
 }

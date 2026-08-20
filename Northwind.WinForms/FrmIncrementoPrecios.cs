@@ -88,5 +88,10 @@ namespace Northwind.WinForms
             nudPorcentaje.Value = nudPorcentaje.Minimum;
             cmbCategoria.SelectedIndex = -1;
         }
+
+        private void btnCerrar_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }
