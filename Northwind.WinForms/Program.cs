@@ -33,6 +33,7 @@ namespace Northwind.WinForms
             services.AddApplication(configuration);
             services.AddInfrastructure(configuration);
             services.AddTransient<Form1>();
+            services.AddTransient<FrmReasignarProductos>();
 
             var serviceProvider = services.BuildServiceProvider();
 
