@@ -12,6 +12,7 @@ namespace Northwind.WinForms
         private readonly ILogger<FrmProductoLista> _logger;
 
         private List<ProductoDto> _productos = new();
+        private DataGridViewButtonColumn? _colEditar;
 
         public FrmProductoLista(
             GetProducts getProducts,
@@ -27,6 +28,11 @@ namespace Northwind.WinForms
         private async void FrmProductoLista_Load(object sender, EventArgs e)
         {
             await CargarProductosAsync();
+        }
+
+        public void AplicarBusquedaExterna(string texto)
+        {
+            txtBuscar.Text = texto;
         }
 
         private async Task CargarProductosAsync()
@@ -107,6 +113,22 @@ namespace Northwind.WinForms
             if (dgvProductos.Columns["CategoryId"] != null)
                 dgvProductos.Columns["CategoryId"].Visible = false;
 
+            if (_colEditar is null || !dgvProductos.Columns.Contains(_colEditar))
+            {
+                _colEditar = new DataGridViewButtonColumn
+                {
+                    Name = "colEditar",
+                    HeaderText = "",
+                    Text = "✏️ Editar",
+                    UseColumnTextForButtonValue = true,
+                    ReadOnly = true,
+                    FillWeight = 45F,
+                    Resizable = DataGridViewTriState.False,
+                    SortMode = DataGridViewColumnSortMode.NotSortable
+                };
+                dgvProductos.Columns.Add(_colEditar);
+            }
+
             lblTotalProductos.Text = $"Total Productos: {filtrados.Count}";
             lblTotalDescontinuados.Text = $"Descontinuados: {filtrados.Count(p => p.Discontinued)}";
         }
@@ -144,15 +166,22 @@ namespace Northwind.WinForms
             }
         }
 
-        private async void btnEditar_Click(object sender, EventArgs e)
-        {
-            await EditarSeleccionadoAsync();
-        }
-
         private async void dgvProductos_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0)
             {
+                await EditarSeleccionadoAsync();
+            }
+        }
+
+        private async void dgvProductos_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex < 0 || _colEditar is null)
+                return;
+
+            if (e.ColumnIndex == _colEditar.Index)
+            {
+                dgvProductos.CurrentCell = dgvProductos.Rows[e.RowIndex].Cells[0];
                 await EditarSeleccionadoAsync();
             }
         }

@@ -35,8 +35,6 @@ namespace Northwind.WinForms
             lblTitulo = new Label();
             panelToolbar = new Panel();
             btnActualizar = new Button();
-            btnEliminar = new Button();
-            btnEditar = new Button();
             btnNuevo = new Button();
             txtBuscar = new TextBox();
             lblBuscar = new Label();
@@ -45,6 +43,8 @@ namespace Northwind.WinForms
             colId = new DataGridViewTextBoxColumn();
             colNombre = new DataGridViewTextBoxColumn();
             colDescripcion = new DataGridViewTextBoxColumn();
+            colEditar = new DataGridViewButtonColumn();
+            colEliminar = new DataGridViewButtonColumn();
             statusStrip1 = new StatusStrip();
             lblStatus = new ToolStripStatusLabel();
             panelHeader.SuspendLayout();
@@ -92,8 +92,6 @@ namespace Northwind.WinForms
             // 
             panelToolbar.BackColor = Color.White;
             panelToolbar.Controls.Add(btnActualizar);
-            panelToolbar.Controls.Add(btnEliminar);
-            panelToolbar.Controls.Add(btnEditar);
             panelToolbar.Controls.Add(btnNuevo);
             panelToolbar.Controls.Add(txtBuscar);
             panelToolbar.Controls.Add(lblBuscar);
@@ -119,48 +117,16 @@ namespace Northwind.WinForms
             btnActualizar.Text = "🔄 Refrescar";
             btnActualizar.UseVisualStyleBackColor = false;
             btnActualizar.Click += btnActualizar_Click;
-            // 
-            // btnEliminar
-            // 
-            btnEliminar.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            btnEliminar.BackColor = Color.FromArgb(254, 242, 242);
-            btnEliminar.FlatAppearance.BorderColor = Color.FromArgb(254, 202, 202);
-            btnEliminar.FlatStyle = FlatStyle.Flat;
-            btnEliminar.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            btnEliminar.ForeColor = Color.FromArgb(185, 28, 28);
-            btnEliminar.Location = new Point(678, 12);
-            btnEliminar.Name = "btnEliminar";
-            btnEliminar.Size = new Size(90, 30);
-            btnEliminar.TabIndex = 4;
-            btnEliminar.Text = "🗑️ Eliminar";
-            btnEliminar.UseVisualStyleBackColor = false;
-            btnEliminar.Click += btnEliminar_Click;
-            // 
-            // btnEditar
-            // 
-            btnEditar.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            btnEditar.BackColor = Color.FromArgb(238, 242, 255);
-            btnEditar.FlatAppearance.BorderColor = Color.FromArgb(199, 210, 254);
-            btnEditar.FlatStyle = FlatStyle.Flat;
-            btnEditar.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            btnEditar.ForeColor = Color.FromArgb(67, 56, 202);
-            btnEditar.Location = new Point(582, 12);
-            btnEditar.Name = "btnEditar";
-            btnEditar.Size = new Size(90, 30);
-            btnEditar.TabIndex = 3;
-            btnEditar.Text = "✏️ Editar";
-            btnEditar.UseVisualStyleBackColor = false;
-            btnEditar.Click += btnEditar_Click;
-            // 
+            //
             // btnNuevo
-            // 
+            //
             btnNuevo.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             btnNuevo.BackColor = Color.FromArgb(37, 99, 235);
             btnNuevo.FlatAppearance.BorderSize = 0;
             btnNuevo.FlatStyle = FlatStyle.Flat;
             btnNuevo.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             btnNuevo.ForeColor = Color.White;
-            btnNuevo.Location = new Point(476, 12);
+            btnNuevo.Location = new Point(664, 12);
             btnNuevo.Name = "btnNuevo";
             btnNuevo.Size = new Size(100, 30);
             btnNuevo.TabIndex = 2;
@@ -221,7 +187,7 @@ namespace Northwind.WinForms
             dgvCategorias.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             dgvCategorias.ColumnHeadersHeight = 40;
             dgvCategorias.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dgvCategorias.Columns.AddRange(new DataGridViewColumn[] { colId, colNombre, colDescripcion });
+            dgvCategorias.Columns.AddRange(new DataGridViewColumn[] { colId, colNombre, colDescripcion, colEditar, colEliminar });
             dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = Color.White;
             dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
@@ -242,8 +208,9 @@ namespace Northwind.WinForms
             dgvCategorias.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgvCategorias.Size = new Size(844, 341);
             dgvCategorias.TabIndex = 0;
+            dgvCategorias.CellContentClick += dgvCategorias_CellContentClick;
             dgvCategorias.CellDoubleClick += dgvCategorias_CellDoubleClick;
-            // 
+            //
             // colId
             // 
             colId.DataPropertyName = "CategoryId";
@@ -267,7 +234,29 @@ namespace Northwind.WinForms
             colDescripcion.HeaderText = "Descripción";
             colDescripcion.Name = "colDescripcion";
             colDescripcion.ReadOnly = true;
-            // 
+            //
+            // colEditar
+            //
+            colEditar.FillWeight = 45F;
+            colEditar.HeaderText = "";
+            colEditar.Name = "colEditar";
+            colEditar.ReadOnly = true;
+            colEditar.Resizable = DataGridViewTriState.False;
+            colEditar.SortMode = DataGridViewColumnSortMode.NotSortable;
+            colEditar.Text = "✏️ Editar";
+            colEditar.UseColumnTextForButtonValue = true;
+            //
+            // colEliminar
+            //
+            colEliminar.FillWeight = 45F;
+            colEliminar.HeaderText = "";
+            colEliminar.Name = "colEliminar";
+            colEliminar.ReadOnly = true;
+            colEliminar.Resizable = DataGridViewTriState.False;
+            colEliminar.SortMode = DataGridViewColumnSortMode.NotSortable;
+            colEliminar.Text = "🗑️ Eliminar";
+            colEliminar.UseColumnTextForButtonValue = true;
+            //
             // statusStrip1
             // 
             statusStrip1.Items.AddRange(new ToolStripItem[] { lblStatus });
@@ -318,8 +307,6 @@ namespace Northwind.WinForms
         private Label lblTitulo;
         private Panel panelToolbar;
         private Button btnActualizar;
-        private Button btnEliminar;
-        private Button btnEditar;
         private Button btnNuevo;
         private TextBox txtBuscar;
         private Label lblBuscar;
@@ -330,5 +317,7 @@ namespace Northwind.WinForms
         private DataGridViewTextBoxColumn colId;
         private DataGridViewTextBoxColumn colNombre;
         private DataGridViewTextBoxColumn colDescripcion;
+        private DataGridViewButtonColumn colEditar;
+        private DataGridViewButtonColumn colEliminar;
     }
 }

@@ -9,16 +9,19 @@ namespace Northwind.WinForms
     {
         private readonly IncreasePricesByCategory _incrementarPrecios;
         private readonly GetAllCategories _getAllCategories;
+        private readonly GetProducts _getProducts;
         private readonly IValidator<IncrementarPrecioCategoriaRequest> _validator;
 
         public FrmIncrementoPrecios(
             IncreasePricesByCategory incrementarPrecios,
             GetAllCategories getAllCategories,
+            GetProducts getProducts,
             IValidator<IncrementarPrecioCategoriaRequest> validator)
         {
             InitializeComponent();
             _incrementarPrecios = incrementarPrecios;
             _getAllCategories = getAllCategories;
+            _getProducts = getProducts;
             _validator = validator;
         }
 
@@ -41,10 +44,40 @@ namespace Northwind.WinForms
                 cmbCategoria.DataSource = resultado.Value?.ToList();
                 cmbCategoria.DisplayMember = nameof(CategoriaDto.CategoryName);
                 cmbCategoria.ValueMember = nameof(CategoriaDto.CategoryId);
+                cmbCategoria.SelectedIndex = -1;
             }
             catch (Exception ex)
             {
                 MessageBox.Show($"Error al cargar las categorías: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private async void cmbCategoria_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cmbCategoria.SelectedValue is not int categoriaId)
+            {
+                lblAfectados.Text = "Seleccione una categoría para ver los productos afectados.";
+                return;
+            }
+
+            try
+            {
+                var productosResult = await _getProducts.EjecutarAsync(categoriaId: categoriaId);
+                if (productosResult.IsSuccess && productosResult.Value is not null)
+                {
+                    var cantidad = productosResult.Value.Count();
+                    lblAfectados.Text = cantidad == 1
+                        ? "Se verá afectado 1 producto de esta categoría."
+                        : $"Se verán afectados {cantidad} productos de esta categoría.";
+                }
+                else
+                {
+                    lblAfectados.Text = "No se pudo consultar los productos de la categoría.";
+                }
+            }
+            catch
+            {
+                lblAfectados.Text = "Error al verificar productos de la categoría.";
             }
         }
 
@@ -77,16 +110,33 @@ namespace Northwind.WinForms
                 return;
             }
 
-            var resultado = await _incrementarPrecios.EjecutarAsync(request);
-            if (!resultado.IsSuccess)
+            try
             {
-                MessageBox.Show(resultado.Error, "Incremento de Precios", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
+                btnAplicar.Enabled = false;
+                btnAplicar.Text = "Aplicando...";
 
-            MessageBox.Show("Precios incrementados correctamente.", "Incremento de Precios", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            nudPorcentaje.Value = nudPorcentaje.Minimum;
-            cmbCategoria.SelectedIndex = -1;
+                var resultado = await _incrementarPrecios.EjecutarAsync(request);
+                if (!resultado.IsSuccess)
+                {
+                    MessageBox.Show(resultado.Error, "Incremento de Precios", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                MessageBox.Show("Precios incrementados correctamente.", "Incremento de Precios", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                nudPorcentaje.Value = 10;
+                cmbCategoria.SelectedIndex = -1;
+            }
+            finally
+            {
+                btnAplicar.Enabled = true;
+                btnAplicar.Text = "Aplicar Incremento";
+            }
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            DialogResult = DialogResult.Cancel;
+            Close();
         }
     }
 }

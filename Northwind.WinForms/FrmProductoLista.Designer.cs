@@ -37,7 +37,6 @@ namespace Northwind.WinForms
             lblTitulo = new Label();
             panelToolbar = new Panel();
             btnRefrescar = new Button();
-            btnEditar = new Button();
             btnNuevo = new Button();
             txtBuscar = new TextBox();
             lblBuscar = new Label();
@@ -89,7 +88,6 @@ namespace Northwind.WinForms
             //
             panelToolbar.BackColor = Color.FromArgb(33, 37, 58);
             panelToolbar.Controls.Add(btnRefrescar);
-            panelToolbar.Controls.Add(btnEditar);
             panelToolbar.Controls.Add(btnNuevo);
             panelToolbar.Controls.Add(txtBuscar);
             panelToolbar.Controls.Add(lblBuscar);
@@ -117,23 +115,6 @@ namespace Northwind.WinForms
             btnRefrescar.UseVisualStyleBackColor = false;
             btnRefrescar.Click += btnRefrescar_Click;
             //
-            // btnEditar
-            //
-            btnEditar.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            btnEditar.BackColor = Color.FromArgb(26, 29, 39);
-            btnEditar.Cursor = Cursors.Hand;
-            btnEditar.FlatAppearance.BorderColor = Color.FromArgb(46, 51, 80);
-            btnEditar.FlatStyle = FlatStyle.Flat;
-            btnEditar.Font = new Font("Segoe UI", 9.5F, FontStyle.Bold);
-            btnEditar.ForeColor = Color.FromArgb(129, 140, 248);
-            btnEditar.Location = new Point(860, 16);
-            btnEditar.Name = "btnEditar";
-            btnEditar.Size = new Size(95, 35);
-            btnEditar.TabIndex = 3;
-            btnEditar.Text = "Editar";
-            btnEditar.UseVisualStyleBackColor = false;
-            btnEditar.Click += btnEditar_Click;
-            //
             // btnNuevo
             //
             btnNuevo.Anchor = AnchorStyles.Top | AnchorStyles.Right;
@@ -143,7 +124,7 @@ namespace Northwind.WinForms
             btnNuevo.FlatStyle = FlatStyle.Flat;
             btnNuevo.Font = new Font("Segoe UI", 9.5F, FontStyle.Bold);
             btnNuevo.ForeColor = Color.White;
-            btnNuevo.Location = new Point(725, 16);
+            btnNuevo.Location = new Point(860, 16);
             btnNuevo.Name = "btnNuevo";
             btnNuevo.Size = new Size(125, 35);
             btnNuevo.TabIndex = 2;
@@ -218,6 +199,7 @@ namespace Northwind.WinForms
             dgvProductos.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgvProductos.Size = new Size(1100, 397);
             dgvProductos.TabIndex = 2;
+            dgvProductos.CellContentClick += dgvProductos_CellContentClick;
             dgvProductos.CellDoubleClick += dgvProductos_CellDoubleClick;
             //
             // panelFooter
@@ -288,7 +270,6 @@ namespace Northwind.WinForms
         private Label lblBuscar;
         private TextBox txtBuscar;
         private Button btnNuevo;
-        private Button btnEditar;
         private Button btnRefrescar;
         private DataGridView dgvProductos;
         private Panel panelFooter;

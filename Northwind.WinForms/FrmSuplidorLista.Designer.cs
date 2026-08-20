@@ -38,8 +38,6 @@ namespace Northwind.WinForms
             panelToolbar = new Panel();
             btnCerrar = new Button();
             btnRefrescar = new Button();
-            btnEliminar = new Button();
-            btnEditar = new Button();
             btnNuevo = new Button();
             txtBuscar = new TextBox();
             lblBuscar = new Label();
@@ -94,8 +92,6 @@ namespace Northwind.WinForms
             panelToolbar.BackColor = Color.FromArgb(33, 37, 58);
             panelToolbar.Controls.Add(btnCerrar);
             panelToolbar.Controls.Add(btnRefrescar);
-            panelToolbar.Controls.Add(btnEliminar);
-            panelToolbar.Controls.Add(btnEditar);
             panelToolbar.Controls.Add(btnNuevo);
             panelToolbar.Controls.Add(txtBuscar);
             panelToolbar.Controls.Add(lblBuscar);
@@ -138,48 +134,16 @@ namespace Northwind.WinForms
             btnRefrescar.Text = "Recargar";
             btnRefrescar.UseVisualStyleBackColor = false;
             btnRefrescar.Click += btnRefrescar_Click;
-            // 
-            // btnEliminar
-            // 
-            btnEliminar.BackColor = Color.FromArgb(239, 68, 68);
-            btnEliminar.Cursor = Cursors.Hand;
-            btnEliminar.FlatAppearance.BorderSize = 0;
-            btnEliminar.FlatStyle = FlatStyle.Flat;
-            btnEliminar.Font = new Font("Segoe UI", 9.5F, FontStyle.Bold);
-            btnEliminar.ForeColor = Color.White;
-            btnEliminar.Location = new Point(585, 16);
-            btnEliminar.Name = "btnEliminar";
-            btnEliminar.Size = new Size(100, 35);
-            btnEliminar.TabIndex = 4;
-            btnEliminar.Text = "Eliminar";
-            btnEliminar.UseVisualStyleBackColor = false;
-            btnEliminar.Click += btnEliminar_Click;
-            // 
-            // btnEditar
-            // 
-            btnEditar.BackColor = Color.FromArgb(26, 29, 39);
-            btnEditar.Cursor = Cursors.Hand;
-            btnEditar.FlatAppearance.BorderColor = Color.FromArgb(46, 51, 80);
-            btnEditar.FlatStyle = FlatStyle.Flat;
-            btnEditar.Font = new Font("Segoe UI", 9.5F, FontStyle.Bold);
-            btnEditar.ForeColor = Color.FromArgb(129, 140, 248);
-            btnEditar.Location = new Point(480, 16);
-            btnEditar.Name = "btnEditar";
-            btnEditar.Size = new Size(95, 35);
-            btnEditar.TabIndex = 3;
-            btnEditar.Text = "Editar";
-            btnEditar.UseVisualStyleBackColor = false;
-            btnEditar.Click += btnEditar_Click;
-            // 
+            //
             // btnNuevo
-            // 
+            //
             btnNuevo.BackColor = Color.FromArgb(99, 102, 241);
             btnNuevo.Cursor = Cursors.Hand;
             btnNuevo.FlatAppearance.BorderSize = 0;
             btnNuevo.FlatStyle = FlatStyle.Flat;
             btnNuevo.Font = new Font("Segoe UI", 9.5F, FontStyle.Bold);
             btnNuevo.ForeColor = Color.White;
-            btnNuevo.Location = new Point(345, 16);
+            btnNuevo.Location = new Point(480, 16);
             btnNuevo.Name = "btnNuevo";
             btnNuevo.Size = new Size(125, 35);
             btnNuevo.TabIndex = 2;
@@ -254,6 +218,7 @@ namespace Northwind.WinForms
             dgvSuplidores.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgvSuplidores.Size = new Size(1020, 427);
             dgvSuplidores.TabIndex = 2;
+            dgvSuplidores.CellContentClick += dgvSuplidores_CellContentClick;
             dgvSuplidores.CellDoubleClick += dgvSuplidores_CellDoubleClick;
             // 
             // panelFooter
@@ -329,8 +294,6 @@ namespace Northwind.WinForms
         private Label lblBuscar;
         private TextBox txtBuscar;
         private Button btnNuevo;
-        private Button btnEditar;
-        private Button btnEliminar;
         private Button btnRefrescar;
         private Button btnCerrar;
         private DataGridView dgvSuplidores;
