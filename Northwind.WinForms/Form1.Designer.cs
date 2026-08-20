@@ -1,4 +1,4 @@
-﻿namespace Northwind.WinForms
+namespace Northwind.WinForms
 {
     partial class Form1
     {
@@ -31,47 +31,59 @@
             panel1 = new Panel();
             panel2 = new Panel();
             panel3 = new Panel();
-            panel1.SuspendLayout();
-            panel2.SuspendLayout();
+            button1 = new Button();
+            panel3.SuspendLayout();
             SuspendLayout();
             // 
             // panel1
             // 
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(0, 0);
+            panel1.Margin = new Padding(2, 2, 2, 2);
             panel1.Name = "panel1";
-            panel1.Size = new Size(1539, 150);
+            panel1.Size = new Size(1077, 90);
             panel1.TabIndex = 0;
             // 
             // panel2
             // 
             panel2.Dock = DockStyle.Left;
-            panel2.Location = new Point(0, 150);
+            panel2.Location = new Point(0, 90);
+            panel2.Margin = new Padding(2, 2, 2, 2);
             panel2.Name = "panel2";
-            panel2.Size = new Size(300, 856);
+            panel2.Size = new Size(210, 514);
             panel2.TabIndex = 1;
             // 
             // panel3
             // 
+            panel3.Controls.Add(button1);
             panel3.Dock = DockStyle.Fill;
-            panel3.Location = new Point(300, 150);
+            panel3.Location = new Point(210, 90);
+            panel3.Margin = new Padding(2, 2, 2, 2);
             panel3.Name = "panel3";
-            panel3.Size = new Size(1239, 856);
+            panel3.Size = new Size(867, 514);
             panel3.TabIndex = 2;
+            button1.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            button1.Location = new Point(221, 198);
+            button1.Name = "button1";
+            button1.Size = new Size(130, 36);
+            button1.TabIndex = 0;
+            button1.Text = "📁 Categorías";
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
             // 
             // Form1
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1539, 1006);
+            ClientSize = new Size(1077, 604);
             Controls.Add(panel3);
             Controls.Add(panel2);
             Controls.Add(panel1);
+            Margin = new Padding(2, 2, 2, 2);
             Name = "Form1";
             Text = "Form1";
             WindowState = FormWindowState.Maximized;
-            panel1.ResumeLayout(false);
-            panel2.ResumeLayout(false);
+            panel3.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -80,5 +92,6 @@
         private Panel panel1;
         private Panel panel2;
         private Panel panel3;
+        private Button button1;
     }
 }
