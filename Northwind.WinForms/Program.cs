@@ -35,6 +35,8 @@ namespace Northwind.WinForms
             services.AddTransient<Form1>();
             services.AddTransient<FrmReporteInventario>();
             services.AddTransient<FrmReasignarProductos>();
+            services.AddTransient<FrmSuplidorLista>();
+            services.AddTransient<FrmSuplidorForm>();
             services.AddTransient<FrmCategoriaLista>();
             services.AddTransient<FrmCategoriaForm>();
             services.AddTransient<FrmIncrementoPrecios>();
