@@ -1,4 +1,4 @@
-namespace Northwind.WinForms
+﻿namespace Northwind.WinForms
 {
     partial class FrmIncrementoPrecios
     {
@@ -51,7 +51,7 @@ namespace Northwind.WinForms
             //
             // panelHeader
             //
-            panelHeader.BackColor = Color.FromArgb(26, 29, 39);
+            panelHeader.BackColor = Color.FromArgb(255, 255, 255);
             panelHeader.Controls.Add(lblSubtitulo);
             panelHeader.Controls.Add(lblTitulo);
             panelHeader.Dock = DockStyle.Top;
@@ -65,7 +65,7 @@ namespace Northwind.WinForms
             //
             lblSubtitulo.AutoSize = true;
             lblSubtitulo.Font = new Font("Segoe UI", 9F);
-            lblSubtitulo.ForeColor = Color.FromArgb(148, 163, 184);
+            lblSubtitulo.ForeColor = Color.FromArgb(91, 100, 116);
             lblSubtitulo.Location = new Point(25, 48);
             lblSubtitulo.Name = "lblSubtitulo";
             lblSubtitulo.Size = new Size(360, 20);
@@ -76,7 +76,7 @@ namespace Northwind.WinForms
             //
             lblTitulo.AutoSize = true;
             lblTitulo.Font = new Font("Segoe UI", 14F, FontStyle.Bold);
-            lblTitulo.ForeColor = Color.FromArgb(226, 232, 240);
+            lblTitulo.ForeColor = Color.FromArgb(22, 26, 36);
             lblTitulo.Location = new Point(23, 14);
             lblTitulo.Name = "lblTitulo";
             lblTitulo.Size = new Size(300, 32);
@@ -85,7 +85,7 @@ namespace Northwind.WinForms
             //
             // panelCard
             //
-            panelCard.BackColor = Color.FromArgb(33, 37, 58);
+            panelCard.BackColor = Color.FromArgb(255, 255, 255);
             panelCard.Controls.Add(lblAfectados);
             panelCard.Controls.Add(nudPorcentaje);
             panelCard.Controls.Add(lblPorcentaje);
@@ -101,7 +101,7 @@ namespace Northwind.WinForms
             //
             lblCategoria.AutoSize = true;
             lblCategoria.Font = new Font("Segoe UI", 9.5F, FontStyle.Bold);
-            lblCategoria.ForeColor = Color.FromArgb(226, 232, 240);
+            lblCategoria.ForeColor = Color.FromArgb(51, 65, 85);
             lblCategoria.Location = new Point(20, 20);
             lblCategoria.Name = "lblCategoria";
             lblCategoria.Size = new Size(78, 21);
@@ -110,11 +110,11 @@ namespace Northwind.WinForms
             //
             // cmbCategoria
             //
-            cmbCategoria.BackColor = Color.FromArgb(26, 29, 39);
+            cmbCategoria.BackColor = Color.FromArgb(248, 250, 252);
             cmbCategoria.DropDownStyle = ComboBoxStyle.DropDownList;
             cmbCategoria.FlatStyle = FlatStyle.Flat;
             cmbCategoria.Font = new Font("Segoe UI", 10F);
-            cmbCategoria.ForeColor = Color.FromArgb(226, 232, 240);
+            cmbCategoria.ForeColor = Color.FromArgb(22, 26, 36);
             cmbCategoria.FormattingEnabled = true;
             cmbCategoria.Location = new Point(20, 48);
             cmbCategoria.Name = "cmbCategoria";
@@ -126,7 +126,7 @@ namespace Northwind.WinForms
             //
             lblPorcentaje.AutoSize = true;
             lblPorcentaje.Font = new Font("Segoe UI", 9.5F, FontStyle.Bold);
-            lblPorcentaje.ForeColor = Color.FromArgb(226, 232, 240);
+            lblPorcentaje.ForeColor = Color.FromArgb(51, 65, 85);
             lblPorcentaje.Location = new Point(20, 98);
             lblPorcentaje.Name = "lblPorcentaje";
             lblPorcentaje.Size = new Size(140, 21);
@@ -135,11 +135,11 @@ namespace Northwind.WinForms
             //
             // nudPorcentaje
             //
-            nudPorcentaje.BackColor = Color.FromArgb(26, 29, 39);
+            nudPorcentaje.BackColor = Color.FromArgb(248, 250, 252);
             nudPorcentaje.BorderStyle = BorderStyle.FixedSingle;
             nudPorcentaje.DecimalPlaces = 2;
             nudPorcentaje.Font = new Font("Segoe UI", 10F);
-            nudPorcentaje.ForeColor = Color.FromArgb(226, 232, 240);
+            nudPorcentaje.ForeColor = Color.FromArgb(22, 26, 36);
             nudPorcentaje.Location = new Point(20, 126);
             nudPorcentaje.Maximum = new decimal(new int[] { 500, 0, 0, 0 });
             nudPorcentaje.Name = "nudPorcentaje";
@@ -151,7 +151,7 @@ namespace Northwind.WinForms
             //
             lblAfectados.AutoSize = true;
             lblAfectados.Font = new Font("Segoe UI", 9F, FontStyle.Italic);
-            lblAfectados.ForeColor = Color.FromArgb(129, 140, 248);
+            lblAfectados.ForeColor = Color.FromArgb(44, 78, 130);
             lblAfectados.Location = new Point(20, 172);
             lblAfectados.Name = "lblAfectados";
             lblAfectados.Size = new Size(300, 20);
@@ -160,7 +160,7 @@ namespace Northwind.WinForms
             //
             // panelActions
             //
-            panelActions.BackColor = Color.FromArgb(15, 17, 23);
+            panelActions.BackColor = Color.FromArgb(248, 250, 252);
             panelActions.Controls.Add(btnAplicar);
             panelActions.Controls.Add(btnCancelar);
             panelActions.Dock = DockStyle.Bottom;
@@ -172,7 +172,7 @@ namespace Northwind.WinForms
             //
             // btnAplicar
             //
-            btnAplicar.BackColor = Color.FromArgb(99, 102, 241);
+            btnAplicar.BackColor = Color.FromArgb(44, 78, 130);
             btnAplicar.Cursor = Cursors.Hand;
             btnAplicar.FlatAppearance.BorderSize = 0;
             btnAplicar.FlatStyle = FlatStyle.Flat;
@@ -188,12 +188,12 @@ namespace Northwind.WinForms
             //
             // btnCancelar
             //
-            btnCancelar.BackColor = Color.FromArgb(33, 37, 58);
+            btnCancelar.BackColor = Color.FromArgb(241, 245, 249);
             btnCancelar.Cursor = Cursors.Hand;
-            btnCancelar.FlatAppearance.BorderColor = Color.FromArgb(46, 51, 80);
+            btnCancelar.FlatAppearance.BorderColor = Color.FromArgb(203, 213, 225);
             btnCancelar.FlatStyle = FlatStyle.Flat;
             btnCancelar.Font = new Font("Segoe UI", 10F);
-            btnCancelar.ForeColor = Color.FromArgb(148, 163, 184);
+            btnCancelar.ForeColor = Color.FromArgb(71, 85, 105);
             btnCancelar.Location = new Point(405, 15);
             btnCancelar.Name = "btnCancelar";
             btnCancelar.Size = new Size(90, 42);
@@ -211,7 +211,7 @@ namespace Northwind.WinForms
             //
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.FromArgb(15, 17, 23);
+            BackColor = Color.FromArgb(245, 247, 251);
             ClientSize = new Size(520, 410);
             Controls.Add(panelActions);
             Controls.Add(panelCard);

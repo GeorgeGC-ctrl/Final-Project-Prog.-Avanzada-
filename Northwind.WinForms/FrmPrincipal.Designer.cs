@@ -1,4 +1,4 @@
-namespace Northwind.WinForms
+﻿namespace Northwind.WinForms
 {
     partial class FrmPrincipal
     {
@@ -63,7 +63,7 @@ namespace Northwind.WinForms
             //
             // panelSidebar
             //
-            panelSidebar.BackColor = Color.FromArgb(20, 23, 34);
+            panelSidebar.BackColor = Color.FromArgb(238, 241, 247);
             panelSidebar.Controls.Add(btnNavSalir);
             panelSidebar.Controls.Add(btnNavReporte);
             panelSidebar.Controls.Add(btnNavReasignar);
@@ -85,7 +85,7 @@ namespace Northwind.WinForms
             //
             // panelSidebarHeader
             //
-            panelSidebarHeader.BackColor = Color.FromArgb(15, 17, 23);
+            panelSidebarHeader.BackColor = Color.FromArgb(238, 241, 247);
             panelSidebarHeader.Controls.Add(lblLogoSubtitulo);
             panelSidebarHeader.Controls.Add(lblLogoTitulo);
             panelSidebarHeader.Dock = DockStyle.Top;
@@ -99,7 +99,7 @@ namespace Northwind.WinForms
             //
             lblLogoSubtitulo.AutoSize = true;
             lblLogoSubtitulo.Font = new Font("Segoe UI", 8.5F);
-            lblLogoSubtitulo.ForeColor = Color.FromArgb(129, 140, 248);
+            lblLogoSubtitulo.ForeColor = Color.FromArgb(44, 78, 130);
             lblLogoSubtitulo.Location = new Point(20, 46);
             lblLogoSubtitulo.Name = "lblLogoSubtitulo";
             lblLogoSubtitulo.Size = new Size(140, 19);
@@ -110,7 +110,7 @@ namespace Northwind.WinForms
             //
             lblLogoTitulo.AutoSize = true;
             lblLogoTitulo.Font = new Font("Segoe UI", 14F, FontStyle.Bold);
-            lblLogoTitulo.ForeColor = Color.White;
+            lblLogoTitulo.ForeColor = Color.FromArgb(22, 26, 36);
             lblLogoTitulo.Location = new Point(18, 14);
             lblLogoTitulo.Name = "lblLogoTitulo";
             lblLogoTitulo.Size = new Size(180, 32);
@@ -132,7 +132,7 @@ namespace Northwind.WinForms
             //
             lblSeccionPrincipal.AutoSize = true;
             lblSeccionPrincipal.Font = new Font("Segoe UI", 8F, FontStyle.Bold);
-            lblSeccionPrincipal.ForeColor = Color.FromArgb(71, 85, 105);
+            lblSeccionPrincipal.ForeColor = Color.FromArgb(136, 144, 160);
             lblSeccionPrincipal.Location = new Point(24, 128);
             lblSeccionPrincipal.Name = "lblSeccionPrincipal";
             lblSeccionPrincipal.Size = new Size(80, 19);
@@ -141,12 +141,12 @@ namespace Northwind.WinForms
             //
             // btnNavInicio
             //
-            btnNavInicio.BackColor = Color.FromArgb(20, 23, 34);
+            btnNavInicio.BackColor = Color.FromArgb(238, 241, 247);
             btnNavInicio.Cursor = Cursors.Hand;
             btnNavInicio.FlatAppearance.BorderSize = 0;
             btnNavInicio.FlatStyle = FlatStyle.Flat;
             btnNavInicio.Font = new Font("Segoe UI", 10.5F);
-            btnNavInicio.ForeColor = Color.FromArgb(226, 232, 240);
+            btnNavInicio.ForeColor = Color.FromArgb(51, 65, 85);
             btnNavInicio.Location = new Point(0, 152);
             btnNavInicio.Name = "btnNavInicio";
             btnNavInicio.Padding = new Padding(24, 0, 0, 0);
@@ -161,7 +161,7 @@ namespace Northwind.WinForms
             //
             lblSeccionCatalogo.AutoSize = true;
             lblSeccionCatalogo.Font = new Font("Segoe UI", 8F, FontStyle.Bold);
-            lblSeccionCatalogo.ForeColor = Color.FromArgb(71, 85, 105);
+            lblSeccionCatalogo.ForeColor = Color.FromArgb(136, 144, 160);
             lblSeccionCatalogo.Location = new Point(24, 204);
             lblSeccionCatalogo.Name = "lblSeccionCatalogo";
             lblSeccionCatalogo.Size = new Size(80, 19);
@@ -170,12 +170,12 @@ namespace Northwind.WinForms
             //
             // btnNavCategorias
             //
-            btnNavCategorias.BackColor = Color.FromArgb(20, 23, 34);
+            btnNavCategorias.BackColor = Color.FromArgb(238, 241, 247);
             btnNavCategorias.Cursor = Cursors.Hand;
             btnNavCategorias.FlatAppearance.BorderSize = 0;
             btnNavCategorias.FlatStyle = FlatStyle.Flat;
             btnNavCategorias.Font = new Font("Segoe UI", 10.5F);
-            btnNavCategorias.ForeColor = Color.FromArgb(226, 232, 240);
+            btnNavCategorias.ForeColor = Color.FromArgb(51, 65, 85);
             btnNavCategorias.Location = new Point(0, 228);
             btnNavCategorias.Name = "btnNavCategorias";
             btnNavCategorias.Padding = new Padding(24, 0, 0, 0);
@@ -188,12 +188,12 @@ namespace Northwind.WinForms
             //
             // btnNavProductos
             //
-            btnNavProductos.BackColor = Color.FromArgb(20, 23, 34);
+            btnNavProductos.BackColor = Color.FromArgb(238, 241, 247);
             btnNavProductos.Cursor = Cursors.Hand;
             btnNavProductos.FlatAppearance.BorderSize = 0;
             btnNavProductos.FlatStyle = FlatStyle.Flat;
             btnNavProductos.Font = new Font("Segoe UI", 10.5F);
-            btnNavProductos.ForeColor = Color.FromArgb(226, 232, 240);
+            btnNavProductos.ForeColor = Color.FromArgb(51, 65, 85);
             btnNavProductos.Location = new Point(0, 272);
             btnNavProductos.Name = "btnNavProductos";
             btnNavProductos.Padding = new Padding(24, 0, 0, 0);
@@ -206,12 +206,12 @@ namespace Northwind.WinForms
             //
             // btnNavSuplidores
             //
-            btnNavSuplidores.BackColor = Color.FromArgb(20, 23, 34);
+            btnNavSuplidores.BackColor = Color.FromArgb(238, 241, 247);
             btnNavSuplidores.Cursor = Cursors.Hand;
             btnNavSuplidores.FlatAppearance.BorderSize = 0;
             btnNavSuplidores.FlatStyle = FlatStyle.Flat;
             btnNavSuplidores.Font = new Font("Segoe UI", 10.5F);
-            btnNavSuplidores.ForeColor = Color.FromArgb(226, 232, 240);
+            btnNavSuplidores.ForeColor = Color.FromArgb(51, 65, 85);
             btnNavSuplidores.Location = new Point(0, 316);
             btnNavSuplidores.Name = "btnNavSuplidores";
             btnNavSuplidores.Padding = new Padding(24, 0, 0, 0);
@@ -226,7 +226,7 @@ namespace Northwind.WinForms
             //
             lblSeccionOperaciones.AutoSize = true;
             lblSeccionOperaciones.Font = new Font("Segoe UI", 8F, FontStyle.Bold);
-            lblSeccionOperaciones.ForeColor = Color.FromArgb(71, 85, 105);
+            lblSeccionOperaciones.ForeColor = Color.FromArgb(136, 144, 160);
             lblSeccionOperaciones.Location = new Point(24, 372);
             lblSeccionOperaciones.Name = "lblSeccionOperaciones";
             lblSeccionOperaciones.Size = new Size(110, 19);
@@ -235,12 +235,12 @@ namespace Northwind.WinForms
             //
             // btnNavIncremento
             //
-            btnNavIncremento.BackColor = Color.FromArgb(20, 23, 34);
+            btnNavIncremento.BackColor = Color.FromArgb(238, 241, 247);
             btnNavIncremento.Cursor = Cursors.Hand;
             btnNavIncremento.FlatAppearance.BorderSize = 0;
             btnNavIncremento.FlatStyle = FlatStyle.Flat;
             btnNavIncremento.Font = new Font("Segoe UI", 10.5F);
-            btnNavIncremento.ForeColor = Color.FromArgb(226, 232, 240);
+            btnNavIncremento.ForeColor = Color.FromArgb(51, 65, 85);
             btnNavIncremento.Location = new Point(0, 396);
             btnNavIncremento.Name = "btnNavIncremento";
             btnNavIncremento.Padding = new Padding(24, 0, 0, 0);
@@ -253,12 +253,12 @@ namespace Northwind.WinForms
             //
             // btnNavReasignar
             //
-            btnNavReasignar.BackColor = Color.FromArgb(20, 23, 34);
+            btnNavReasignar.BackColor = Color.FromArgb(238, 241, 247);
             btnNavReasignar.Cursor = Cursors.Hand;
             btnNavReasignar.FlatAppearance.BorderSize = 0;
             btnNavReasignar.FlatStyle = FlatStyle.Flat;
             btnNavReasignar.Font = new Font("Segoe UI", 10.5F);
-            btnNavReasignar.ForeColor = Color.FromArgb(226, 232, 240);
+            btnNavReasignar.ForeColor = Color.FromArgb(51, 65, 85);
             btnNavReasignar.Location = new Point(0, 440);
             btnNavReasignar.Name = "btnNavReasignar";
             btnNavReasignar.Padding = new Padding(24, 0, 0, 0);
@@ -271,12 +271,12 @@ namespace Northwind.WinForms
             //
             // btnNavReporte
             //
-            btnNavReporte.BackColor = Color.FromArgb(20, 23, 34);
+            btnNavReporte.BackColor = Color.FromArgb(238, 241, 247);
             btnNavReporte.Cursor = Cursors.Hand;
             btnNavReporte.FlatAppearance.BorderSize = 0;
             btnNavReporte.FlatStyle = FlatStyle.Flat;
             btnNavReporte.Font = new Font("Segoe UI", 10.5F);
-            btnNavReporte.ForeColor = Color.FromArgb(226, 232, 240);
+            btnNavReporte.ForeColor = Color.FromArgb(51, 65, 85);
             btnNavReporte.Location = new Point(0, 484);
             btnNavReporte.Name = "btnNavReporte";
             btnNavReporte.Padding = new Padding(24, 0, 0, 0);
@@ -289,13 +289,13 @@ namespace Northwind.WinForms
             //
             // btnNavSalir
             //
-            btnNavSalir.BackColor = Color.FromArgb(20, 23, 34);
+            btnNavSalir.BackColor = Color.FromArgb(238, 241, 247);
             btnNavSalir.Cursor = Cursors.Hand;
             btnNavSalir.Dock = DockStyle.Bottom;
             btnNavSalir.FlatAppearance.BorderSize = 0;
             btnNavSalir.Font = new Font("Segoe UI", 10.5F);
             btnNavSalir.FlatStyle = FlatStyle.Flat;
-            btnNavSalir.ForeColor = Color.FromArgb(148, 163, 184);
+            btnNavSalir.ForeColor = Color.FromArgb(91, 100, 116);
             btnNavSalir.Location = new Point(0, 744);
             btnNavSalir.Name = "btnNavSalir";
             btnNavSalir.Padding = new Padding(24, 0, 0, 0);
@@ -308,7 +308,7 @@ namespace Northwind.WinForms
             //
             // panelTopbar
             //
-            panelTopbar.BackColor = Color.FromArgb(26, 29, 39);
+            panelTopbar.BackColor = Color.FromArgb(255, 255, 255);
             panelTopbar.Controls.Add(txtBuscarGlobal);
             panelTopbar.Controls.Add(lblSeccionActual);
             panelTopbar.Controls.Add(panelTopbarRight);
@@ -323,7 +323,7 @@ namespace Northwind.WinForms
             //
             lblSeccionActual.AutoSize = true;
             lblSeccionActual.Font = new Font("Segoe UI", 13F, FontStyle.Bold);
-            lblSeccionActual.ForeColor = Color.FromArgb(226, 232, 240);
+            lblSeccionActual.ForeColor = Color.FromArgb(22, 26, 36);
             lblSeccionActual.Location = new Point(28, 18);
             lblSeccionActual.Name = "lblSeccionActual";
             lblSeccionActual.Size = new Size(120, 28);
@@ -332,10 +332,10 @@ namespace Northwind.WinForms
             //
             // txtBuscarGlobal
             //
-            txtBuscarGlobal.BackColor = Color.FromArgb(20, 23, 34);
+            txtBuscarGlobal.BackColor = Color.FromArgb(248, 250, 252);
             txtBuscarGlobal.BorderStyle = BorderStyle.FixedSingle;
             txtBuscarGlobal.Font = new Font("Segoe UI", 9.5F);
-            txtBuscarGlobal.ForeColor = Color.FromArgb(226, 232, 240);
+            txtBuscarGlobal.ForeColor = Color.FromArgb(22, 26, 36);
             txtBuscarGlobal.Location = new Point(300, 17);
             txtBuscarGlobal.Name = "txtBuscarGlobal";
             txtBuscarGlobal.PlaceholderText = "🔍  Buscar productos y presionar Enter...";
@@ -358,7 +358,7 @@ namespace Northwind.WinForms
             //
             lblFecha.AutoSize = true;
             lblFecha.Font = new Font("Segoe UI", 9.5F);
-            lblFecha.ForeColor = Color.FromArgb(148, 163, 184);
+            lblFecha.ForeColor = Color.FromArgb(91, 100, 116);
             lblFecha.Location = new Point(20, 22);
             lblFecha.Name = "lblFecha";
             lblFecha.Size = new Size(160, 21);
@@ -370,7 +370,7 @@ namespace Northwind.WinForms
             lblNotificaciones.AutoSize = true;
             lblNotificaciones.Cursor = Cursors.Hand;
             lblNotificaciones.Font = new Font("Segoe UI", 11F);
-            lblNotificaciones.ForeColor = Color.FromArgb(226, 232, 240);
+            lblNotificaciones.ForeColor = Color.FromArgb(71, 85, 105);
             lblNotificaciones.Location = new Point(230, 19);
             lblNotificaciones.Name = "lblNotificaciones";
             lblNotificaciones.Size = new Size(40, 25);
@@ -382,7 +382,7 @@ namespace Northwind.WinForms
             //
             lblUsuario.AutoSize = true;
             lblUsuario.Font = new Font("Segoe UI", 9.5F);
-            lblUsuario.ForeColor = Color.FromArgb(148, 163, 184);
+            lblUsuario.ForeColor = Color.FromArgb(91, 100, 116);
             lblUsuario.Location = new Point(290, 22);
             lblUsuario.Name = "lblUsuario";
             lblUsuario.Size = new Size(176, 21);
@@ -391,7 +391,7 @@ namespace Northwind.WinForms
             //
             // panelContent
             //
-            panelContent.BackColor = Color.FromArgb(21, 24, 34);
+            panelContent.BackColor = Color.FromArgb(245, 247, 251);
             panelContent.Dock = DockStyle.Fill;
             panelContent.Location = new Point(240, 64);
             panelContent.Name = "panelContent";
@@ -401,7 +401,7 @@ namespace Northwind.WinForms
             //
             // statusStrip
             //
-            statusStrip.BackColor = Color.FromArgb(26, 29, 39);
+            statusStrip.BackColor = Color.FromArgb(238, 241, 247);
             statusStrip.ImageScalingSize = new Size(20, 20);
             statusStrip.Items.AddRange(new ToolStripItem[] { statusLabel });
             statusStrip.Location = new Point(240, 768);
@@ -412,7 +412,7 @@ namespace Northwind.WinForms
             //
             // statusLabel
             //
-            statusLabel.ForeColor = Color.FromArgb(148, 163, 184);
+            statusLabel.ForeColor = Color.FromArgb(91, 100, 116);
             statusLabel.Name = "statusLabel";
             statusLabel.Size = new Size(60, 25);
             statusLabel.Text = "Listo";
@@ -421,7 +421,7 @@ namespace Northwind.WinForms
             //
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.FromArgb(21, 24, 34);
+            BackColor = Color.FromArgb(245, 247, 251);
             ClientSize = new Size(1400, 800);
             Controls.Add(panelContent);
             Controls.Add(statusStrip);

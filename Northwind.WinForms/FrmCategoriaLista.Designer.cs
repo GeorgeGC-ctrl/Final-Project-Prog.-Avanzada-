@@ -1,4 +1,4 @@
-namespace Northwind.WinForms
+﻿namespace Northwind.WinForms
 {
     partial class FrmCategoriaLista
     {
@@ -56,7 +56,7 @@ namespace Northwind.WinForms
             // 
             // panelHeader
             // 
-            panelHeader.BackColor = Color.FromArgb(30, 41, 59);
+            panelHeader.BackColor = Color.FromArgb(255, 255, 255);
             panelHeader.Controls.Add(lblSubtitulo);
             panelHeader.Controls.Add(lblTitulo);
             panelHeader.Dock = DockStyle.Top;
@@ -70,7 +70,7 @@ namespace Northwind.WinForms
             // 
             lblSubtitulo.AutoSize = true;
             lblSubtitulo.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            lblSubtitulo.ForeColor = Color.FromArgb(148, 163, 184);
+            lblSubtitulo.ForeColor = Color.FromArgb(91, 100, 116);
             lblSubtitulo.Location = new Point(20, 42);
             lblSubtitulo.Name = "lblSubtitulo";
             lblSubtitulo.Size = new Size(244, 15);
@@ -81,7 +81,7 @@ namespace Northwind.WinForms
             // 
             lblTitulo.AutoSize = true;
             lblTitulo.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
-            lblTitulo.ForeColor = Color.White;
+            lblTitulo.ForeColor = Color.FromArgb(22, 26, 36);
             lblTitulo.Location = new Point(20, 14);
             lblTitulo.Name = "lblTitulo";
             lblTitulo.Size = new Size(213, 25);
@@ -121,7 +121,7 @@ namespace Northwind.WinForms
             // btnNuevo
             //
             btnNuevo.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            btnNuevo.BackColor = Color.FromArgb(37, 99, 235);
+            btnNuevo.BackColor = Color.FromArgb(44, 78, 130);
             btnNuevo.FlatAppearance.BorderSize = 0;
             btnNuevo.FlatStyle = FlatStyle.Flat;
             btnNuevo.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);

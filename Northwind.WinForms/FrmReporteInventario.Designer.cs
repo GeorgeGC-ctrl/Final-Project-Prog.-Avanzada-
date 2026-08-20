@@ -1,4 +1,4 @@
-namespace Northwind.WinForms
+﻿namespace Northwind.WinForms
 {
     partial class FrmReporteInventario
     {
@@ -64,7 +64,7 @@ namespace Northwind.WinForms
             // 
             // panelHeader
             // 
-            panelHeader.BackColor = Color.FromArgb(26, 29, 39);
+            panelHeader.BackColor = Color.FromArgb(255, 255, 255);
             panelHeader.Controls.Add(lblSubtitulo);
             panelHeader.Controls.Add(lblTitulo);
             panelHeader.Dock = DockStyle.Top;
@@ -78,7 +78,7 @@ namespace Northwind.WinForms
             // 
             lblSubtitulo.AutoSize = true;
             lblSubtitulo.Font = new Font("Segoe UI", 9F);
-            lblSubtitulo.ForeColor = Color.FromArgb(148, 163, 184);
+            lblSubtitulo.ForeColor = Color.FromArgb(91, 100, 116);
             lblSubtitulo.Location = new Point(25, 48);
             lblSubtitulo.Name = "lblSubtitulo";
             lblSubtitulo.Size = new Size(393, 20);
@@ -89,7 +89,7 @@ namespace Northwind.WinForms
             // 
             lblTitulo.AutoSize = true;
             lblTitulo.Font = new Font("Segoe UI", 14F, FontStyle.Bold);
-            lblTitulo.ForeColor = Color.FromArgb(226, 232, 240);
+            lblTitulo.ForeColor = Color.FromArgb(22, 26, 36);
             lblTitulo.Location = new Point(23, 14);
             lblTitulo.Name = "lblTitulo";
             lblTitulo.Size = new Size(516, 32);
@@ -98,7 +98,7 @@ namespace Northwind.WinForms
             // 
             // panelFiltros
             // 
-            panelFiltros.BackColor = Color.FromArgb(33, 37, 58);
+            panelFiltros.BackColor = Color.FromArgb(255, 255, 255);
             panelFiltros.Controls.Add(cmbCategorias);
             panelFiltros.Controls.Add(lblFiltroCategoria);
             panelFiltros.Controls.Add(btnGenerar);
@@ -112,11 +112,11 @@ namespace Northwind.WinForms
             // 
             // cmbCategorias
             // 
-            cmbCategorias.BackColor = Color.FromArgb(26, 29, 39);
+            cmbCategorias.BackColor = Color.FromArgb(248, 250, 252);
             cmbCategorias.DropDownStyle = ComboBoxStyle.DropDownList;
             cmbCategorias.FlatStyle = FlatStyle.Flat;
             cmbCategorias.Font = new Font("Segoe UI", 10F);
-            cmbCategorias.ForeColor = Color.FromArgb(226, 232, 240);
+            cmbCategorias.ForeColor = Color.FromArgb(22, 26, 36);
             cmbCategorias.FormattingEnabled = true;
             cmbCategorias.Location = new Point(125, 18);
             cmbCategorias.Name = "cmbCategorias";
@@ -128,7 +128,7 @@ namespace Northwind.WinForms
             // 
             lblFiltroCategoria.AutoSize = true;
             lblFiltroCategoria.Font = new Font("Segoe UI", 9.5F, FontStyle.Bold);
-            lblFiltroCategoria.ForeColor = Color.FromArgb(226, 232, 240);
+            lblFiltroCategoria.ForeColor = Color.FromArgb(51, 65, 85);
             lblFiltroCategoria.Location = new Point(25, 22);
             lblFiltroCategoria.Name = "lblFiltroCategoria";
             lblFiltroCategoria.Size = new Size(90, 21);
@@ -137,7 +137,7 @@ namespace Northwind.WinForms
             // 
             // btnGenerar
             // 
-            btnGenerar.BackColor = Color.FromArgb(99, 102, 241);
+            btnGenerar.BackColor = Color.FromArgb(44, 78, 130);
             btnGenerar.Cursor = Cursors.Hand;
             btnGenerar.FlatAppearance.BorderSize = 0;
             btnGenerar.FlatStyle = FlatStyle.Flat;
@@ -154,12 +154,12 @@ namespace Northwind.WinForms
             // btnCerrar
             // 
             btnCerrar.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            btnCerrar.BackColor = Color.FromArgb(26, 29, 39);
+            btnCerrar.BackColor = Color.FromArgb(241, 245, 249);
             btnCerrar.Cursor = Cursors.Hand;
-            btnCerrar.FlatAppearance.BorderColor = Color.FromArgb(46, 51, 80);
+            btnCerrar.FlatAppearance.BorderColor = Color.FromArgb(203, 213, 225);
             btnCerrar.FlatStyle = FlatStyle.Flat;
             btnCerrar.Font = new Font("Segoe UI", 9.5F);
-            btnCerrar.ForeColor = Color.FromArgb(148, 163, 184);
+            btnCerrar.ForeColor = Color.FromArgb(71, 85, 105);
             btnCerrar.Location = new Point(835, 16);
             btnCerrar.Name = "btnCerrar";
             btnCerrar.Size = new Size(100, 35);
@@ -173,38 +173,38 @@ namespace Northwind.WinForms
             dgvReporte.AllowUserToAddRows = false;
             dgvReporte.AllowUserToDeleteRows = false;
             dgvReporte.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dgvReporte.BackgroundColor = Color.FromArgb(15, 17, 23);
+            dgvReporte.BackgroundColor = Color.FromArgb(255, 255, 255);
             dgvReporte.BorderStyle = BorderStyle.None;
             dgvReporte.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
             dgvReporte.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = Color.FromArgb(26, 29, 39);
+            dataGridViewCellStyle1.BackColor = Color.FromArgb(241, 245, 249);
             dataGridViewCellStyle1.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
-            dataGridViewCellStyle1.ForeColor = Color.FromArgb(129, 140, 248);
+            dataGridViewCellStyle1.ForeColor = Color.FromArgb(30, 41, 59);
             dataGridViewCellStyle1.Padding = new Padding(10, 8, 10, 8);
-            dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(26, 29, 39);
-            dataGridViewCellStyle1.SelectionForeColor = Color.FromArgb(129, 140, 248);
+            dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(241, 245, 249);
+            dataGridViewCellStyle1.SelectionForeColor = Color.FromArgb(30, 41, 59);
             dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
             dgvReporte.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             dgvReporte.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = Color.FromArgb(21, 24, 34);
+            dataGridViewCellStyle2.BackColor = Color.FromArgb(255, 255, 255);
             dataGridViewCellStyle2.Font = new Font("Segoe UI", 9.5F);
-            dataGridViewCellStyle2.ForeColor = Color.FromArgb(226, 232, 240);
+            dataGridViewCellStyle2.ForeColor = Color.FromArgb(30, 41, 59);
             dataGridViewCellStyle2.Padding = new Padding(8, 6, 8, 6);
-            dataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(99, 102, 241);
-            dataGridViewCellStyle2.SelectionForeColor = Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(224, 231, 255);
+            dataGridViewCellStyle2.SelectionForeColor = Color.FromArgb(30, 41, 59);
             dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
             dgvReporte.DefaultCellStyle = dataGridViewCellStyle2;
             dgvReporte.Dock = DockStyle.Fill;
             dgvReporte.EnableHeadersVisualStyles = false;
-            dgvReporte.GridColor = Color.FromArgb(46, 51, 80);
+            dgvReporte.GridColor = Color.FromArgb(226, 232, 240);
             dgvReporte.Location = new Point(0, 153);
             dgvReporte.Name = "dgvReporte";
             dgvReporte.ReadOnly = true;
             dgvReporte.RowHeadersVisible = false;
             dgvReporte.RowHeadersWidth = 51;
-            dataGridViewCellStyle3.BackColor = Color.FromArgb(21, 24, 34);
+            dataGridViewCellStyle3.BackColor = Color.FromArgb(255, 255, 255);
             dgvReporte.RowsDefaultCellStyle = dataGridViewCellStyle3;
             dgvReporte.RowTemplate.Height = 36;
             dgvReporte.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
@@ -213,7 +213,7 @@ namespace Northwind.WinForms
             // 
             // panelStats
             // 
-            panelStats.BackColor = Color.FromArgb(26, 29, 39);
+            panelStats.BackColor = Color.FromArgb(241, 245, 249);
             panelStats.Controls.Add(cardValor);
             panelStats.Controls.Add(cardUnidades);
             panelStats.Controls.Add(cardProductos);
@@ -227,7 +227,7 @@ namespace Northwind.WinForms
             // cardValor
             // 
             cardValor.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            cardValor.BackColor = Color.FromArgb(33, 37, 58);
+            cardValor.BackColor = Color.FromArgb(255, 255, 255);
             cardValor.Controls.Add(lblTotalValor);
             cardValor.Controls.Add(lblTagValor);
             cardValor.Location = new Point(640, 12);
@@ -240,7 +240,7 @@ namespace Northwind.WinForms
             // 
             lblTotalValor.AutoSize = true;
             lblTotalValor.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
-            lblTotalValor.ForeColor = Color.FromArgb(34, 197, 94);
+            lblTotalValor.ForeColor = Color.FromArgb(31, 138, 95);
             lblTotalValor.Location = new Point(12, 26);
             lblTotalValor.Name = "lblTotalValor";
             lblTotalValor.Size = new Size(62, 28);
@@ -251,7 +251,7 @@ namespace Northwind.WinForms
             // 
             lblTagValor.AutoSize = true;
             lblTagValor.Font = new Font("Segoe UI", 8F, FontStyle.Bold);
-            lblTagValor.ForeColor = Color.FromArgb(148, 163, 184);
+            lblTagValor.ForeColor = Color.FromArgb(91, 100, 116);
             lblTagValor.Location = new Point(12, 8);
             lblTagValor.Name = "lblTagValor";
             lblTagValor.Size = new Size(183, 19);
@@ -260,7 +260,7 @@ namespace Northwind.WinForms
             // 
             // cardUnidades
             // 
-            cardUnidades.BackColor = Color.FromArgb(33, 37, 58);
+            cardUnidades.BackColor = Color.FromArgb(255, 255, 255);
             cardUnidades.Controls.Add(lblTotalUnidades);
             cardUnidades.Controls.Add(lblTagUnidades);
             cardUnidades.Location = new Point(290, 12);
@@ -273,7 +273,7 @@ namespace Northwind.WinForms
             // 
             lblTotalUnidades.AutoSize = true;
             lblTotalUnidades.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
-            lblTotalUnidades.ForeColor = Color.FromArgb(226, 232, 240);
+            lblTotalUnidades.ForeColor = Color.FromArgb(51, 65, 85);
             lblTotalUnidades.Location = new Point(12, 26);
             lblTotalUnidades.Name = "lblTotalUnidades";
             lblTotalUnidades.Size = new Size(24, 28);
@@ -284,7 +284,7 @@ namespace Northwind.WinForms
             // 
             lblTagUnidades.AutoSize = true;
             lblTagUnidades.Font = new Font("Segoe UI", 8F, FontStyle.Bold);
-            lblTagUnidades.ForeColor = Color.FromArgb(148, 163, 184);
+            lblTagUnidades.ForeColor = Color.FromArgb(91, 100, 116);
             lblTagUnidades.Location = new Point(12, 8);
             lblTagUnidades.Name = "lblTagUnidades";
             lblTagUnidades.Size = new Size(125, 19);
@@ -293,7 +293,7 @@ namespace Northwind.WinForms
             // 
             // cardProductos
             // 
-            cardProductos.BackColor = Color.FromArgb(33, 37, 58);
+            cardProductos.BackColor = Color.FromArgb(255, 255, 255);
             cardProductos.Controls.Add(lblTotalProductos);
             cardProductos.Controls.Add(lblTagProductos);
             cardProductos.Location = new Point(25, 12);
@@ -306,7 +306,7 @@ namespace Northwind.WinForms
             // 
             lblTotalProductos.AutoSize = true;
             lblTotalProductos.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
-            lblTotalProductos.ForeColor = Color.FromArgb(226, 232, 240);
+            lblTotalProductos.ForeColor = Color.FromArgb(51, 65, 85);
             lblTotalProductos.Location = new Point(12, 26);
             lblTotalProductos.Name = "lblTotalProductos";
             lblTotalProductos.Size = new Size(24, 28);
@@ -317,7 +317,7 @@ namespace Northwind.WinForms
             // 
             lblTagProductos.AutoSize = true;
             lblTagProductos.Font = new Font("Segoe UI", 8F, FontStyle.Bold);
-            lblTagProductos.ForeColor = Color.FromArgb(148, 163, 184);
+            lblTagProductos.ForeColor = Color.FromArgb(91, 100, 116);
             lblTagProductos.Location = new Point(12, 8);
             lblTagProductos.Name = "lblTagProductos";
             lblTagProductos.Size = new Size(140, 19);
@@ -333,7 +333,7 @@ namespace Northwind.WinForms
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.FromArgb(15, 17, 23);
+            BackColor = Color.FromArgb(245, 247, 251);
             ClientSize = new Size(960, 600);
             Controls.Add(dgvReporte);
             Controls.Add(panelStats);

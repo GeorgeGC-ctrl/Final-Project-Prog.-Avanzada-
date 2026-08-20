@@ -9,10 +9,10 @@ namespace Northwind.WinForms
 {
     public partial class FrmPrincipal : Form
     {
-        private static readonly Color ColorBotonActivo = Color.FromArgb(99, 102, 241);
-        private static readonly Color ColorBotonInactivo = Color.FromArgb(20, 23, 34);
+        private static readonly Color ColorBotonActivo = Color.FromArgb(44, 78, 130);
+        private static readonly Color ColorBotonInactivo = Color.FromArgb(238, 241, 247);
         private static readonly Color ColorTextoActivo = Color.White;
-        private static readonly Color ColorTextoInactivo = Color.FromArgb(226, 232, 240);
+        private static readonly Color ColorTextoInactivo = Color.FromArgb(51, 65, 85);
 
         private readonly IServiceProvider _serviceProvider;
         private readonly GetAllCategories _getAllCategories;
@@ -192,97 +192,91 @@ namespace Northwind.WinForms
             var panel = new Panel
             {
                 Dock = DockStyle.Fill,
-                BackColor = Color.FromArgb(244, 246, 251),
-                AutoScroll = true,
-                Padding = new Padding(32)
+                BackColor = Color.FromArgb(245, 247, 251),
+                Padding = new Padding(28)
             };
 
-            var lblBienvenida = new Label
+            // Layout raíz: 3 filas, todas ajustadas al ancho disponible del panel de contenido.
+            var raiz = new TableLayoutPanel
+            {
+                Dock = DockStyle.Fill,
+                ColumnCount = 1,
+                RowCount = 3,
+                BackColor = Color.Transparent
+            };
+            raiz.RowStyles.Add(new RowStyle(SizeType.AutoSize));
+            raiz.RowStyles.Add(new RowStyle(SizeType.Absolute, 128));
+            raiz.RowStyles.Add(new RowStyle(SizeType.Percent, 100));
+            panel.Controls.Add(raiz);
+
+            // --- Encabezado ---
+            var encabezado = new TableLayoutPanel { AutoSize = true, ColumnCount = 1, Dock = DockStyle.Fill, Margin = new Padding(0, 0, 0, 18) };
+            encabezado.Controls.Add(new Label
             {
                 Text = "Panel Principal",
                 Font = new Font("Segoe UI", 18F, FontStyle.Bold),
-                ForeColor = Color.FromArgb(15, 23, 42),
+                ForeColor = Color.FromArgb(22, 26, 36),
                 AutoSize = true,
-                Location = new Point(32, 24)
-            };
-
-            var lblDescripcion = new Label
+                Margin = new Padding(0)
+            });
+            encabezado.Controls.Add(new Label
             {
                 Text = "Resumen general del catálogo y accesos directos a los módulos.",
                 Font = new Font("Segoe UI", 10F),
                 ForeColor = Color.FromArgb(100, 116, 139),
                 AutoSize = true,
-                Location = new Point(32, 62)
-            };
+                Margin = new Padding(0, 4, 0, 0)
+            });
+            raiz.Controls.Add(encabezado, 0, 0);
+
+            // --- Fila de estadísticas: 4 columnas iguales que se reparten el ancho disponible ---
+            var filaStats = new TableLayoutPanel { Dock = DockStyle.Fill, ColumnCount = 4, RowCount = 1, Margin = new Padding(0, 0, 0, 18) };
+            for (int i = 0; i < 4; i++)
+                filaStats.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25));
+            filaStats.RowStyles.Add(new RowStyle(SizeType.Percent, 100));
 
             var stats = new (string Icono, string Titulo, Color Acento, Action<Label> Bind)[]
             {
-                ("🏷️", "CATEGORÍAS", Color.FromArgb(99, 102, 241), l => _lblStatCategorias = l),
-                ("📦", "PRODUCTOS", Color.FromArgb(34, 197, 94), l => _lblStatProductos = l),
-                ("🚚", "SUPLIDORES", Color.FromArgb(249, 115, 22), l => _lblStatSuplidores = l),
-                ("⚠️", "STOCK BAJO", Color.FromArgb(239, 68, 68), l => _lblStatStockBajo = l),
+                ("🏷️", "CATEGORÍAS", Color.FromArgb(44, 78, 130), l => _lblStatCategorias = l),
+                ("📦", "PRODUCTOS", Color.FromArgb(31, 138, 95), l => _lblStatProductos = l),
+                ("🚚", "SUPLIDORES", Color.FromArgb(193, 121, 31), l => _lblStatSuplidores = l),
+                ("⚠️", "STOCK BAJO", Color.FromArgb(180, 83, 9), l => _lblStatStockBajo = l),
             };
 
-            int cardWidth = 250, cardHeight = 120, gap = 20, startX = 32, startY = 105;
             for (int i = 0; i < stats.Length; i++)
             {
                 var (icono, titulo, acento, bind) = stats[i];
                 var card = new Panel
                 {
-                    Location = new Point(startX + i * (cardWidth + gap), startY),
-                    Size = new Size(cardWidth, cardHeight),
+                    Dock = DockStyle.Fill,
+                    Margin = new Padding(i == 0 ? 0 : 8, 0, i == stats.Length - 1 ? 0 : 8, 0),
                     BackColor = Color.White
                 };
-
-                var lblIcono = new Label
-                {
-                    Text = icono,
-                    Font = new Font("Segoe UI", 16F),
-                    Location = new Point(16, 14),
-                    AutoSize = true
-                };
-
-                var lblValor = new Label
-                {
-                    Text = "0",
-                    Font = new Font("Segoe UI", 24F, FontStyle.Bold),
-                    ForeColor = Color.FromArgb(15, 23, 42),
-                    Location = new Point(16, 48),
-                    AutoSize = true
-                };
-
-                var lblTitulo = new Label
-                {
-                    Text = titulo,
-                    Font = new Font("Segoe UI", 8.5F, FontStyle.Bold),
-                    ForeColor = acento,
-                    Location = new Point(16, 92),
-                    AutoSize = true
-                };
-
-                card.Controls.Add(lblTitulo);
+                card.Controls.Add(new Label { Text = icono, Font = new Font("Segoe UI", 16F), Location = new Point(18, 14), AutoSize = true });
+                var lblValor = new Label { Text = "0", Font = new Font("Segoe UI", 24F, FontStyle.Bold), ForeColor = Color.FromArgb(22, 26, 36), Location = new Point(18, 48), AutoSize = true };
                 card.Controls.Add(lblValor);
-                card.Controls.Add(lblIcono);
+                card.Controls.Add(new Label { Text = titulo, Font = new Font("Segoe UI", 8.5F, FontStyle.Bold), ForeColor = acento, Location = new Point(18, 94), AutoSize = true });
                 bind(lblValor);
-                panel.Controls.Add(card);
+                filaStats.Controls.Add(card, i, 0);
             }
+            raiz.Controls.Add(filaStats, 0, 1);
 
-            var panelAccesos = new Panel
-            {
-                Location = new Point(32, 245),
-                Size = new Size(360, 340),
-                BackColor = Color.White,
-                Padding = new Padding(20)
-            };
-            var lblAccesosTitulo = new Label
+            // --- Fila inferior: accesos rápidos (35%) + top de precios (65%), ambos Dock=Fill ---
+            var filaInferior = new TableLayoutPanel { Dock = DockStyle.Fill, ColumnCount = 2, RowCount = 1 };
+            filaInferior.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 35));
+            filaInferior.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 65));
+            filaInferior.RowStyles.Add(new RowStyle(SizeType.Percent, 100));
+
+            var panelAccesos = new Panel { Dock = DockStyle.Fill, Margin = new Padding(0, 0, 8, 0), BackColor = Color.White, Padding = new Padding(20) };
+            var accesosLayout = new TableLayoutPanel { Dock = DockStyle.Fill, ColumnCount = 1 };
+            accesosLayout.Controls.Add(new Label
             {
                 Text = "Accesos Rápidos",
                 Font = new Font("Segoe UI", 12F, FontStyle.Bold),
-                ForeColor = Color.FromArgb(15, 23, 42),
-                Location = new Point(20, 16),
-                AutoSize = true
-            };
-            panelAccesos.Controls.Add(lblAccesosTitulo);
+                ForeColor = Color.FromArgb(22, 26, 36),
+                AutoSize = true,
+                Margin = new Padding(0, 0, 0, 12)
+            });
 
             var accesos = new (string Texto, EventHandler Handler)[]
             {
@@ -293,15 +287,14 @@ namespace Northwind.WinForms
                 ("🔄  Reasignar Productos", btnNavReasignar_Click),
                 ("📊  Ver Reportes", btnNavReporte_Click),
             };
-
-            int y = 58;
             foreach (var (texto, handler) in accesos)
             {
                 var link = new Button
                 {
                     Text = texto,
-                    Location = new Point(20, y),
-                    Size = new Size(320, 40),
+                    Dock = DockStyle.Top,
+                    Height = 40,
+                    Margin = new Padding(0, 0, 0, 6),
                     FlatStyle = FlatStyle.Flat,
                     BackColor = Color.FromArgb(248, 250, 252),
                     ForeColor = Color.FromArgb(30, 41, 59),
@@ -312,42 +305,36 @@ namespace Northwind.WinForms
                 };
                 link.FlatAppearance.BorderColor = Color.FromArgb(226, 232, 240);
                 link.Click += handler;
-                panelAccesos.Controls.Add(link);
-                y += 46;
+                accesosLayout.Controls.Add(link);
             }
+            panelAccesos.Controls.Add(accesosLayout);
 
-            var panelTopPrecios = new Panel
-            {
-                Location = new Point(412, 245),
-                Size = new Size(600, 340),
-                BackColor = Color.White,
-                Padding = new Padding(20)
-            };
-            var lblTopTitulo = new Label
+            var panelTopPrecios = new Panel { Dock = DockStyle.Fill, Margin = new Padding(8, 0, 0, 0), BackColor = Color.White, Padding = new Padding(20) };
+            var topLayout = new TableLayoutPanel { Dock = DockStyle.Fill, ColumnCount = 1, RowCount = 2 };
+            topLayout.RowStyles.Add(new RowStyle(SizeType.AutoSize));
+            topLayout.RowStyles.Add(new RowStyle(SizeType.Percent, 100));
+            topLayout.Controls.Add(new Label
             {
                 Text = "Productos con Mayor Precio",
                 Font = new Font("Segoe UI", 12F, FontStyle.Bold),
-                ForeColor = Color.FromArgb(15, 23, 42),
-                Location = new Point(20, 16),
-                AutoSize = true
-            };
+                ForeColor = Color.FromArgb(22, 26, 36),
+                AutoSize = true,
+                Margin = new Padding(0, 0, 0, 10)
+            }, 0, 0);
 
             _flowTopPrecios = new FlowLayoutPanel
             {
-                Location = new Point(20, 56),
-                Size = new Size(560, 264),
+                Dock = DockStyle.Fill,
                 FlowDirection = FlowDirection.TopDown,
                 WrapContents = false,
                 AutoScroll = true
             };
+            topLayout.Controls.Add(_flowTopPrecios, 0, 1);
+            panelTopPrecios.Controls.Add(topLayout);
 
-            panelTopPrecios.Controls.Add(_flowTopPrecios);
-            panelTopPrecios.Controls.Add(lblTopTitulo);
-
-            panel.Controls.Add(panelTopPrecios);
-            panel.Controls.Add(panelAccesos);
-            panel.Controls.Add(lblDescripcion);
-            panel.Controls.Add(lblBienvenida);
+            filaInferior.Controls.Add(panelAccesos, 0, 0);
+            filaInferior.Controls.Add(panelTopPrecios, 1, 0);
+            raiz.Controls.Add(filaInferior, 0, 2);
 
             return panel;
         }
@@ -406,9 +393,10 @@ namespace Northwind.WinForms
                 }
                 else
                 {
+                    int filaWidth = Math.Max(300, _flowTopPrecios.ClientSize.Width);
                     foreach (var p in topProductos)
                     {
-                        var fila = new Panel { Size = new Size(540, 34), Margin = new Padding(0, 0, 0, 4) };
+                        var fila = new Panel { Width = filaWidth, Height = 34, Margin = new Padding(0, 0, 0, 4) };
                         var lblNombre = new Label
                         {
                             Text = p.ProductName,
@@ -421,20 +409,37 @@ namespace Northwind.WinForms
                         {
                             Text = p.UnitPrice?.ToString("C2", CultureInfo.GetCultureInfo("en-US")),
                             Font = new Font("Segoe UI", 9.75F, FontStyle.Bold),
-                            ForeColor = Color.FromArgb(34, 197, 94),
-                            Location = new Point(460, 6),
+                            ForeColor = Color.FromArgb(31, 138, 95),
+                            Anchor = AnchorStyles.Top | AnchorStyles.Right,
                             AutoSize = true
                         };
+                        lblPrecio.Location = new Point(fila.Width - lblPrecio.PreferredWidth - 4, 6);
                         fila.Controls.Add(lblPrecio);
                         fila.Controls.Add(lblNombre);
                         _flowTopPrecios.Controls.Add(fila);
                     }
+
+                    _flowTopPrecios.Resize -= FlowTopPrecios_Resize;
+                    _flowTopPrecios.Resize += FlowTopPrecios_Resize;
                 }
             }
             catch (Exception ex)
             {
                 statusLabel.Text = $"Error al cargar el dashboard: {ex.Message}";
                 ActualizarEstadoConexion(false);
+            }
+        }
+
+        private void FlowTopPrecios_Resize(object? sender, EventArgs e)
+        {
+            int filaWidth = Math.Max(300, _flowTopPrecios.ClientSize.Width);
+            foreach (Control fila in _flowTopPrecios.Controls)
+            {
+                fila.Width = filaWidth;
+                if (fila.Controls.Count > 0 && fila.Controls[0] is Label lblPrecio)
+                {
+                    lblPrecio.Location = new Point(fila.Width - lblPrecio.PreferredWidth - 4, lblPrecio.Location.Y);
+                }
             }
         }
     }

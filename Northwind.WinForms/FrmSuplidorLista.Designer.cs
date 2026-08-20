@@ -1,4 +1,4 @@
-namespace Northwind.WinForms
+﻿namespace Northwind.WinForms
 {
     partial class FrmSuplidorLista
     {
@@ -55,7 +55,7 @@ namespace Northwind.WinForms
             // 
             // panelHeader
             // 
-            panelHeader.BackColor = Color.FromArgb(26, 29, 39);
+            panelHeader.BackColor = Color.FromArgb(255, 255, 255);
             panelHeader.Controls.Add(lblSubtitulo);
             panelHeader.Controls.Add(lblTitulo);
             panelHeader.Dock = DockStyle.Top;
@@ -69,7 +69,7 @@ namespace Northwind.WinForms
             // 
             lblSubtitulo.AutoSize = true;
             lblSubtitulo.Font = new Font("Segoe UI", 9F);
-            lblSubtitulo.ForeColor = Color.FromArgb(148, 163, 184);
+            lblSubtitulo.ForeColor = Color.FromArgb(91, 100, 116);
             lblSubtitulo.Location = new Point(25, 48);
             lblSubtitulo.Name = "lblSubtitulo";
             lblSubtitulo.Size = new Size(462, 20);
@@ -80,7 +80,7 @@ namespace Northwind.WinForms
             // 
             lblTitulo.AutoSize = true;
             lblTitulo.Font = new Font("Segoe UI", 14F, FontStyle.Bold);
-            lblTitulo.ForeColor = Color.FromArgb(226, 232, 240);
+            lblTitulo.ForeColor = Color.FromArgb(22, 26, 36);
             lblTitulo.Location = new Point(23, 14);
             lblTitulo.Name = "lblTitulo";
             lblTitulo.Size = new Size(265, 32);
@@ -89,7 +89,7 @@ namespace Northwind.WinForms
             // 
             // panelToolbar
             // 
-            panelToolbar.BackColor = Color.FromArgb(33, 37, 58);
+            panelToolbar.BackColor = Color.FromArgb(255, 255, 255);
             panelToolbar.Controls.Add(btnCerrar);
             panelToolbar.Controls.Add(btnRefrescar);
             panelToolbar.Controls.Add(btnNuevo);
@@ -105,12 +105,12 @@ namespace Northwind.WinForms
             // btnCerrar
             // 
             btnCerrar.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            btnCerrar.BackColor = Color.FromArgb(26, 29, 39);
+            btnCerrar.BackColor = Color.FromArgb(241, 245, 249);
             btnCerrar.Cursor = Cursors.Hand;
-            btnCerrar.FlatAppearance.BorderColor = Color.FromArgb(46, 51, 80);
+            btnCerrar.FlatAppearance.BorderColor = Color.FromArgb(203, 213, 225);
             btnCerrar.FlatStyle = FlatStyle.Flat;
             btnCerrar.Font = new Font("Segoe UI", 9.5F);
-            btnCerrar.ForeColor = Color.FromArgb(148, 163, 184);
+            btnCerrar.ForeColor = Color.FromArgb(71, 85, 105);
             btnCerrar.Location = new Point(915, 16);
             btnCerrar.Name = "btnCerrar";
             btnCerrar.Size = new Size(85, 35);
@@ -121,12 +121,12 @@ namespace Northwind.WinForms
             // 
             // btnRefrescar
             // 
-            btnRefrescar.BackColor = Color.FromArgb(26, 29, 39);
+            btnRefrescar.BackColor = Color.FromArgb(241, 245, 249);
             btnRefrescar.Cursor = Cursors.Hand;
-            btnRefrescar.FlatAppearance.BorderColor = Color.FromArgb(46, 51, 80);
+            btnRefrescar.FlatAppearance.BorderColor = Color.FromArgb(203, 213, 225);
             btnRefrescar.FlatStyle = FlatStyle.Flat;
             btnRefrescar.Font = new Font("Segoe UI", 9.5F);
-            btnRefrescar.ForeColor = Color.FromArgb(226, 232, 240);
+            btnRefrescar.ForeColor = Color.FromArgb(71, 85, 105);
             btnRefrescar.Location = new Point(695, 16);
             btnRefrescar.Name = "btnRefrescar";
             btnRefrescar.Size = new Size(95, 35);
@@ -137,7 +137,7 @@ namespace Northwind.WinForms
             //
             // btnNuevo
             //
-            btnNuevo.BackColor = Color.FromArgb(99, 102, 241);
+            btnNuevo.BackColor = Color.FromArgb(44, 78, 130);
             btnNuevo.Cursor = Cursors.Hand;
             btnNuevo.FlatAppearance.BorderSize = 0;
             btnNuevo.FlatStyle = FlatStyle.Flat;
@@ -153,10 +153,10 @@ namespace Northwind.WinForms
             // 
             // txtBuscar
             // 
-            txtBuscar.BackColor = Color.FromArgb(26, 29, 39);
+            txtBuscar.BackColor = Color.FromArgb(248, 250, 252);
             txtBuscar.BorderStyle = BorderStyle.FixedSingle;
             txtBuscar.Font = new Font("Segoe UI", 10F);
-            txtBuscar.ForeColor = Color.FromArgb(226, 232, 240);
+            txtBuscar.ForeColor = Color.FromArgb(22, 26, 36);
             txtBuscar.Location = new Point(85, 19);
             txtBuscar.Name = "txtBuscar";
             txtBuscar.PlaceholderText = "Buscar por nombre, país...";
@@ -168,7 +168,7 @@ namespace Northwind.WinForms
             // 
             lblBuscar.AutoSize = true;
             lblBuscar.Font = new Font("Segoe UI", 9.5F, FontStyle.Bold);
-            lblBuscar.ForeColor = Color.FromArgb(226, 232, 240);
+            lblBuscar.ForeColor = Color.FromArgb(71, 85, 105);
             lblBuscar.Location = new Point(20, 23);
             lblBuscar.Name = "lblBuscar";
             lblBuscar.Size = new Size(64, 21);
@@ -180,39 +180,39 @@ namespace Northwind.WinForms
             dgvSuplidores.AllowUserToAddRows = false;
             dgvSuplidores.AllowUserToDeleteRows = false;
             dgvSuplidores.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dgvSuplidores.BackgroundColor = Color.FromArgb(15, 17, 23);
+            dgvSuplidores.BackgroundColor = Color.FromArgb(255, 255, 255);
             dgvSuplidores.BorderStyle = BorderStyle.None;
             dgvSuplidores.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
             dgvSuplidores.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = Color.FromArgb(26, 29, 39);
+            dataGridViewCellStyle1.BackColor = Color.FromArgb(241, 245, 249);
             dataGridViewCellStyle1.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
-            dataGridViewCellStyle1.ForeColor = Color.FromArgb(129, 140, 248);
+            dataGridViewCellStyle1.ForeColor = Color.FromArgb(30, 41, 59);
             dataGridViewCellStyle1.Padding = new Padding(10, 8, 10, 8);
-            dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(26, 29, 39);
-            dataGridViewCellStyle1.SelectionForeColor = Color.FromArgb(129, 140, 248);
+            dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(241, 245, 249);
+            dataGridViewCellStyle1.SelectionForeColor = Color.FromArgb(30, 41, 59);
             dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
             dgvSuplidores.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             dgvSuplidores.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = Color.FromArgb(21, 24, 34);
+            dataGridViewCellStyle2.BackColor = Color.FromArgb(255, 255, 255);
             dataGridViewCellStyle2.Font = new Font("Segoe UI", 9.5F);
-            dataGridViewCellStyle2.ForeColor = Color.FromArgb(226, 232, 240);
+            dataGridViewCellStyle2.ForeColor = Color.FromArgb(30, 41, 59);
             dataGridViewCellStyle2.Padding = new Padding(8, 6, 8, 6);
-            dataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(99, 102, 241);
-            dataGridViewCellStyle2.SelectionForeColor = Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(224, 231, 255);
+            dataGridViewCellStyle2.SelectionForeColor = Color.FromArgb(30, 41, 59);
             dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
             dgvSuplidores.DefaultCellStyle = dataGridViewCellStyle2;
             dgvSuplidores.Dock = DockStyle.Fill;
             dgvSuplidores.EnableHeadersVisualStyles = false;
-            dgvSuplidores.GridColor = Color.FromArgb(46, 51, 80);
+            dgvSuplidores.GridColor = Color.FromArgb(226, 232, 240);
             dgvSuplidores.Location = new Point(0, 153);
             dgvSuplidores.MultiSelect = false;
             dgvSuplidores.Name = "dgvSuplidores";
             dgvSuplidores.ReadOnly = true;
             dgvSuplidores.RowHeadersVisible = false;
             dgvSuplidores.RowHeadersWidth = 51;
-            dataGridViewCellStyle3.BackColor = Color.FromArgb(21, 24, 34);
+            dataGridViewCellStyle3.BackColor = Color.FromArgb(255, 255, 255);
             dgvSuplidores.RowsDefaultCellStyle = dataGridViewCellStyle3;
             dgvSuplidores.RowTemplate.Height = 36;
             dgvSuplidores.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
@@ -223,7 +223,7 @@ namespace Northwind.WinForms
             // 
             // panelFooter
             // 
-            panelFooter.BackColor = Color.FromArgb(26, 29, 39);
+            panelFooter.BackColor = Color.FromArgb(241, 245, 249);
             panelFooter.Controls.Add(lblTotalPaises);
             panelFooter.Controls.Add(lblTotalSuplidores);
             panelFooter.Dock = DockStyle.Bottom;
@@ -237,7 +237,7 @@ namespace Northwind.WinForms
             // 
             lblTotalPaises.AutoSize = true;
             lblTotalPaises.Font = new Font("Segoe UI", 9.5F, FontStyle.Bold);
-            lblTotalPaises.ForeColor = Color.FromArgb(148, 163, 184);
+            lblTotalPaises.ForeColor = Color.FromArgb(91, 100, 116);
             lblTotalPaises.Location = new Point(250, 14);
             lblTotalPaises.Name = "lblTotalPaises";
             lblTotalPaises.Size = new Size(160, 21);
@@ -248,7 +248,7 @@ namespace Northwind.WinForms
             // 
             lblTotalSuplidores.AutoSize = true;
             lblTotalSuplidores.Font = new Font("Segoe UI", 9.5F, FontStyle.Bold);
-            lblTotalSuplidores.ForeColor = Color.FromArgb(129, 140, 248);
+            lblTotalSuplidores.ForeColor = Color.FromArgb(44, 78, 130);
             lblTotalSuplidores.Location = new Point(25, 14);
             lblTotalSuplidores.Name = "lblTotalSuplidores";
             lblTotalSuplidores.Size = new Size(171, 21);
@@ -264,7 +264,7 @@ namespace Northwind.WinForms
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.FromArgb(15, 17, 23);
+            BackColor = Color.FromArgb(245, 247, 251);
             ClientSize = new Size(1020, 630);
             Controls.Add(dgvSuplidores);
             Controls.Add(panelFooter);
