@@ -1,4 +1,4 @@
-﻿namespace Northwind.WinForms
+namespace Northwind.WinForms
 {
     partial class Form1
     {
@@ -62,15 +62,14 @@
             panel3.Name = "panel3";
             panel3.Size = new Size(867, 514);
             panel3.TabIndex = 2;
-            // 
-            // button1
-            // 
+            button1.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             button1.Location = new Point(221, 198);
             button1.Name = "button1";
-            button1.Size = new Size(75, 23);
+            button1.Size = new Size(130, 36);
             button1.TabIndex = 0;
-            button1.Text = "Prueba";
+            button1.Text = "📁 Categorías";
             button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
             // 
             // Form1
             // 
