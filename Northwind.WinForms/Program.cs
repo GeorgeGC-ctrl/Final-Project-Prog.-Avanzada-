@@ -34,6 +34,8 @@ namespace Northwind.WinForms
             services.AddInfrastructure(configuration);
             services.AddTransient<Form1>();
             services.AddTransient<FrmReporteInventario>();
+            services.AddTransient<FrmCategoriaLista>();
+            services.AddTransient<FrmCategoriaForm>();
 
             var serviceProvider = services.BuildServiceProvider();
 
