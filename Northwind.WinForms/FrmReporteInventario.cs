@@ -9,6 +9,8 @@ namespace Northwind.WinForms
     {
         private readonly GetProducts _getProducts;
         private readonly GetAllCategories _getAllCategories;
+        private bool _inicializando = true;
+        private bool _cargandoReporte = false;
 
         public record FilaReporteInventario(
             string Categoria,
@@ -26,7 +28,16 @@ namespace Northwind.WinForms
 
         private async void FrmReporteInventario_Load(object sender, EventArgs e)
         {
-            await CargarFiltrosCategoriasAsync();
+            try
+            {
+                _inicializando = true;
+                await CargarFiltrosCategoriasAsync();
+            }
+            finally
+            {
+                _inicializando = false;
+            }
+
             await CargarReporteAsync();
         }
 
@@ -61,6 +72,11 @@ namespace Northwind.WinForms
 
         private async Task CargarReporteAsync()
         {
+            if (_cargandoReporte)
+                return;
+
+            _cargandoReporte = true;
+
             try
             {
                 btnGenerar.Enabled = false;
@@ -70,6 +86,10 @@ namespace Northwind.WinForms
                 if (cmbCategorias.SelectedValue is int catId)
                 {
                     categoriaSeleccionada = catId;
+                }
+                else if (cmbCategorias.SelectedItem is KeyValuePair<int?, string> pair)
+                {
+                    categoriaSeleccionada = pair.Key;
                 }
 
                 var result = await _getProducts.EjecutarAsync(categoriaSeleccionada);
@@ -117,6 +137,7 @@ namespace Northwind.WinForms
             }
             finally
             {
+                _cargandoReporte = false;
                 btnGenerar.Enabled = true;
                 btnGenerar.Text = "Actualizar";
             }
@@ -124,11 +145,17 @@ namespace Northwind.WinForms
 
         private async void btnGenerar_Click(object sender, EventArgs e)
         {
+            if (_inicializando)
+                return;
+
             await CargarReporteAsync();
         }
 
         private async void cmbCategorias_SelectedIndexChanged(object sender, EventArgs e)
         {
+            if (_inicializando)
+                return;
+
             if (cmbCategorias.SelectedIndex >= 0)
             {
                 await CargarReporteAsync();

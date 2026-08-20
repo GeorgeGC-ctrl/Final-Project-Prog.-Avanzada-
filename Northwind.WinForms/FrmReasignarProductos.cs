@@ -9,6 +9,7 @@ namespace Northwind.WinForms
         private readonly GetSuppliers _getSuppliers;
         private readonly ReassignSupplier _reassignSupplier;
         private readonly GetProducts _getProducts;
+        private bool _inicializando = true;
 
         public FrmReasignarProductos(GetSuppliers getSuppliers, ReassignSupplier reassignSupplier, GetProducts getProducts)
         {
@@ -20,7 +21,15 @@ namespace Northwind.WinForms
 
         private async void FrmReasignarProductos_Load(object sender, EventArgs e)
         {
-            await CargarSuplidoresAsync();
+            try
+            {
+                _inicializando = true;
+                await CargarSuplidoresAsync();
+            }
+            finally
+            {
+                _inicializando = false;
+            }
         }
 
         private async Task CargarSuplidoresAsync()
@@ -57,6 +66,9 @@ namespace Northwind.WinForms
 
         private async void cmbOrigen_SelectedIndexChanged(object sender, EventArgs e)
         {
+            if (_inicializando)
+                return;
+
             if (cmbOrigen.SelectedValue is int suplidorId)
             {
                 try
