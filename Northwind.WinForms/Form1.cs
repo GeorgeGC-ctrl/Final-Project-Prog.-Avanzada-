@@ -12,53 +12,79 @@ namespace Northwind.WinForms
             _serviceProvider = serviceProvider;
         }
 
-        private void AbrirFormulario<T>() where T : Form
+        private FrmPrincipal? ObtenerFormularioPrincipal()
         {
-            if (MdiParent is FrmPrincipal principal)
-            {
-                foreach (Form hijo in principal.MdiChildren)
-                {
-                    if (hijo is T)
-                    {
-                        hijo.Activate();
-                        return;
-                    }
-                }
-
-                var form = _serviceProvider.GetRequiredService<T>();
-                form.MdiParent = principal;
-                form.Show();
-            }
-            else
-            {
-                var form = _serviceProvider.GetRequiredService<T>();
-                form.Show();
-            }
+            return TopLevelControl as FrmPrincipal ?? ParentForm as FrmPrincipal;
         }
 
         private void btnAccCategorias_Click(object sender, EventArgs e)
         {
-            AbrirFormulario<FrmCategoriaLista>();
+            var principal = ObtenerFormularioPrincipal();
+            if (principal != null)
+            {
+                principal.btnNavCategorias_Click(sender, e);
+            }
+            else
+            {
+                var form = _serviceProvider.GetRequiredService<FrmCategoriaLista>();
+                form.ShowDialog();
+            }
         }
 
         private void btnAccSuplidores_Click(object sender, EventArgs e)
         {
-            AbrirFormulario<FrmSuplidorLista>();
+            var principal = ObtenerFormularioPrincipal();
+            if (principal != null)
+            {
+                principal.btnNavSuplidores_Click(sender, e);
+            }
+            else
+            {
+                var form = _serviceProvider.GetRequiredService<FrmSuplidorLista>();
+                form.ShowDialog();
+            }
         }
 
         private void btnAccPrecios_Click(object sender, EventArgs e)
         {
-            AbrirFormulario<FrmIncrementoPrecios>();
+            var principal = ObtenerFormularioPrincipal();
+            if (principal != null)
+            {
+                principal.btnNavIncrementoPrecios_Click(sender, e);
+            }
+            else
+            {
+                var form = _serviceProvider.GetRequiredService<FrmIncrementoPrecios>();
+                form.ShowDialog();
+            }
         }
 
         private void btnAccReasignar_Click(object sender, EventArgs e)
         {
-            AbrirFormulario<FrmReasignarProductos>();
+            var principal = ObtenerFormularioPrincipal();
+            if (principal != null)
+            {
+                principal.btnNavReasignarProductos_Click(sender, e);
+            }
+            else
+            {
+                var form = _serviceProvider.GetRequiredService<FrmReasignarProductos>();
+                form.ShowDialog();
+            }
         }
 
         private void btnAccReporte_Click(object sender, EventArgs e)
         {
-            AbrirFormulario<FrmReporteInventario>();
+            var principal = ObtenerFormularioPrincipal();
+            if (principal != null)
+            {
+                principal.btnNavReporteInventario_Click(sender, e);
+            }
+            else
+            {
+                var form = _serviceProvider.GetRequiredService<FrmReporteInventario>();
+                form.ShowDialog();
+            }
         }
     }
 }
