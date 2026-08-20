@@ -37,9 +37,29 @@ namespace Northwind.WinForms
             AbrirFormularioHijo(_serviceProvider.GetRequiredService<Form1>());
         }
 
+        private void mnuCategorias_Click(object sender, EventArgs e)
+        {
+            AbrirFormularioHijo(_serviceProvider.GetRequiredService<FrmCategoriaLista>());
+        }
+
+        private void mnuSuplidores_Click(object sender, EventArgs e)
+        {
+            AbrirFormularioHijo(_serviceProvider.GetRequiredService<FrmSuplidorLista>());
+        }
+
         private void mnuIncrementoPrecios_Click(object sender, EventArgs e)
         {
             AbrirFormularioHijo(_serviceProvider.GetRequiredService<FrmIncrementoPrecios>());
+        }
+
+        private void mnuReasignarProductos_Click(object sender, EventArgs e)
+        {
+            AbrirFormularioHijo(_serviceProvider.GetRequiredService<FrmReasignarProductos>());
+        }
+
+        private void mnuReporteInventario_Click(object sender, EventArgs e)
+        {
+            AbrirFormularioHijo(_serviceProvider.GetRequiredService<FrmReporteInventario>());
         }
 
         private void mnuSalir_Click(object sender, EventArgs e)

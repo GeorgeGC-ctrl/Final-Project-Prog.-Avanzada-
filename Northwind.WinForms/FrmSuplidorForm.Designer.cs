@@ -30,6 +30,7 @@ namespace Northwind.WinForms
         {
             components = new System.ComponentModel.Container();
             panelHeader = new Panel();
+            lblEyebrow = new Label();
             lblSubtitulo = new Label();
             lblTitulo = new Label();
             panelCard = new Panel();
@@ -57,22 +58,34 @@ namespace Northwind.WinForms
             // 
             // panelHeader
             // 
-            panelHeader.BackColor = Color.FromArgb(26, 29, 39);
+            panelHeader.BackColor = Color.White;
+            panelHeader.Controls.Add(lblEyebrow);
             panelHeader.Controls.Add(lblSubtitulo);
             panelHeader.Controls.Add(lblTitulo);
             panelHeader.Dock = DockStyle.Top;
             panelHeader.Location = new Point(0, 0);
             panelHeader.Name = "panelHeader";
-            panelHeader.Padding = new Padding(25, 18, 25, 15);
-            panelHeader.Size = new Size(560, 85);
+            panelHeader.Padding = new Padding(25, 16, 25, 14);
+            panelHeader.Size = new Size(560, 90);
             panelHeader.TabIndex = 0;
+            // 
+            // lblEyebrow
+            // 
+            lblEyebrow.AutoSize = true;
+            lblEyebrow.Font = new Font("Segoe UI", 8F, FontStyle.Bold);
+            lblEyebrow.ForeColor = Color.FromArgb(136, 144, 160);
+            lblEyebrow.Location = new Point(25, 12);
+            lblEyebrow.Name = "lblEyebrow";
+            lblEyebrow.Size = new Size(181, 19);
+            lblEyebrow.TabIndex = 2;
+            lblEyebrow.Text = "REGISTRO DE PROVEEDOR";
             // 
             // lblSubtitulo
             // 
             lblSubtitulo.AutoSize = true;
             lblSubtitulo.Font = new Font("Segoe UI", 9F);
-            lblSubtitulo.ForeColor = Color.FromArgb(148, 163, 184);
-            lblSubtitulo.Location = new Point(25, 48);
+            lblSubtitulo.ForeColor = Color.FromArgb(91, 100, 116);
+            lblSubtitulo.Location = new Point(25, 58);
             lblSubtitulo.Name = "lblSubtitulo";
             lblSubtitulo.Size = new Size(318, 20);
             lblSubtitulo.TabIndex = 1;
@@ -81,17 +94,18 @@ namespace Northwind.WinForms
             // lblTitulo
             // 
             lblTitulo.AutoSize = true;
-            lblTitulo.Font = new Font("Segoe UI", 14F, FontStyle.Bold);
-            lblTitulo.ForeColor = Color.FromArgb(226, 232, 240);
-            lblTitulo.Location = new Point(23, 14);
+            lblTitulo.Font = new Font("Segoe UI", 13.5F, FontStyle.Bold);
+            lblTitulo.ForeColor = Color.FromArgb(22, 26, 36);
+            lblTitulo.Location = new Point(23, 29);
             lblTitulo.Name = "lblTitulo";
-            lblTitulo.Size = new Size(207, 32);
+            lblTitulo.Size = new Size(198, 31);
             lblTitulo.TabIndex = 0;
             lblTitulo.Text = "Registro Suplidor";
             // 
             // panelCard
             // 
-            panelCard.BackColor = Color.FromArgb(33, 37, 58);
+            panelCard.BackColor = Color.White;
+            panelCard.BorderStyle = BorderStyle.FixedSingle;
             panelCard.Controls.Add(txtPhone);
             panelCard.Controls.Add(lblPhone);
             panelCard.Controls.Add(txtCity);
@@ -104,7 +118,7 @@ namespace Northwind.WinForms
             panelCard.Controls.Add(lblContactName);
             panelCard.Controls.Add(txtCompanyName);
             panelCard.Controls.Add(lblCompanyName);
-            panelCard.Location = new Point(25, 105);
+            panelCard.Location = new Point(25, 108);
             panelCard.Name = "panelCard";
             panelCard.Padding = new Padding(20);
             panelCard.Size = new Size(510, 390);
@@ -112,10 +126,10 @@ namespace Northwind.WinForms
             // 
             // txtPhone
             // 
-            txtPhone.BackColor = Color.FromArgb(26, 29, 39);
+            txtPhone.BackColor = Color.White;
             txtPhone.BorderStyle = BorderStyle.FixedSingle;
             txtPhone.Font = new Font("Segoe UI", 10F);
-            txtPhone.ForeColor = Color.FromArgb(226, 232, 240);
+            txtPhone.ForeColor = Color.FromArgb(22, 26, 36);
             txtPhone.Location = new Point(260, 325);
             txtPhone.MaxLength = 24;
             txtPhone.Name = "txtPhone";
@@ -126,7 +140,7 @@ namespace Northwind.WinForms
             // 
             lblPhone.AutoSize = true;
             lblPhone.Font = new Font("Segoe UI", 9.5F, FontStyle.Bold);
-            lblPhone.ForeColor = Color.FromArgb(226, 232, 240);
+            lblPhone.ForeColor = Color.FromArgb(22, 26, 36);
             lblPhone.Location = new Point(260, 298);
             lblPhone.Name = "lblPhone";
             lblPhone.Size = new Size(77, 21);
@@ -135,10 +149,10 @@ namespace Northwind.WinForms
             // 
             // txtCity
             // 
-            txtCity.BackColor = Color.FromArgb(26, 29, 39);
+            txtCity.BackColor = Color.White;
             txtCity.BorderStyle = BorderStyle.FixedSingle;
             txtCity.Font = new Font("Segoe UI", 10F);
-            txtCity.ForeColor = Color.FromArgb(226, 232, 240);
+            txtCity.ForeColor = Color.FromArgb(22, 26, 36);
             txtCity.Location = new Point(20, 325);
             txtCity.MaxLength = 15;
             txtCity.Name = "txtCity";
@@ -149,7 +163,7 @@ namespace Northwind.WinForms
             // 
             lblCity.AutoSize = true;
             lblCity.Font = new Font("Segoe UI", 9.5F, FontStyle.Bold);
-            lblCity.ForeColor = Color.FromArgb(226, 232, 240);
+            lblCity.ForeColor = Color.FromArgb(22, 26, 36);
             lblCity.Location = new Point(20, 298);
             lblCity.Name = "lblCity";
             lblCity.Size = new Size(64, 21);
@@ -158,10 +172,10 @@ namespace Northwind.WinForms
             // 
             // txtCountry
             // 
-            txtCountry.BackColor = Color.FromArgb(26, 29, 39);
+            txtCountry.BackColor = Color.White;
             txtCountry.BorderStyle = BorderStyle.FixedSingle;
             txtCountry.Font = new Font("Segoe UI", 10F);
-            txtCountry.ForeColor = Color.FromArgb(226, 232, 240);
+            txtCountry.ForeColor = Color.FromArgb(22, 26, 36);
             txtCountry.Location = new Point(20, 255);
             txtCountry.MaxLength = 15;
             txtCountry.Name = "txtCountry";
@@ -172,7 +186,7 @@ namespace Northwind.WinForms
             // 
             lblCountry.AutoSize = true;
             lblCountry.Font = new Font("Segoe UI", 9.5F, FontStyle.Bold);
-            lblCountry.ForeColor = Color.FromArgb(226, 232, 240);
+            lblCountry.ForeColor = Color.FromArgb(22, 26, 36);
             lblCountry.Location = new Point(20, 228);
             lblCountry.Name = "lblCountry";
             lblCountry.Size = new Size(41, 21);
@@ -181,10 +195,10 @@ namespace Northwind.WinForms
             // 
             // txtContactTitle
             // 
-            txtContactTitle.BackColor = Color.FromArgb(26, 29, 39);
+            txtContactTitle.BackColor = Color.White;
             txtContactTitle.BorderStyle = BorderStyle.FixedSingle;
             txtContactTitle.Font = new Font("Segoe UI", 10F);
-            txtContactTitle.ForeColor = Color.FromArgb(226, 232, 240);
+            txtContactTitle.ForeColor = Color.FromArgb(22, 26, 36);
             txtContactTitle.Location = new Point(20, 185);
             txtContactTitle.MaxLength = 30;
             txtContactTitle.Name = "txtContactTitle";
@@ -195,7 +209,7 @@ namespace Northwind.WinForms
             // 
             lblContactTitle.AutoSize = true;
             lblContactTitle.Font = new Font("Segoe UI", 9.5F, FontStyle.Bold);
-            lblContactTitle.ForeColor = Color.FromArgb(226, 232, 240);
+            lblContactTitle.ForeColor = Color.FromArgb(22, 26, 36);
             lblContactTitle.Location = new Point(20, 158);
             lblContactTitle.Name = "lblContactTitle";
             lblContactTitle.Size = new Size(150, 21);
@@ -204,10 +218,10 @@ namespace Northwind.WinForms
             // 
             // txtContactName
             // 
-            txtContactName.BackColor = Color.FromArgb(26, 29, 39);
+            txtContactName.BackColor = Color.White;
             txtContactName.BorderStyle = BorderStyle.FixedSingle;
             txtContactName.Font = new Font("Segoe UI", 10F);
-            txtContactName.ForeColor = Color.FromArgb(226, 232, 240);
+            txtContactName.ForeColor = Color.FromArgb(22, 26, 36);
             txtContactName.Location = new Point(20, 115);
             txtContactName.MaxLength = 30;
             txtContactName.Name = "txtContactName";
@@ -218,7 +232,7 @@ namespace Northwind.WinForms
             // 
             lblContactName.AutoSize = true;
             lblContactName.Font = new Font("Segoe UI", 9.5F, FontStyle.Bold);
-            lblContactName.ForeColor = Color.FromArgb(226, 232, 240);
+            lblContactName.ForeColor = Color.FromArgb(22, 26, 36);
             lblContactName.Location = new Point(20, 88);
             lblContactName.Name = "lblContactName";
             lblContactName.Size = new Size(181, 21);
@@ -227,10 +241,10 @@ namespace Northwind.WinForms
             // 
             // txtCompanyName
             // 
-            txtCompanyName.BackColor = Color.FromArgb(26, 29, 39);
+            txtCompanyName.BackColor = Color.White;
             txtCompanyName.BorderStyle = BorderStyle.FixedSingle;
             txtCompanyName.Font = new Font("Segoe UI", 10F);
-            txtCompanyName.ForeColor = Color.FromArgb(226, 232, 240);
+            txtCompanyName.ForeColor = Color.FromArgb(22, 26, 36);
             txtCompanyName.Location = new Point(20, 48);
             txtCompanyName.MaxLength = 40;
             txtCompanyName.Name = "txtCompanyName";
@@ -241,7 +255,7 @@ namespace Northwind.WinForms
             // 
             lblCompanyName.AutoSize = true;
             lblCompanyName.Font = new Font("Segoe UI", 9.5F, FontStyle.Bold);
-            lblCompanyName.ForeColor = Color.FromArgb(226, 232, 240);
+            lblCompanyName.ForeColor = Color.FromArgb(22, 26, 36);
             lblCompanyName.Location = new Point(20, 20);
             lblCompanyName.Name = "lblCompanyName";
             lblCompanyName.Size = new Size(207, 21);
@@ -250,25 +264,25 @@ namespace Northwind.WinForms
             // 
             // panelActions
             // 
-            panelActions.BackColor = Color.FromArgb(15, 17, 23);
+            panelActions.BackColor = Color.FromArgb(238, 241, 247);
             panelActions.Controls.Add(btnGuardar);
             panelActions.Controls.Add(btnCancelar);
             panelActions.Dock = DockStyle.Bottom;
-            panelActions.Location = new Point(0, 515);
+            panelActions.Location = new Point(0, 518);
             panelActions.Name = "panelActions";
-            panelActions.Padding = new Padding(25, 10, 25, 15);
-            panelActions.Size = new Size(560, 75);
+            panelActions.Padding = new Padding(25, 10, 25, 14);
+            panelActions.Size = new Size(560, 72);
             panelActions.TabIndex = 2;
             // 
             // btnGuardar
             // 
-            btnGuardar.BackColor = Color.FromArgb(99, 102, 241);
+            btnGuardar.BackColor = Color.FromArgb(44, 78, 130);
             btnGuardar.Cursor = Cursors.Hand;
             btnGuardar.FlatAppearance.BorderSize = 0;
             btnGuardar.FlatStyle = FlatStyle.Flat;
             btnGuardar.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
             btnGuardar.ForeColor = Color.White;
-            btnGuardar.Location = new Point(275, 15);
+            btnGuardar.Location = new Point(275, 14);
             btnGuardar.Name = "btnGuardar";
             btnGuardar.Size = new Size(160, 42);
             btnGuardar.TabIndex = 0;
@@ -278,13 +292,13 @@ namespace Northwind.WinForms
             // 
             // btnCancelar
             // 
-            btnCancelar.BackColor = Color.FromArgb(33, 37, 58);
+            btnCancelar.BackColor = Color.White;
             btnCancelar.Cursor = Cursors.Hand;
-            btnCancelar.FlatAppearance.BorderColor = Color.FromArgb(46, 51, 80);
+            btnCancelar.FlatAppearance.BorderColor = Color.FromArgb(227, 231, 239);
             btnCancelar.FlatStyle = FlatStyle.Flat;
-            btnCancelar.Font = new Font("Segoe UI", 10F);
-            btnCancelar.ForeColor = Color.FromArgb(148, 163, 184);
-            btnCancelar.Location = new Point(445, 15);
+            btnCancelar.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
+            btnCancelar.ForeColor = Color.FromArgb(22, 26, 36);
+            btnCancelar.Location = new Point(445, 14);
             btnCancelar.Name = "btnCancelar";
             btnCancelar.Size = new Size(90, 42);
             btnCancelar.TabIndex = 1;
@@ -301,7 +315,7 @@ namespace Northwind.WinForms
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.FromArgb(15, 17, 23);
+            BackColor = Color.FromArgb(245, 247, 251);
             ClientSize = new Size(560, 590);
             Controls.Add(panelActions);
             Controls.Add(panelCard);
@@ -324,6 +338,7 @@ namespace Northwind.WinForms
         #endregion
 
         private Panel panelHeader;
+        private Label lblEyebrow;
         private Label lblTitulo;
         private Label lblSubtitulo;
         private Panel panelCard;
