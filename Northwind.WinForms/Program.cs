@@ -35,6 +35,8 @@ namespace Northwind.WinForms
             services.AddTransient<Form1>();
             services.AddTransient<FrmCategoriaLista>();
             services.AddTransient<FrmCategoriaForm>();
+            services.AddTransient<FrmIncrementoPrecios>();
+            services.AddTransient<FrmPrincipal>();
 
             var serviceProvider = services.BuildServiceProvider();
 
@@ -42,7 +44,7 @@ namespace Northwind.WinForms
             {
                 Log.Information("=== Iniciando aplicaci�n Northwind ===");
 
-                var formPrincipal = serviceProvider.GetRequiredService<Form1>();
+                var formPrincipal = serviceProvider.GetRequiredService<FrmPrincipal>();
                 System.Windows.Forms.Application.Run(formPrincipal);
             }
             catch (Exception ex)
