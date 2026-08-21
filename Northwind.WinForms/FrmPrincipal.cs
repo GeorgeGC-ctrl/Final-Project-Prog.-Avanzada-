@@ -95,27 +95,27 @@ namespace Northwind.WinForms
             MostrarModulo("Productos", () => _serviceProvider.GetRequiredService<FrmProductoLista>(), btnNavProductos);
         }
 
-        private void btnNavInicio_Click(object sender, EventArgs e) => MostrarInicio(btnNavInicio);
+        private void btnNavInicio_Click(object? sender, EventArgs e) => MostrarInicio(btnNavInicio);
 
-        private void btnNavCategorias_Click(object sender, EventArgs e) =>
+        private void btnNavCategorias_Click(object? sender, EventArgs e) =>
             MostrarModulo("Categorías", () => _serviceProvider.GetRequiredService<FrmCategoriaLista>(), btnNavCategorias);
 
-        private void btnNavProductos_Click(object sender, EventArgs e) =>
+        private void btnNavProductos_Click(object? sender, EventArgs e) =>
             MostrarModulo("Productos", () => _serviceProvider.GetRequiredService<FrmProductoLista>(), btnNavProductos);
 
-        private void btnNavSuplidores_Click(object sender, EventArgs e) =>
+        private void btnNavSuplidores_Click(object? sender, EventArgs e) =>
             MostrarModulo("Suplidores", () => _serviceProvider.GetRequiredService<FrmSuplidorLista>(), btnNavSuplidores);
 
-        private void btnNavIncremento_Click(object sender, EventArgs e) =>
+        private void btnNavIncremento_Click(object? sender, EventArgs e) =>
             MostrarModulo("Incremento de Precios", () => _serviceProvider.GetRequiredService<FrmIncrementoPrecios>(), btnNavIncremento);
 
-        private void btnNavReasignar_Click(object sender, EventArgs e) =>
+        private void btnNavReasignar_Click(object? sender, EventArgs e) =>
             MostrarModulo("Reasignar Productos", () => _serviceProvider.GetRequiredService<FrmReasignarProductos>(), btnNavReasignar);
 
-        private void btnNavReporte_Click(object sender, EventArgs e) =>
+        private void btnNavReporte_Click(object? sender, EventArgs e) =>
             MostrarModulo("Reporte de Inventario", () => _serviceProvider.GetRequiredService<FrmReporteInventario>(), btnNavReporte);
 
-        private void btnNavSalir_Click(object sender, EventArgs e) => Close();
+        private void btnNavSalir_Click(object? sender, EventArgs e) => Close();
 
         private void MostrarInicio(Button botonNav)
         {
