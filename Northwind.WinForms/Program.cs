@@ -40,6 +40,8 @@ namespace Northwind.WinForms
             services.AddTransient<FrmCategoriaLista>();
             services.AddTransient<FrmCategoriaForm>();
             services.AddTransient<FrmIncrementoPrecios>();
+            services.AddTransient<FrmProductoLista>();
+            services.AddTransient<FrmProductoForm>();
             services.AddTransient<FrmPrincipal>();
 
             var serviceProvider = services.BuildServiceProvider();

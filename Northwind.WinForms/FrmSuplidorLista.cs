@@ -11,6 +11,8 @@ namespace Northwind.WinForms
         private readonly IServiceProvider _serviceProvider;
 
         private List<SuplidorDto> _suplidoresCompletos = new();
+        private DataGridViewButtonColumn? _colEditar;
+        private DataGridViewButtonColumn? _colEliminar;
 
         public FrmSuplidorLista(
             GetSuppliers getSuppliers,
@@ -83,6 +85,38 @@ namespace Northwind.WinForms
             if (dgvSuplidores.Columns["Phone"] != null)
                 dgvSuplidores.Columns["Phone"].HeaderText = "Teléfono";
 
+            if (_colEditar is null || !dgvSuplidores.Columns.Contains(_colEditar))
+            {
+                _colEditar = new DataGridViewButtonColumn
+                {
+                    Name = "colEditar",
+                    HeaderText = "",
+                    Text = "✏️ Editar",
+                    UseColumnTextForButtonValue = true,
+                    ReadOnly = true,
+                    FillWeight = 45F,
+                    Resizable = DataGridViewTriState.False,
+                    SortMode = DataGridViewColumnSortMode.NotSortable
+                };
+                dgvSuplidores.Columns.Add(_colEditar);
+            }
+
+            if (_colEliminar is null || !dgvSuplidores.Columns.Contains(_colEliminar))
+            {
+                _colEliminar = new DataGridViewButtonColumn
+                {
+                    Name = "colEliminar",
+                    HeaderText = "",
+                    Text = "🗑️ Eliminar",
+                    UseColumnTextForButtonValue = true,
+                    ReadOnly = true,
+                    FillWeight = 45F,
+                    Resizable = DataGridViewTriState.False,
+                    SortMode = DataGridViewColumnSortMode.NotSortable
+                };
+                dgvSuplidores.Columns.Add(_colEliminar);
+            }
+
             int total = filtrados.Count;
             int paises = filtrados.Where(s => !string.IsNullOrWhiteSpace(s.Country)).Select(s => s.Country).Distinct().Count();
 
@@ -111,16 +145,28 @@ namespace Northwind.WinForms
             }
         }
 
-        private async void btnEditar_Click(object sender, EventArgs e)
-        {
-            await EditarSeleccionadoAsync();
-        }
-
         private async void dgvSuplidores_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0)
             {
                 await EditarSeleccionadoAsync();
+            }
+        }
+
+        private async void dgvSuplidores_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex < 0)
+                return;
+
+            dgvSuplidores.CurrentCell = dgvSuplidores.Rows[e.RowIndex].Cells[0];
+
+            if (_colEditar is not null && e.ColumnIndex == _colEditar.Index)
+            {
+                await EditarSeleccionadoAsync();
+            }
+            else if (_colEliminar is not null && e.ColumnIndex == _colEliminar.Index)
+            {
+                await EliminarSeleccionadoAsync();
             }
         }
 
@@ -142,7 +188,7 @@ namespace Northwind.WinForms
             }
         }
 
-        private async void btnEliminar_Click(object sender, EventArgs e)
+        private async Task EliminarSeleccionadoAsync()
         {
             if (dgvSuplidores.CurrentRow?.DataBoundItem is not SuplidorDto suplidor)
             {
@@ -161,7 +207,7 @@ namespace Northwind.WinForms
 
             try
             {
-                btnEliminar.Enabled = false;
+                this.Cursor = Cursors.WaitCursor;
 
                 var result = await _deleteSupplier.EjecutarAsync(suplidor.SupplierId);
                 if (result.IsSuccess)
@@ -180,7 +226,7 @@ namespace Northwind.WinForms
             }
             finally
             {
-                btnEliminar.Enabled = true;
+                this.Cursor = Cursors.Default;
             }
         }
 

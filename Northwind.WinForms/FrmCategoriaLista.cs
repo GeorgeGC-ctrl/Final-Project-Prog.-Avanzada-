@@ -126,16 +126,28 @@ namespace Northwind.WinForms
             }
         }
 
-        private async void btnEditar_Click(object sender, EventArgs e)
-        {
-            await EditarSeleccionadoAsync();
-        }
-
         private async void dgvCategorias_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0)
             {
                 await EditarSeleccionadoAsync();
+            }
+        }
+
+        private async void dgvCategorias_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex < 0)
+                return;
+
+            dgvCategorias.CurrentCell = dgvCategorias.Rows[e.RowIndex].Cells[0];
+
+            if (e.ColumnIndex == colEditar.Index)
+            {
+                await EditarSeleccionadoAsync();
+            }
+            else if (e.ColumnIndex == colEliminar.Index)
+            {
+                await EliminarSeleccionadoAsync();
             }
         }
 
@@ -172,7 +184,7 @@ namespace Northwind.WinForms
             }
         }
 
-        private async void btnEliminar_Click(object sender, EventArgs e)
+        private async Task EliminarSeleccionadoAsync()
         {
             if (dgvCategorias.CurrentRow?.DataBoundItem is not CategoriaDto seleccionada)
             {
