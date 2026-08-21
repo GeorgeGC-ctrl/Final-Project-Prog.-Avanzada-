@@ -1,4 +1,4 @@
-namespace Northwind.WinForms
+﻿namespace Northwind.WinForms
 {
     partial class FrmReasignarProductos
     {
@@ -30,11 +30,9 @@ namespace Northwind.WinForms
         {
             components = new System.ComponentModel.Container();
             panelHeader = new Panel();
-            lblEyebrow = new Label();
             lblSubtitulo = new Label();
             lblTitulo = new Label();
             panelCard = new Panel();
-            panelInfo = new Panel();
             lblInfoProductos = new Label();
             panelAviso = new Panel();
             lblAviso = new Label();
@@ -48,7 +46,6 @@ namespace Northwind.WinForms
             errorProvider = new ErrorProvider(components);
             panelHeader.SuspendLayout();
             panelCard.SuspendLayout();
-            panelInfo.SuspendLayout();
             panelAviso.SuspendLayout();
             panelActions.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)errorProvider).BeginInit();
@@ -56,34 +53,22 @@ namespace Northwind.WinForms
             // 
             // panelHeader
             // 
-            panelHeader.BackColor = Color.White;
-            panelHeader.Controls.Add(lblEyebrow);
+            panelHeader.BackColor = Color.FromArgb(255, 255, 255);
             panelHeader.Controls.Add(lblSubtitulo);
             panelHeader.Controls.Add(lblTitulo);
             panelHeader.Dock = DockStyle.Top;
             panelHeader.Location = new Point(0, 0);
             panelHeader.Name = "panelHeader";
-            panelHeader.Padding = new Padding(25, 16, 25, 14);
-            panelHeader.Size = new Size(580, 90);
+            panelHeader.Padding = new Padding(25, 18, 25, 15);
+            panelHeader.Size = new Size(580, 85);
             panelHeader.TabIndex = 0;
-            // 
-            // lblEyebrow
-            // 
-            lblEyebrow.AutoSize = true;
-            lblEyebrow.Font = new Font("Segoe UI", 8F, FontStyle.Bold);
-            lblEyebrow.ForeColor = Color.FromArgb(136, 144, 160);
-            lblEyebrow.Location = new Point(25, 12);
-            lblEyebrow.Name = "lblEyebrow";
-            lblEyebrow.Size = new Size(183, 19);
-            lblEyebrow.TabIndex = 2;
-            lblEyebrow.Text = "OPERACIONES DE CATÁLOGO";
             // 
             // lblSubtitulo
             // 
             lblSubtitulo.AutoSize = true;
             lblSubtitulo.Font = new Font("Segoe UI", 9F);
             lblSubtitulo.ForeColor = Color.FromArgb(91, 100, 116);
-            lblSubtitulo.Location = new Point(25, 58);
+            lblSubtitulo.Location = new Point(25, 48);
             lblSubtitulo.Name = "lblSubtitulo";
             lblSubtitulo.Size = new Size(337, 20);
             lblSubtitulo.TabIndex = 1;
@@ -92,58 +77,47 @@ namespace Northwind.WinForms
             // lblTitulo
             // 
             lblTitulo.AutoSize = true;
-            lblTitulo.Font = new Font("Segoe UI", 13.5F, FontStyle.Bold);
+            lblTitulo.Font = new Font("Segoe UI", 14F, FontStyle.Bold);
             lblTitulo.ForeColor = Color.FromArgb(22, 26, 36);
-            lblTitulo.Location = new Point(23, 29);
+            lblTitulo.Location = new Point(23, 14);
             lblTitulo.Name = "lblTitulo";
-            lblTitulo.Size = new Size(372, 31);
+            lblTitulo.Size = new Size(385, 32);
             lblTitulo.TabIndex = 0;
             lblTitulo.Text = "Reasignar Productos de Suplidor";
             // 
             // panelCard
             // 
-            panelCard.BackColor = Color.White;
-            panelCard.BorderStyle = BorderStyle.FixedSingle;
-            panelCard.Controls.Add(panelInfo);
+            panelCard.BackColor = Color.FromArgb(255, 255, 255);
+            panelCard.Controls.Add(lblInfoProductos);
             panelCard.Controls.Add(panelAviso);
             panelCard.Controls.Add(cmbDestino);
             panelCard.Controls.Add(lblDestino);
             panelCard.Controls.Add(cmbOrigen);
             panelCard.Controls.Add(lblOrigen);
-            panelCard.Location = new Point(25, 108);
+            panelCard.Location = new Point(25, 105);
             panelCard.Name = "panelCard";
             panelCard.Padding = new Padding(20);
-            panelCard.Size = new Size(530, 320);
+            panelCard.Size = new Size(530, 310);
             panelCard.TabIndex = 1;
-            // 
-            // panelInfo
-            // 
-            panelInfo.BackColor = Color.FromArgb(231, 237, 246);
-            panelInfo.Controls.Add(lblInfoProductos);
-            panelInfo.Location = new Point(20, 96);
-            panelInfo.Name = "panelInfo";
-            panelInfo.Padding = new Padding(10, 6, 10, 6);
-            panelInfo.Size = new Size(490, 32);
-            panelInfo.TabIndex = 6;
             // 
             // lblInfoProductos
             // 
-            lblInfoProductos.Dock = DockStyle.Fill;
-            lblInfoProductos.Font = new Font("Segoe UI", 8.5F, FontStyle.Bold);
+            lblInfoProductos.AutoSize = true;
+            lblInfoProductos.Font = new Font("Segoe UI", 8.5F);
             lblInfoProductos.ForeColor = Color.FromArgb(44, 78, 130);
-            lblInfoProductos.Location = new Point(10, 6);
+            lblInfoProductos.Location = new Point(20, 97);
             lblInfoProductos.Name = "lblInfoProductos";
-            lblInfoProductos.Size = new Size(470, 20);
+            lblInfoProductos.Size = new Size(244, 19);
             lblInfoProductos.TabIndex = 2;
-            lblInfoProductos.Text = "Seleccione un suplidor para ver sus productos asociados";
+            lblInfoProductos.Text = "Seleccione un suplidor para ver productos";
             // 
             // panelAviso
             // 
             panelAviso.BackColor = Color.FromArgb(251, 238, 223);
             panelAviso.Controls.Add(lblAviso);
-            panelAviso.Location = new Point(20, 235);
+            panelAviso.Location = new Point(20, 225);
             panelAviso.Name = "panelAviso";
-            panelAviso.Padding = new Padding(12, 8, 12, 8);
+            panelAviso.Padding = new Padding(12, 10, 12, 10);
             panelAviso.Size = new Size(490, 65);
             panelAviso.TabIndex = 5;
             // 
@@ -152,21 +126,21 @@ namespace Northwind.WinForms
             lblAviso.Dock = DockStyle.Fill;
             lblAviso.Font = new Font("Segoe UI", 8.5F);
             lblAviso.ForeColor = Color.FromArgb(180, 83, 9);
-            lblAviso.Location = new Point(12, 8);
+            lblAviso.Location = new Point(12, 10);
             lblAviso.Name = "lblAviso";
-            lblAviso.Size = new Size(466, 49);
+            lblAviso.Size = new Size(466, 45);
             lblAviso.TabIndex = 0;
-            lblAviso.Text = "⚠ Advertencia: Todos los productos del suplidor de origen serán transferidos al destino seleccionado.";
+            lblAviso.Text = "⚠ Advertencia: Todos los productos del suplidor origen serán transferidos al destino de manera definitiva.";
             // 
             // cmbDestino
             // 
-            cmbDestino.BackColor = Color.White;
+            cmbDestino.BackColor = Color.FromArgb(248, 250, 252);
             cmbDestino.DropDownStyle = ComboBoxStyle.DropDownList;
             cmbDestino.FlatStyle = FlatStyle.Flat;
             cmbDestino.Font = new Font("Segoe UI", 10F);
             cmbDestino.ForeColor = Color.FromArgb(22, 26, 36);
             cmbDestino.FormattingEnabled = true;
-            cmbDestino.Location = new Point(20, 180);
+            cmbDestino.Location = new Point(20, 165);
             cmbDestino.Name = "cmbDestino";
             cmbDestino.Size = new Size(490, 31);
             cmbDestino.TabIndex = 4;
@@ -175,8 +149,8 @@ namespace Northwind.WinForms
             // 
             lblDestino.AutoSize = true;
             lblDestino.Font = new Font("Segoe UI", 9.5F, FontStyle.Bold);
-            lblDestino.ForeColor = Color.FromArgb(22, 26, 36);
-            lblDestino.Location = new Point(20, 150);
+            lblDestino.ForeColor = Color.FromArgb(51, 65, 85);
+            lblDestino.Location = new Point(20, 135);
             lblDestino.Name = "lblDestino";
             lblDestino.Size = new Size(168, 21);
             lblDestino.TabIndex = 3;
@@ -184,13 +158,13 @@ namespace Northwind.WinForms
             // 
             // cmbOrigen
             // 
-            cmbOrigen.BackColor = Color.White;
+            cmbOrigen.BackColor = Color.FromArgb(248, 250, 252);
             cmbOrigen.DropDownStyle = ComboBoxStyle.DropDownList;
             cmbOrigen.FlatStyle = FlatStyle.Flat;
             cmbOrigen.Font = new Font("Segoe UI", 10F);
             cmbOrigen.ForeColor = Color.FromArgb(22, 26, 36);
             cmbOrigen.FormattingEnabled = true;
-            cmbOrigen.Location = new Point(20, 52);
+            cmbOrigen.Location = new Point(20, 55);
             cmbOrigen.Name = "cmbOrigen";
             cmbOrigen.Size = new Size(490, 31);
             cmbOrigen.TabIndex = 1;
@@ -200,8 +174,8 @@ namespace Northwind.WinForms
             // 
             lblOrigen.AutoSize = true;
             lblOrigen.Font = new Font("Segoe UI", 9.5F, FontStyle.Bold);
-            lblOrigen.ForeColor = Color.FromArgb(22, 26, 36);
-            lblOrigen.Location = new Point(20, 22);
+            lblOrigen.ForeColor = Color.FromArgb(51, 65, 85);
+            lblOrigen.Location = new Point(20, 25);
             lblOrigen.Name = "lblOrigen";
             lblOrigen.Size = new Size(160, 21);
             lblOrigen.TabIndex = 0;
@@ -209,14 +183,14 @@ namespace Northwind.WinForms
             // 
             // panelActions
             // 
-            panelActions.BackColor = Color.FromArgb(238, 241, 247);
+            panelActions.BackColor = Color.FromArgb(248, 250, 252);
             panelActions.Controls.Add(btnReasignar);
             panelActions.Controls.Add(btnCerrar);
             panelActions.Dock = DockStyle.Bottom;
-            panelActions.Location = new Point(0, 448);
+            panelActions.Location = new Point(0, 435);
             panelActions.Name = "panelActions";
-            panelActions.Padding = new Padding(25, 10, 25, 14);
-            panelActions.Size = new Size(580, 72);
+            panelActions.Padding = new Padding(25, 10, 25, 15);
+            panelActions.Size = new Size(580, 75);
             panelActions.TabIndex = 2;
             // 
             // btnReasignar
@@ -227,7 +201,7 @@ namespace Northwind.WinForms
             btnReasignar.FlatStyle = FlatStyle.Flat;
             btnReasignar.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
             btnReasignar.ForeColor = Color.White;
-            btnReasignar.Location = new Point(265, 14);
+            btnReasignar.Location = new Point(265, 15);
             btnReasignar.Name = "btnReasignar";
             btnReasignar.Size = new Size(185, 42);
             btnReasignar.TabIndex = 0;
@@ -237,13 +211,13 @@ namespace Northwind.WinForms
             // 
             // btnCerrar
             // 
-            btnCerrar.BackColor = Color.White;
+            btnCerrar.BackColor = Color.FromArgb(241, 245, 249);
             btnCerrar.Cursor = Cursors.Hand;
-            btnCerrar.FlatAppearance.BorderColor = Color.FromArgb(227, 231, 239);
+            btnCerrar.FlatAppearance.BorderColor = Color.FromArgb(203, 213, 225);
             btnCerrar.FlatStyle = FlatStyle.Flat;
-            btnCerrar.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
-            btnCerrar.ForeColor = Color.FromArgb(22, 26, 36);
-            btnCerrar.Location = new Point(460, 14);
+            btnCerrar.Font = new Font("Segoe UI", 10F);
+            btnCerrar.ForeColor = Color.FromArgb(71, 85, 105);
+            btnCerrar.Location = new Point(460, 15);
             btnCerrar.Name = "btnCerrar";
             btnCerrar.Size = new Size(95, 42);
             btnCerrar.TabIndex = 1;
@@ -261,7 +235,7 @@ namespace Northwind.WinForms
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(245, 247, 251);
-            ClientSize = new Size(580, 520);
+            ClientSize = new Size(580, 510);
             Controls.Add(panelActions);
             Controls.Add(panelCard);
             Controls.Add(panelHeader);
@@ -276,7 +250,6 @@ namespace Northwind.WinForms
             panelHeader.PerformLayout();
             panelCard.ResumeLayout(false);
             panelCard.PerformLayout();
-            panelInfo.ResumeLayout(false);
             panelAviso.ResumeLayout(false);
             panelActions.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)errorProvider).EndInit();
@@ -286,7 +259,6 @@ namespace Northwind.WinForms
         #endregion
 
         private Panel panelHeader;
-        private Label lblEyebrow;
         private Label lblTitulo;
         private Label lblSubtitulo;
         private Panel panelCard;
@@ -294,7 +266,6 @@ namespace Northwind.WinForms
         private ComboBox cmbOrigen;
         private Label lblDestino;
         private ComboBox cmbDestino;
-        private Panel panelInfo;
         private Label lblInfoProductos;
         private Panel panelAviso;
         private Label lblAviso;

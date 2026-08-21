@@ -1,4 +1,4 @@
-namespace Northwind.WinForms
+﻿namespace Northwind.WinForms
 {
     partial class FrmPrincipal
     {
@@ -29,481 +29,451 @@ namespace Northwind.WinForms
         private void InitializeComponent()
         {
             panelSidebar = new Panel();
-            panelMenu = new Panel();
             btnNavSalir = new Button();
-            lblSectionReportes = new Label();
-            btnNavReporteInventario = new Button();
-            lblSectionOperaciones = new Label();
-            btnNavReasignarProductos = new Button();
-            btnNavIncrementoPrecios = new Button();
-            lblSectionCatalogo = new Label();
+            btnNavReporte = new Button();
+            btnNavReasignar = new Button();
+            btnNavIncremento = new Button();
+            lblSeccionOperaciones = new Label();
             btnNavSuplidores = new Button();
+            btnNavProductos = new Button();
             btnNavCategorias = new Button();
-            lblSectionGeneral = new Label();
-            btnNavDashboard = new Button();
-            panelSidebarFooter = new Panel();
-            lblUserRole = new Label();
-            lblUserName = new Label();
-            panelBrand = new Panel();
-            lblConnStatus = new Label();
-            lblBrandSubtitle = new Label();
-            lblBrandTitle = new Label();
-            panelLogo = new Panel();
-            lblLogoLetter = new Label();
-            panelMainContainer = new Panel();
-            panelContenido = new Panel();
-            panelTopBar = new Panel();
-            lblPageDescription = new Label();
-            lblPageTitle = new Label();
+            lblSeccionCatalogo = new Label();
+            btnNavInicio = new Button();
+            lblSeccionPrincipal = new Label();
+            lblConexion = new Label();
+            panelSidebarHeader = new Panel();
+            lblLogoSubtitulo = new Label();
+            lblLogoTitulo = new Label();
+            panelTopbar = new Panel();
+            txtBuscarGlobal = new TextBox();
+            lblSeccionActual = new Label();
+            panelTopbarRight = new Panel();
+            lblUsuario = new Label();
+            lblNotificaciones = new Label();
+            lblFecha = new Label();
+            panelContent = new Panel();
+            statusStrip = new StatusStrip();
+            statusLabel = new ToolStripStatusLabel();
             panelSidebar.SuspendLayout();
-            panelMenu.SuspendLayout();
-            panelSidebarFooter.SuspendLayout();
-            panelBrand.SuspendLayout();
-            panelLogo.SuspendLayout();
-            panelMainContainer.SuspendLayout();
-            panelTopBar.SuspendLayout();
+            panelSidebarHeader.SuspendLayout();
+            panelTopbar.SuspendLayout();
+            panelTopbarRight.SuspendLayout();
+            statusStrip.SuspendLayout();
             SuspendLayout();
-            // 
+            //
             // panelSidebar
-            // 
+            //
             panelSidebar.BackColor = Color.FromArgb(238, 241, 247);
-            panelSidebar.Controls.Add(panelMenu);
-            panelSidebar.Controls.Add(panelSidebarFooter);
-            panelSidebar.Controls.Add(panelBrand);
+            panelSidebar.Controls.Add(btnNavSalir);
+            panelSidebar.Controls.Add(btnNavReporte);
+            panelSidebar.Controls.Add(btnNavReasignar);
+            panelSidebar.Controls.Add(btnNavIncremento);
+            panelSidebar.Controls.Add(lblSeccionOperaciones);
+            panelSidebar.Controls.Add(btnNavSuplidores);
+            panelSidebar.Controls.Add(btnNavProductos);
+            panelSidebar.Controls.Add(btnNavCategorias);
+            panelSidebar.Controls.Add(lblSeccionCatalogo);
+            panelSidebar.Controls.Add(btnNavInicio);
+            panelSidebar.Controls.Add(lblSeccionPrincipal);
+            panelSidebar.Controls.Add(lblConexion);
+            panelSidebar.Controls.Add(panelSidebarHeader);
             panelSidebar.Dock = DockStyle.Left;
             panelSidebar.Location = new Point(0, 0);
             panelSidebar.Name = "panelSidebar";
-            panelSidebar.Padding = new Padding(12, 16, 12, 16);
-            panelSidebar.Size = new Size(260, 800);
+            panelSidebar.Size = new Size(240, 800);
             panelSidebar.TabIndex = 0;
-            // 
-            // panelMenu
-            // 
-            panelMenu.AutoScroll = true;
-            panelMenu.Controls.Add(btnNavSalir);
-            panelMenu.Controls.Add(lblSectionReportes);
-            panelMenu.Controls.Add(btnNavReporteInventario);
-            panelMenu.Controls.Add(lblSectionOperaciones);
-            panelMenu.Controls.Add(btnNavReasignarProductos);
-            panelMenu.Controls.Add(btnNavIncrementoPrecios);
-            panelMenu.Controls.Add(lblSectionCatalogo);
-            panelMenu.Controls.Add(btnNavSuplidores);
-            panelMenu.Controls.Add(btnNavCategorias);
-            panelMenu.Controls.Add(lblSectionGeneral);
-            panelMenu.Controls.Add(btnNavDashboard);
-            panelMenu.Dock = DockStyle.Fill;
-            panelMenu.Location = new Point(12, 116);
-            panelMenu.Name = "panelMenu";
-            panelMenu.Padding = new Padding(0, 8, 0, 8);
-            panelMenu.Size = new Size(236, 608);
-            panelMenu.TabIndex = 1;
-            // 
-            // btnNavSalir
-            // 
-            btnNavSalir.BackColor = Color.Transparent;
-            btnNavSalir.Cursor = Cursors.Hand;
-            btnNavSalir.Dock = DockStyle.Top;
-            btnNavSalir.FlatAppearance.BorderSize = 0;
-            btnNavSalir.FlatAppearance.MouseDownBackColor = Color.FromArgb(251, 234, 232);
-            btnNavSalir.FlatAppearance.MouseOverBackColor = Color.FromArgb(254, 242, 242);
-            btnNavSalir.FlatStyle = FlatStyle.Flat;
-            btnNavSalir.Font = new Font("Segoe UI", 9.5F, FontStyle.Bold);
-            btnNavSalir.ForeColor = Color.FromArgb(192, 57, 43);
-            btnNavSalir.Location = new Point(0, 396);
-            btnNavSalir.Margin = new Padding(0, 2, 0, 2);
-            btnNavSalir.Name = "btnNavSalir";
-            btnNavSalir.Padding = new Padding(12, 0, 12, 0);
-            btnNavSalir.Size = new Size(236, 42);
-            btnNavSalir.TabIndex = 10;
-            btnNavSalir.Text = "🚪   Salir del Sistema";
-            btnNavSalir.TextAlign = ContentAlignment.MiddleLeft;
-            btnNavSalir.UseVisualStyleBackColor = false;
-            btnNavSalir.Click += btnNavSalir_Click;
-            // 
-            // lblSectionReportes
-            // 
-            lblSectionReportes.Dock = DockStyle.Top;
-            lblSectionReportes.Font = new Font("Segoe UI", 7.5F, FontStyle.Bold);
-            lblSectionReportes.ForeColor = Color.FromArgb(136, 144, 160);
-            lblSectionReportes.Location = new Point(0, 368);
-            lblSectionReportes.Name = "lblSectionReportes";
-            lblSectionReportes.Padding = new Padding(10, 10, 0, 0);
-            lblSectionReportes.Size = new Size(236, 28);
-            lblSectionReportes.TabIndex = 8;
-            lblSectionReportes.Text = "REPORTES";
-            // 
-            // btnNavReporteInventario
-            // 
-            btnNavReporteInventario.BackColor = Color.Transparent;
-            btnNavReporteInventario.Cursor = Cursors.Hand;
-            btnNavReporteInventario.Dock = DockStyle.Top;
-            btnNavReporteInventario.FlatAppearance.BorderSize = 0;
-            btnNavReporteInventario.FlatAppearance.MouseOverBackColor = Color.FromArgb(227, 231, 239);
-            btnNavReporteInventario.FlatStyle = FlatStyle.Flat;
-            btnNavReporteInventario.Font = new Font("Segoe UI", 9.5F);
-            btnNavReporteInventario.ForeColor = Color.FromArgb(91, 100, 116);
-            btnNavReporteInventario.Location = new Point(0, 326);
-            btnNavReporteInventario.Margin = new Padding(0, 2, 0, 2);
-            btnNavReporteInventario.Name = "btnNavReporteInventario";
-            btnNavReporteInventario.Padding = new Padding(12, 0, 12, 0);
-            btnNavReporteInventario.Size = new Size(236, 42);
-            btnNavReporteInventario.TabIndex = 9;
-            btnNavReporteInventario.Text = "📋   Valor de Inventario";
-            btnNavReporteInventario.TextAlign = ContentAlignment.MiddleLeft;
-            btnNavReporteInventario.UseVisualStyleBackColor = false;
-            btnNavReporteInventario.Click += btnNavReporteInventario_Click;
-            // 
-            // lblSectionOperaciones
-            // 
-            lblSectionOperaciones.Dock = DockStyle.Top;
-            lblSectionOperaciones.Font = new Font("Segoe UI", 7.5F, FontStyle.Bold);
-            lblSectionOperaciones.ForeColor = Color.FromArgb(136, 144, 160);
-            lblSectionOperaciones.Location = new Point(0, 244);
-            lblSectionOperaciones.Name = "lblSectionOperaciones";
-            lblSectionOperaciones.Padding = new Padding(10, 10, 0, 0);
-            lblSectionOperaciones.Size = new Size(236, 28);
-            lblSectionOperaciones.TabIndex = 5;
-            lblSectionOperaciones.Text = "OPERACIONES";
-            // 
-            // btnNavReasignarProductos
-            // 
-            btnNavReasignarProductos.BackColor = Color.Transparent;
-            btnNavReasignarProductos.Cursor = Cursors.Hand;
-            btnNavReasignarProductos.Dock = DockStyle.Top;
-            btnNavReasignarProductos.FlatAppearance.BorderSize = 0;
-            btnNavReasignarProductos.FlatAppearance.MouseOverBackColor = Color.FromArgb(227, 231, 239);
-            btnNavReasignarProductos.FlatStyle = FlatStyle.Flat;
-            btnNavReasignarProductos.Font = new Font("Segoe UI", 9.5F);
-            btnNavReasignarProductos.ForeColor = Color.FromArgb(91, 100, 116);
-            btnNavReasignarProductos.Location = new Point(0, 202);
-            btnNavReasignarProductos.Margin = new Padding(0, 2, 0, 2);
-            btnNavReasignarProductos.Name = "btnNavReasignarProductos";
-            btnNavReasignarProductos.Padding = new Padding(12, 0, 12, 0);
-            btnNavReasignarProductos.Size = new Size(236, 42);
-            btnNavReasignarProductos.TabIndex = 7;
-            btnNavReasignarProductos.Text = "🔄   Reasignar Productos";
-            btnNavReasignarProductos.TextAlign = ContentAlignment.MiddleLeft;
-            btnNavReasignarProductos.UseVisualStyleBackColor = false;
-            btnNavReasignarProductos.Click += btnNavReasignarProductos_Click;
-            // 
-            // btnNavIncrementoPrecios
-            // 
-            btnNavIncrementoPrecios.BackColor = Color.Transparent;
-            btnNavIncrementoPrecios.Cursor = Cursors.Hand;
-            btnNavIncrementoPrecios.Dock = DockStyle.Top;
-            btnNavIncrementoPrecios.FlatAppearance.BorderSize = 0;
-            btnNavIncrementoPrecios.FlatAppearance.MouseOverBackColor = Color.FromArgb(227, 231, 239);
-            btnNavIncrementoPrecios.FlatStyle = FlatStyle.Flat;
-            btnNavIncrementoPrecios.Font = new Font("Segoe UI", 9.5F);
-            btnNavIncrementoPrecios.ForeColor = Color.FromArgb(91, 100, 116);
-            btnNavIncrementoPrecios.Location = new Point(0, 160);
-            btnNavIncrementoPrecios.Margin = new Padding(0, 2, 0, 2);
-            btnNavIncrementoPrecios.Name = "btnNavIncrementoPrecios";
-            btnNavIncrementoPrecios.Padding = new Padding(12, 0, 12, 0);
-            btnNavIncrementoPrecios.Size = new Size(236, 42);
-            btnNavIncrementoPrecios.TabIndex = 6;
-            btnNavIncrementoPrecios.Text = "📈   Incremento Precios";
-            btnNavIncrementoPrecios.TextAlign = ContentAlignment.MiddleLeft;
-            btnNavIncrementoPrecios.UseVisualStyleBackColor = false;
-            btnNavIncrementoPrecios.Click += btnNavIncrementoPrecios_Click;
-            // 
-            // lblSectionCatalogo
-            // 
-            lblSectionCatalogo.Dock = DockStyle.Top;
-            lblSectionCatalogo.Font = new Font("Segoe UI", 7.5F, FontStyle.Bold);
-            lblSectionCatalogo.ForeColor = Color.FromArgb(136, 144, 160);
-            lblSectionCatalogo.Location = new Point(0, 132);
-            lblSectionCatalogo.Name = "lblSectionCatalogo";
-            lblSectionCatalogo.Padding = new Padding(10, 10, 0, 0);
-            lblSectionCatalogo.Size = new Size(236, 28);
-            lblSectionCatalogo.TabIndex = 2;
-            lblSectionCatalogo.Text = "CATÁLOGO";
-            // 
-            // btnNavSuplidores
-            // 
-            btnNavSuplidores.BackColor = Color.Transparent;
-            btnNavSuplidores.Cursor = Cursors.Hand;
-            btnNavSuplidores.Dock = DockStyle.Top;
-            btnNavSuplidores.FlatAppearance.BorderSize = 0;
-            btnNavSuplidores.FlatAppearance.MouseOverBackColor = Color.FromArgb(227, 231, 239);
-            btnNavSuplidores.FlatStyle = FlatStyle.Flat;
-            btnNavSuplidores.Font = new Font("Segoe UI", 9.5F);
-            btnNavSuplidores.ForeColor = Color.FromArgb(91, 100, 116);
-            btnNavSuplidores.Location = new Point(0, 90);
-            btnNavSuplidores.Margin = new Padding(0, 2, 0, 2);
-            btnNavSuplidores.Name = "btnNavSuplidores";
-            btnNavSuplidores.Padding = new Padding(12, 0, 12, 0);
-            btnNavSuplidores.Size = new Size(236, 42);
-            btnNavSuplidores.TabIndex = 4;
-            btnNavSuplidores.Text = "🚚   Suplidores";
-            btnNavSuplidores.TextAlign = ContentAlignment.MiddleLeft;
-            btnNavSuplidores.UseVisualStyleBackColor = false;
-            btnNavSuplidores.Click += btnNavSuplidores_Click;
-            // 
+            //
+            // panelSidebarHeader
+            //
+            panelSidebarHeader.BackColor = Color.FromArgb(238, 241, 247);
+            panelSidebarHeader.Controls.Add(lblLogoSubtitulo);
+            panelSidebarHeader.Controls.Add(lblLogoTitulo);
+            panelSidebarHeader.Dock = DockStyle.Top;
+            panelSidebarHeader.Location = new Point(0, 0);
+            panelSidebarHeader.Name = "panelSidebarHeader";
+            panelSidebarHeader.Padding = new Padding(20, 18, 20, 15);
+            panelSidebarHeader.Size = new Size(240, 80);
+            panelSidebarHeader.TabIndex = 0;
+            //
+            // lblLogoSubtitulo
+            //
+            lblLogoSubtitulo.AutoSize = true;
+            lblLogoSubtitulo.Font = new Font("Segoe UI", 8.5F);
+            lblLogoSubtitulo.ForeColor = Color.FromArgb(44, 78, 130);
+            lblLogoSubtitulo.Location = new Point(20, 46);
+            lblLogoSubtitulo.Name = "lblLogoSubtitulo";
+            lblLogoSubtitulo.Size = new Size(140, 19);
+            lblLogoSubtitulo.TabIndex = 1;
+            lblLogoSubtitulo.Text = "SISTEMA · GESTIÓN";
+            //
+            // lblLogoTitulo
+            //
+            lblLogoTitulo.AutoSize = true;
+            lblLogoTitulo.Font = new Font("Segoe UI", 14F, FontStyle.Bold);
+            lblLogoTitulo.ForeColor = Color.FromArgb(22, 26, 36);
+            lblLogoTitulo.Location = new Point(18, 14);
+            lblLogoTitulo.Name = "lblLogoTitulo";
+            lblLogoTitulo.Size = new Size(180, 32);
+            lblLogoTitulo.TabIndex = 0;
+            lblLogoTitulo.Text = "🏢 Northwind";
+            //
+            // lblConexion
+            //
+            lblConexion.AutoSize = true;
+            lblConexion.Font = new Font("Segoe UI", 8.5F, FontStyle.Bold);
+            lblConexion.ForeColor = Color.FromArgb(100, 116, 139);
+            lblConexion.Location = new Point(20, 92);
+            lblConexion.Name = "lblConexion";
+            lblConexion.Size = new Size(160, 19);
+            lblConexion.TabIndex = 1;
+            lblConexion.Text = "●  Verificando conexión...";
+            //
+            // lblSeccionPrincipal
+            //
+            lblSeccionPrincipal.AutoSize = true;
+            lblSeccionPrincipal.Font = new Font("Segoe UI", 8F, FontStyle.Bold);
+            lblSeccionPrincipal.ForeColor = Color.FromArgb(136, 144, 160);
+            lblSeccionPrincipal.Location = new Point(24, 128);
+            lblSeccionPrincipal.Name = "lblSeccionPrincipal";
+            lblSeccionPrincipal.Size = new Size(80, 19);
+            lblSeccionPrincipal.TabIndex = 2;
+            lblSeccionPrincipal.Text = "PRINCIPAL";
+            //
+            // btnNavInicio
+            //
+            btnNavInicio.BackColor = Color.FromArgb(238, 241, 247);
+            btnNavInicio.Cursor = Cursors.Hand;
+            btnNavInicio.FlatAppearance.BorderSize = 0;
+            btnNavInicio.FlatStyle = FlatStyle.Flat;
+            btnNavInicio.Font = new Font("Segoe UI", 10.5F);
+            btnNavInicio.ForeColor = Color.FromArgb(51, 65, 85);
+            btnNavInicio.Location = new Point(0, 152);
+            btnNavInicio.Name = "btnNavInicio";
+            btnNavInicio.Padding = new Padding(24, 0, 0, 0);
+            btnNavInicio.Size = new Size(240, 44);
+            btnNavInicio.TabIndex = 3;
+            btnNavInicio.Text = "🏠   Dashboard";
+            btnNavInicio.TextAlign = ContentAlignment.MiddleLeft;
+            btnNavInicio.UseVisualStyleBackColor = false;
+            btnNavInicio.Click += btnNavInicio_Click;
+            //
+            // lblSeccionCatalogo
+            //
+            lblSeccionCatalogo.AutoSize = true;
+            lblSeccionCatalogo.Font = new Font("Segoe UI", 8F, FontStyle.Bold);
+            lblSeccionCatalogo.ForeColor = Color.FromArgb(136, 144, 160);
+            lblSeccionCatalogo.Location = new Point(24, 204);
+            lblSeccionCatalogo.Name = "lblSeccionCatalogo";
+            lblSeccionCatalogo.Size = new Size(80, 19);
+            lblSeccionCatalogo.TabIndex = 4;
+            lblSeccionCatalogo.Text = "CATÁLOGO";
+            //
             // btnNavCategorias
-            // 
-            btnNavCategorias.BackColor = Color.Transparent;
+            //
+            btnNavCategorias.BackColor = Color.FromArgb(238, 241, 247);
             btnNavCategorias.Cursor = Cursors.Hand;
-            btnNavCategorias.Dock = DockStyle.Top;
             btnNavCategorias.FlatAppearance.BorderSize = 0;
-            btnNavCategorias.FlatAppearance.MouseOverBackColor = Color.FromArgb(227, 231, 239);
             btnNavCategorias.FlatStyle = FlatStyle.Flat;
-            btnNavCategorias.Font = new Font("Segoe UI", 9.5F);
-            btnNavCategorias.ForeColor = Color.FromArgb(91, 100, 116);
-            btnNavCategorias.Location = new Point(0, 48);
-            btnNavCategorias.Margin = new Padding(0, 2, 0, 2);
+            btnNavCategorias.Font = new Font("Segoe UI", 10.5F);
+            btnNavCategorias.ForeColor = Color.FromArgb(51, 65, 85);
+            btnNavCategorias.Location = new Point(0, 228);
             btnNavCategorias.Name = "btnNavCategorias";
-            btnNavCategorias.Padding = new Padding(12, 0, 12, 0);
-            btnNavCategorias.Size = new Size(236, 42);
-            btnNavCategorias.TabIndex = 3;
+            btnNavCategorias.Padding = new Padding(24, 0, 0, 0);
+            btnNavCategorias.Size = new Size(240, 44);
+            btnNavCategorias.TabIndex = 5;
             btnNavCategorias.Text = "🏷️   Categorías";
             btnNavCategorias.TextAlign = ContentAlignment.MiddleLeft;
             btnNavCategorias.UseVisualStyleBackColor = false;
             btnNavCategorias.Click += btnNavCategorias_Click;
-            // 
-            // lblSectionGeneral
-            // 
-            lblSectionGeneral.Dock = DockStyle.Top;
-            lblSectionGeneral.Font = new Font("Segoe UI", 7.5F, FontStyle.Bold);
-            lblSectionGeneral.ForeColor = Color.FromArgb(136, 144, 160);
-            lblSectionGeneral.Location = new Point(0, 8);
-            lblSectionGeneral.Name = "lblSectionGeneral";
-            lblSectionGeneral.Padding = new Padding(10, 0, 0, 0);
-            lblSectionGeneral.Size = new Size(236, 20);
-            lblSectionGeneral.TabIndex = 0;
-            lblSectionGeneral.Text = "GENERAL";
-            // 
-            // btnNavDashboard
-            // 
-            btnNavDashboard.BackColor = Color.FromArgb(44, 78, 130);
-            btnNavDashboard.Cursor = Cursors.Hand;
-            btnNavDashboard.Dock = DockStyle.Top;
-            btnNavDashboard.FlatAppearance.BorderSize = 0;
-            btnNavDashboard.FlatStyle = FlatStyle.Flat;
-            btnNavDashboard.Font = new Font("Segoe UI", 9.5F, FontStyle.Bold);
-            btnNavDashboard.ForeColor = Color.White;
-            btnNavDashboard.Location = new Point(0, 28);
-            btnNavDashboard.Margin = new Padding(0, 2, 0, 2);
-            btnNavDashboard.Name = "btnNavDashboard";
-            btnNavDashboard.Padding = new Padding(12, 0, 12, 0);
-            btnNavDashboard.Size = new Size(236, 42);
-            btnNavDashboard.TabIndex = 1;
-            btnNavDashboard.Text = "📊   Dashboard";
-            btnNavDashboard.TextAlign = ContentAlignment.MiddleLeft;
-            btnNavDashboard.UseVisualStyleBackColor = false;
-            btnNavDashboard.Click += btnNavDashboard_Click;
-            // 
-            // panelSidebarFooter
-            // 
-            panelSidebarFooter.BackColor = Color.FromArgb(231, 235, 243);
-            panelSidebarFooter.Controls.Add(lblUserRole);
-            panelSidebarFooter.Controls.Add(lblUserName);
-            panelSidebarFooter.Dock = DockStyle.Bottom;
-            panelSidebarFooter.Location = new Point(12, 724);
-            panelSidebarFooter.Name = "panelSidebarFooter";
-            panelSidebarFooter.Padding = new Padding(12, 10, 12, 10);
-            panelSidebarFooter.Size = new Size(236, 60);
-            panelSidebarFooter.TabIndex = 2;
-            // 
-            // lblUserRole
-            // 
-            lblUserRole.AutoSize = true;
-            lblUserRole.Font = new Font("Segoe UI", 8F);
-            lblUserRole.ForeColor = Color.FromArgb(91, 100, 116);
-            lblUserRole.Location = new Point(10, 32);
-            lblUserRole.Name = "lblUserRole";
-            lblUserRole.Size = new Size(98, 19);
-            lblUserRole.TabIndex = 1;
-            lblUserRole.Text = "Administrador";
-            // 
-            // lblUserName
-            // 
-            lblUserName.AutoSize = true;
-            lblUserName.Font = new Font("Segoe UI", 9.5F, FontStyle.Bold);
-            lblUserName.ForeColor = Color.FromArgb(22, 26, 36);
-            lblUserName.Location = new Point(10, 10);
-            lblUserName.Name = "lblUserName";
-            lblUserName.Size = new Size(107, 21);
-            lblUserName.TabIndex = 0;
-            lblUserName.Text = "manugardon";
-            // 
-            // panelBrand
-            // 
-            panelBrand.Controls.Add(lblConnStatus);
-            panelBrand.Controls.Add(lblBrandSubtitle);
-            panelBrand.Controls.Add(lblBrandTitle);
-            panelBrand.Controls.Add(panelLogo);
-            panelBrand.Dock = DockStyle.Top;
-            panelBrand.Location = new Point(12, 16);
-            panelBrand.Name = "panelBrand";
-            panelBrand.Size = new Size(236, 100);
-            panelBrand.TabIndex = 0;
-            // 
-            // lblConnStatus
-            // 
-            lblConnStatus.AutoSize = true;
-            lblConnStatus.Font = new Font("Segoe UI", 8F, FontStyle.Bold);
-            lblConnStatus.ForeColor = Color.FromArgb(31, 138, 95);
-            lblConnStatus.Location = new Point(6, 68);
-            lblConnStatus.Name = "lblConnStatus";
-            lblConnStatus.Size = new Size(169, 19);
-            lblConnStatus.TabIndex = 3;
-            lblConnStatus.Text = "● Conectado · SQL Server";
-            // 
-            // lblBrandSubtitle
-            // 
-            lblBrandSubtitle.AutoSize = true;
-            lblBrandSubtitle.Font = new Font("Segoe UI", 7.5F, FontStyle.Bold);
-            lblBrandSubtitle.ForeColor = Color.FromArgb(136, 144, 160);
-            lblBrandSubtitle.Location = new Point(60, 35);
-            lblBrandSubtitle.Name = "lblBrandSubtitle";
-            lblBrandSubtitle.Size = new Size(99, 17);
-            lblBrandSubtitle.TabIndex = 2;
-            lblBrandSubtitle.Text = "MANAGER v1.0";
-            // 
-            // lblBrandTitle
-            // 
-            lblBrandTitle.AutoSize = true;
-            lblBrandTitle.Font = new Font("Segoe UI", 13.5F, FontStyle.Bold);
-            lblBrandTitle.ForeColor = Color.FromArgb(22, 26, 36);
-            lblBrandTitle.Location = new Point(56, 10);
-            lblBrandTitle.Name = "lblBrandTitle";
-            lblBrandTitle.Size = new Size(130, 31);
-            lblBrandTitle.TabIndex = 1;
-            lblBrandTitle.Text = "Northwind";
-            // 
-            // panelLogo
-            // 
-            panelLogo.BackColor = Color.FromArgb(44, 78, 130);
-            panelLogo.Controls.Add(lblLogoLetter);
-            panelLogo.Location = new Point(6, 12);
-            panelLogo.Name = "panelLogo";
-            panelLogo.Size = new Size(42, 42);
-            panelLogo.TabIndex = 0;
-            // 
-            // lblLogoLetter
-            // 
-            lblLogoLetter.Dock = DockStyle.Fill;
-            lblLogoLetter.Font = new Font("Segoe UI", 14F, FontStyle.Bold);
-            lblLogoLetter.ForeColor = Color.White;
-            lblLogoLetter.Location = new Point(0, 0);
-            lblLogoLetter.Name = "lblLogoLetter";
-            lblLogoLetter.Size = new Size(42, 42);
-            lblLogoLetter.TabIndex = 0;
-            lblLogoLetter.Text = "N";
-            lblLogoLetter.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // panelMainContainer
-            // 
-            panelMainContainer.BackColor = Color.FromArgb(245, 247, 251);
-            panelMainContainer.Controls.Add(panelContenido);
-            panelMainContainer.Controls.Add(panelTopBar);
-            panelMainContainer.Dock = DockStyle.Fill;
-            panelMainContainer.Location = new Point(260, 0);
-            panelMainContainer.Name = "panelMainContainer";
-            panelMainContainer.Size = new Size(1040, 800);
-            panelMainContainer.TabIndex = 1;
-            // 
-            // panelContenido
-            // 
-            panelContenido.BackColor = Color.FromArgb(245, 247, 251);
-            panelContenido.Dock = DockStyle.Fill;
-            panelContenido.Location = new Point(0, 60);
-            panelContenido.Name = "panelContenido";
-            panelContenido.Size = new Size(1040, 740);
-            panelContenido.TabIndex = 1;
-            // 
-            // panelTopBar
-            // 
-            panelTopBar.BackColor = Color.White;
-            panelTopBar.BorderStyle = BorderStyle.FixedSingle;
-            panelTopBar.Controls.Add(lblPageDescription);
-            panelTopBar.Controls.Add(lblPageTitle);
-            panelTopBar.Dock = DockStyle.Top;
-            panelTopBar.Location = new Point(0, 0);
-            panelTopBar.Name = "panelTopBar";
-            panelTopBar.Padding = new Padding(25, 10, 25, 10);
-            panelTopBar.Size = new Size(1040, 60);
-            panelTopBar.TabIndex = 0;
-            // 
-            // lblPageDescription
-            // 
-            lblPageDescription.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            lblPageDescription.AutoSize = true;
-            lblPageDescription.Font = new Font("Segoe UI", 8.5F);
-            lblPageDescription.ForeColor = Color.FromArgb(136, 144, 160);
-            lblPageDescription.Location = new Point(780, 20);
-            lblPageDescription.Name = "lblPageDescription";
-            lblPageDescription.Size = new Size(224, 20);
-            lblPageDescription.TabIndex = 1;
-            lblPageDescription.Text = "Sistema de Gestión Empresarial";
-            // 
-            // lblPageTitle
-            // 
-            lblPageTitle.AutoSize = true;
-            lblPageTitle.Font = new Font("Segoe UI", 12.5F, FontStyle.Bold);
-            lblPageTitle.ForeColor = Color.FromArgb(22, 26, 36);
-            lblPageTitle.Location = new Point(20, 14);
-            lblPageTitle.Name = "lblPageTitle";
-            lblPageTitle.Size = new Size(122, 30);
-            lblPageTitle.TabIndex = 0;
-            lblPageTitle.Text = "Dashboard";
-            // 
+            //
+            // btnNavProductos
+            //
+            btnNavProductos.BackColor = Color.FromArgb(238, 241, 247);
+            btnNavProductos.Cursor = Cursors.Hand;
+            btnNavProductos.FlatAppearance.BorderSize = 0;
+            btnNavProductos.FlatStyle = FlatStyle.Flat;
+            btnNavProductos.Font = new Font("Segoe UI", 10.5F);
+            btnNavProductos.ForeColor = Color.FromArgb(51, 65, 85);
+            btnNavProductos.Location = new Point(0, 272);
+            btnNavProductos.Name = "btnNavProductos";
+            btnNavProductos.Padding = new Padding(24, 0, 0, 0);
+            btnNavProductos.Size = new Size(240, 44);
+            btnNavProductos.TabIndex = 6;
+            btnNavProductos.Text = "📦   Productos";
+            btnNavProductos.TextAlign = ContentAlignment.MiddleLeft;
+            btnNavProductos.UseVisualStyleBackColor = false;
+            btnNavProductos.Click += btnNavProductos_Click;
+            //
+            // btnNavSuplidores
+            //
+            btnNavSuplidores.BackColor = Color.FromArgb(238, 241, 247);
+            btnNavSuplidores.Cursor = Cursors.Hand;
+            btnNavSuplidores.FlatAppearance.BorderSize = 0;
+            btnNavSuplidores.FlatStyle = FlatStyle.Flat;
+            btnNavSuplidores.Font = new Font("Segoe UI", 10.5F);
+            btnNavSuplidores.ForeColor = Color.FromArgb(51, 65, 85);
+            btnNavSuplidores.Location = new Point(0, 316);
+            btnNavSuplidores.Name = "btnNavSuplidores";
+            btnNavSuplidores.Padding = new Padding(24, 0, 0, 0);
+            btnNavSuplidores.Size = new Size(240, 44);
+            btnNavSuplidores.TabIndex = 7;
+            btnNavSuplidores.Text = "🚚   Suplidores";
+            btnNavSuplidores.TextAlign = ContentAlignment.MiddleLeft;
+            btnNavSuplidores.UseVisualStyleBackColor = false;
+            btnNavSuplidores.Click += btnNavSuplidores_Click;
+            //
+            // lblSeccionOperaciones
+            //
+            lblSeccionOperaciones.AutoSize = true;
+            lblSeccionOperaciones.Font = new Font("Segoe UI", 8F, FontStyle.Bold);
+            lblSeccionOperaciones.ForeColor = Color.FromArgb(136, 144, 160);
+            lblSeccionOperaciones.Location = new Point(24, 372);
+            lblSeccionOperaciones.Name = "lblSeccionOperaciones";
+            lblSeccionOperaciones.Size = new Size(110, 19);
+            lblSeccionOperaciones.TabIndex = 8;
+            lblSeccionOperaciones.Text = "OPERACIONES";
+            //
+            // btnNavIncremento
+            //
+            btnNavIncremento.BackColor = Color.FromArgb(238, 241, 247);
+            btnNavIncremento.Cursor = Cursors.Hand;
+            btnNavIncremento.FlatAppearance.BorderSize = 0;
+            btnNavIncremento.FlatStyle = FlatStyle.Flat;
+            btnNavIncremento.Font = new Font("Segoe UI", 10.5F);
+            btnNavIncremento.ForeColor = Color.FromArgb(51, 65, 85);
+            btnNavIncremento.Location = new Point(0, 396);
+            btnNavIncremento.Name = "btnNavIncremento";
+            btnNavIncremento.Padding = new Padding(24, 0, 0, 0);
+            btnNavIncremento.Size = new Size(240, 44);
+            btnNavIncremento.TabIndex = 9;
+            btnNavIncremento.Text = "💲   Incremento Precios";
+            btnNavIncremento.TextAlign = ContentAlignment.MiddleLeft;
+            btnNavIncremento.UseVisualStyleBackColor = false;
+            btnNavIncremento.Click += btnNavIncremento_Click;
+            //
+            // btnNavReasignar
+            //
+            btnNavReasignar.BackColor = Color.FromArgb(238, 241, 247);
+            btnNavReasignar.Cursor = Cursors.Hand;
+            btnNavReasignar.FlatAppearance.BorderSize = 0;
+            btnNavReasignar.FlatStyle = FlatStyle.Flat;
+            btnNavReasignar.Font = new Font("Segoe UI", 10.5F);
+            btnNavReasignar.ForeColor = Color.FromArgb(51, 65, 85);
+            btnNavReasignar.Location = new Point(0, 440);
+            btnNavReasignar.Name = "btnNavReasignar";
+            btnNavReasignar.Padding = new Padding(24, 0, 0, 0);
+            btnNavReasignar.Size = new Size(240, 44);
+            btnNavReasignar.TabIndex = 10;
+            btnNavReasignar.Text = "🔄   Reasignar Productos";
+            btnNavReasignar.TextAlign = ContentAlignment.MiddleLeft;
+            btnNavReasignar.UseVisualStyleBackColor = false;
+            btnNavReasignar.Click += btnNavReasignar_Click;
+            //
+            // btnNavReporte
+            //
+            btnNavReporte.BackColor = Color.FromArgb(238, 241, 247);
+            btnNavReporte.Cursor = Cursors.Hand;
+            btnNavReporte.FlatAppearance.BorderSize = 0;
+            btnNavReporte.FlatStyle = FlatStyle.Flat;
+            btnNavReporte.Font = new Font("Segoe UI", 10.5F);
+            btnNavReporte.ForeColor = Color.FromArgb(51, 65, 85);
+            btnNavReporte.Location = new Point(0, 484);
+            btnNavReporte.Name = "btnNavReporte";
+            btnNavReporte.Padding = new Padding(24, 0, 0, 0);
+            btnNavReporte.Size = new Size(240, 44);
+            btnNavReporte.TabIndex = 11;
+            btnNavReporte.Text = "📊   Reportes";
+            btnNavReporte.TextAlign = ContentAlignment.MiddleLeft;
+            btnNavReporte.UseVisualStyleBackColor = false;
+            btnNavReporte.Click += btnNavReporte_Click;
+            //
+            // btnNavSalir
+            //
+            btnNavSalir.BackColor = Color.FromArgb(238, 241, 247);
+            btnNavSalir.Cursor = Cursors.Hand;
+            btnNavSalir.Dock = DockStyle.Bottom;
+            btnNavSalir.FlatAppearance.BorderSize = 0;
+            btnNavSalir.Font = new Font("Segoe UI", 10.5F);
+            btnNavSalir.FlatStyle = FlatStyle.Flat;
+            btnNavSalir.ForeColor = Color.FromArgb(91, 100, 116);
+            btnNavSalir.Location = new Point(0, 744);
+            btnNavSalir.Name = "btnNavSalir";
+            btnNavSalir.Padding = new Padding(24, 0, 0, 0);
+            btnNavSalir.Size = new Size(240, 56);
+            btnNavSalir.TabIndex = 12;
+            btnNavSalir.Text = "🚪   Salir";
+            btnNavSalir.TextAlign = ContentAlignment.MiddleLeft;
+            btnNavSalir.UseVisualStyleBackColor = false;
+            btnNavSalir.Click += btnNavSalir_Click;
+            //
+            // panelTopbar
+            //
+            panelTopbar.BackColor = Color.FromArgb(255, 255, 255);
+            panelTopbar.Controls.Add(txtBuscarGlobal);
+            panelTopbar.Controls.Add(lblSeccionActual);
+            panelTopbar.Controls.Add(panelTopbarRight);
+            panelTopbar.Dock = DockStyle.Top;
+            panelTopbar.Location = new Point(240, 0);
+            panelTopbar.Name = "panelTopbar";
+            panelTopbar.Padding = new Padding(28, 0, 0, 0);
+            panelTopbar.Size = new Size(1160, 64);
+            panelTopbar.TabIndex = 1;
+            //
+            // lblSeccionActual
+            //
+            lblSeccionActual.AutoSize = true;
+            lblSeccionActual.Font = new Font("Segoe UI", 13F, FontStyle.Bold);
+            lblSeccionActual.ForeColor = Color.FromArgb(22, 26, 36);
+            lblSeccionActual.Location = new Point(28, 18);
+            lblSeccionActual.Name = "lblSeccionActual";
+            lblSeccionActual.Size = new Size(120, 28);
+            lblSeccionActual.TabIndex = 0;
+            lblSeccionActual.Text = "Dashboard";
+            //
+            // txtBuscarGlobal
+            //
+            txtBuscarGlobal.BackColor = Color.FromArgb(248, 250, 252);
+            txtBuscarGlobal.BorderStyle = BorderStyle.FixedSingle;
+            txtBuscarGlobal.Font = new Font("Segoe UI", 9.5F);
+            txtBuscarGlobal.ForeColor = Color.FromArgb(22, 26, 36);
+            txtBuscarGlobal.Location = new Point(300, 17);
+            txtBuscarGlobal.Name = "txtBuscarGlobal";
+            txtBuscarGlobal.PlaceholderText = "🔍  Buscar productos y presionar Enter...";
+            txtBuscarGlobal.Size = new Size(300, 29);
+            txtBuscarGlobal.TabIndex = 1;
+            txtBuscarGlobal.KeyDown += txtBuscarGlobal_KeyDown;
+            //
+            // panelTopbarRight
+            //
+            panelTopbarRight.Controls.Add(lblUsuario);
+            panelTopbarRight.Controls.Add(lblNotificaciones);
+            panelTopbarRight.Controls.Add(lblFecha);
+            panelTopbarRight.Dock = DockStyle.Right;
+            panelTopbarRight.Location = new Point(730, 0);
+            panelTopbarRight.Name = "panelTopbarRight";
+            panelTopbarRight.Size = new Size(430, 64);
+            panelTopbarRight.TabIndex = 2;
+            //
+            // lblFecha
+            //
+            lblFecha.AutoSize = true;
+            lblFecha.Font = new Font("Segoe UI", 9.5F);
+            lblFecha.ForeColor = Color.FromArgb(91, 100, 116);
+            lblFecha.Location = new Point(20, 22);
+            lblFecha.Name = "lblFecha";
+            lblFecha.Size = new Size(160, 21);
+            lblFecha.TabIndex = 0;
+            lblFecha.Text = "—";
+            //
+            // lblNotificaciones
+            //
+            lblNotificaciones.AutoSize = true;
+            lblNotificaciones.Cursor = Cursors.Hand;
+            lblNotificaciones.Font = new Font("Segoe UI", 11F);
+            lblNotificaciones.ForeColor = Color.FromArgb(71, 85, 105);
+            lblNotificaciones.Location = new Point(230, 19);
+            lblNotificaciones.Name = "lblNotificaciones";
+            lblNotificaciones.Size = new Size(40, 25);
+            lblNotificaciones.TabIndex = 1;
+            lblNotificaciones.Text = "🔔";
+            lblNotificaciones.Click += lblNotificaciones_Click;
+            //
+            // lblUsuario
+            //
+            lblUsuario.AutoSize = true;
+            lblUsuario.Font = new Font("Segoe UI", 9.5F);
+            lblUsuario.ForeColor = Color.FromArgb(91, 100, 116);
+            lblUsuario.Location = new Point(290, 22);
+            lblUsuario.Name = "lblUsuario";
+            lblUsuario.Size = new Size(176, 21);
+            lblUsuario.TabIndex = 2;
+            lblUsuario.Text = "👤  Administrador";
+            //
+            // panelContent
+            //
+            panelContent.BackColor = Color.FromArgb(245, 247, 251);
+            panelContent.Dock = DockStyle.Fill;
+            panelContent.Location = new Point(240, 64);
+            panelContent.Name = "panelContent";
+            panelContent.Padding = new Padding(0);
+            panelContent.Size = new Size(1160, 704);
+            panelContent.TabIndex = 2;
+            //
+            // statusStrip
+            //
+            statusStrip.BackColor = Color.FromArgb(238, 241, 247);
+            statusStrip.ImageScalingSize = new Size(20, 20);
+            statusStrip.Items.AddRange(new ToolStripItem[] { statusLabel });
+            statusStrip.Location = new Point(240, 768);
+            statusStrip.Name = "statusStrip";
+            statusStrip.SizingGrip = false;
+            statusStrip.Size = new Size(1160, 32);
+            statusStrip.TabIndex = 3;
+            //
+            // statusLabel
+            //
+            statusLabel.ForeColor = Color.FromArgb(91, 100, 116);
+            statusLabel.Name = "statusLabel";
+            statusLabel.Size = new Size(60, 25);
+            statusLabel.Text = "Listo";
+            //
             // FrmPrincipal
-            // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            //
+            AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(245, 247, 251);
-            ClientSize = new Size(1300, 800);
-            Controls.Add(panelMainContainer);
+            ClientSize = new Size(1400, 800);
+            Controls.Add(panelContent);
+            Controls.Add(statusStrip);
+            Controls.Add(panelTopbar);
             Controls.Add(panelSidebar);
-            MinimumSize = new Size(1000, 650);
+            MinimumSize = new Size(1300, 750);
             Name = "FrmPrincipal";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "Northwind — Sistema de Gestión";
+            Text = "Northwind Manager";
             WindowState = FormWindowState.Maximized;
             Load += FrmPrincipal_Load;
             panelSidebar.ResumeLayout(false);
-            panelMenu.ResumeLayout(false);
-            panelSidebarFooter.ResumeLayout(false);
-            panelSidebarFooter.PerformLayout();
-            panelBrand.ResumeLayout(false);
-            panelBrand.PerformLayout();
-            panelLogo.ResumeLayout(false);
-            panelMainContainer.ResumeLayout(false);
-            panelTopBar.ResumeLayout(false);
-            panelTopBar.PerformLayout();
+            panelSidebar.PerformLayout();
+            panelSidebarHeader.ResumeLayout(false);
+            panelSidebarHeader.PerformLayout();
+            panelTopbar.ResumeLayout(false);
+            panelTopbar.PerformLayout();
+            panelTopbarRight.ResumeLayout(false);
+            panelTopbarRight.PerformLayout();
+            statusStrip.ResumeLayout(false);
+            statusStrip.PerformLayout();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
 
         private Panel panelSidebar;
-        private Panel panelBrand;
-        private Panel panelLogo;
-        private Label lblLogoLetter;
-        private Label lblBrandTitle;
-        private Label lblBrandSubtitle;
-        private Label lblConnStatus;
-        private Panel panelMenu;
-        private Label lblSectionGeneral;
-        private Button btnNavDashboard;
-        private Label lblSectionCatalogo;
+        private Panel panelSidebarHeader;
+        private Label lblLogoTitulo;
+        private Label lblLogoSubtitulo;
+        private Label lblConexion;
+        private Label lblSeccionPrincipal;
+        private Button btnNavInicio;
+        private Label lblSeccionCatalogo;
         private Button btnNavCategorias;
+        private Button btnNavProductos;
         private Button btnNavSuplidores;
-        private Label lblSectionOperaciones;
-        private Button btnNavIncrementoPrecios;
-        private Button btnNavReasignarProductos;
-        private Label lblSectionReportes;
-        private Button btnNavReporteInventario;
+        private Label lblSeccionOperaciones;
+        private Button btnNavIncremento;
+        private Button btnNavReasignar;
+        private Button btnNavReporte;
         private Button btnNavSalir;
-        private Panel panelSidebarFooter;
-        private Label lblUserName;
-        private Label lblUserRole;
-        private Panel panelMainContainer;
-        private Panel panelTopBar;
-        private Label lblPageTitle;
-        private Label lblPageDescription;
-        private Panel panelContenido;
+        private Panel panelTopbar;
+        private Label lblSeccionActual;
+        private TextBox txtBuscarGlobal;
+        private Panel panelTopbarRight;
+        private Label lblFecha;
+        private Label lblNotificaciones;
+        private Label lblUsuario;
+        private Panel panelContent;
+        private StatusStrip statusStrip;
+        private ToolStripStatusLabel statusLabel;
     }
 }
